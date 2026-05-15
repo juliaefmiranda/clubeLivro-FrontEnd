@@ -1,0 +1,54 @@
+.header {
+    min-height: 100vh;
+    background-color: #e6e6e6;
+    color: #1f1f1f;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 60px;
+}
+
+.homeText {
+    max-width: 55%;
+    font-family: Montserrat, sans-serif;
+}
+
+.homeText h2 {
+    font-size: 2.3rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-family: Georgia, serif;
+}
+
+.homeText p {
+    font-size: 1rem;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.linha {
+    width: 120px;
+    height: 2px;
+    background-color: #C7B889;
+    margin: 25px 0;
+}
+
+.homeBook {
+    text-align: center;
+}
+
+.homeBook img {
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.homeBook p {
+  margin-top: 15px;
+  color: #ab9962;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: Montserrat, sans-serif;
+}
