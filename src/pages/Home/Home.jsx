@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import styles from './Home.module.css';
+import Footer from '../../components/Footer/Footer';
 
 export default function Home() {
     const [capa, setCapa] = useState('');
@@ -53,10 +54,17 @@ export default function Home() {
                 </section>
 
                 <section className={styles.homeBook}>
-                    <img src={capa} alt="A Moreninha" />
-                    <p>Veja mais informações → </p>
+                    <div className={styles.book}>
+                        <img src={capa} alt="A Moreninha" />
+                    </div>
+
+                    <button className={styles.botao}>
+                        Ver mais informações →
+                    </button>
                 </section>
             </main>
+
+            <Footer/>
         </div>
     );
 }
