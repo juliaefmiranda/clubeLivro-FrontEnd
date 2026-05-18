@@ -1,17 +1,23 @@
+/* ─────────────────────────────────────────
+   Sobre.module.css  — Entre Linhas
+───────────────────────────────────────── */
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
 
 :root {
-    --bg: #e8e6e1;
-    --bg-card: #f0ede8;
-    --borda: #c9b89a;
-    --dourado: #b5924c;
-    --texto: #2a1f0e;
+    --bg:          #e8e6e1;
+    --bg-card:     #f0ede8;
+    --borda:       #c9b89a;
+    --dourado:     #b5924c;
+    --dourado-glow:#d4a96a;
+    --texto:       #2a1f0e;
     --texto-suave: #5a4e3a;
-    --texto-leve: #8a7d6a;
-    --branco: #faf8f5;
-    --radius: 8px;
+    --texto-leve:  #8a7d6a;
+    --branco:      #faf8f5;
+    --radius:      8px;
 }
 
+/* ── Wrapper ── */
 .wrapper {
     min-height: 100vh;
     background-color: var(--bg);
@@ -26,31 +32,87 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 32px 80px;
-    gap: 48px;
-    max-width: 960px;
+    /* ALTERADO: mais padding-top para descer o conteúdo */
+    padding: 130px 32px 80px;
+    gap: 52px;
+    max-width: 980px;
     margin: 0 auto;
     width: 100%;
+    box-sizing: border-box;
 }
 
-/* ── HERO ── */
+/* ════════════════════════════════
+   HERO
+════════════════════════════════ */
 .hero {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
+    align-items: flex-start;
+    gap: 56px;
     width: 100%;
 }
 
-.heroDecor { display: none; }
-.bigLetter  { display: none; }
+.bookCoverWrap {
+    position: relative;
+    flex-shrink: 0;
+    cursor: default;
+}
 
-.heroContent {
+.bookImg,
+.bookPlaceholder {
+    width: 200px;
+    height: 280px;
+    border-radius: 4px;
+    border: 1px solid var(--borda);
+    box-shadow: 6px 6px 24px rgba(0,0,0,0.15);
+    display: block;
+    object-fit: cover;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.bookPlaceholder {
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookPlaceholderText {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--texto-leve);
+    letter-spacing: 2px;
+}
+
+.bookGlow {
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    background: radial-gradient(ellipse at center, var(--dourado-glow) 0%, transparent 70%);
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.35s ease;
+    filter: blur(18px);
+    transform: scale(1.1);
+}
+
+.bookCoverWrap:hover .bookImg,
+.bookCoverWrap:hover .bookPlaceholder {
+    transform: translateY(-10px);
+    box-shadow: 6px 18px 40px rgba(181,146,76,0.35), 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.bookCoverWrap:hover .bookGlow {
+    opacity: 0.75;
+}
+
+.heroInfo {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    text-align: center;
+    gap: 10px;
+    padding-top: 8px;
 }
 
 .tag {
@@ -63,10 +125,10 @@
 
 .heroTitle {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 400;
+    font-size: clamp(36px, 4.5vw, 54px);
+    font-weight: 700;
     color: var(--texto);
-    line-height: 1.1;
+    line-height: 1.08;
     margin: 0;
 }
 
@@ -75,69 +137,15 @@
     font-weight: 300;
     color: var(--texto-leve);
     letter-spacing: 1px;
-    margin: 0;
+    margin: 0 0 4px;
 }
 
-.langToggle {
-    margin-top: 8px;
-    background: transparent;
-    border: 1px solid var(--borda);
-    color: var(--texto-suave);
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 8px 20px;
-    cursor: pointer;
-    border-radius: var(--radius);
-    transition: background 0.2s, color 0.2s;
-}
-
-.langToggle:hover {
+.heroDividerThin {
+    width: 48px;
+    height: 2px;
     background: var(--dourado);
-    color: var(--branco);
-    border-color: var(--dourado);
-}
-
-/* ── CAPA ── */
-.bookCover {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-}
-
-.bookPlaceholder {
-    width: 140px;
-    height: 196px;
-    background: var(--bg-card);
-    border: 1px solid var(--borda);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 4px 4px 16px rgba(0,0,0,0.1);
-}
-
-.bookPlaceholderText {
-    font-family: 'Playfair Display', serif;
-    font-size: 12px;
-    color: var(--texto-leve);
-    letter-spacing: 2px;
-}
-
-.bookCover img {
-    width: 140px;
-    height: 196px;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid var(--borda);
-    box-shadow: 4px 4px 16px rgba(0,0,0,0.1);
-}
-
-.bookInfo {
-    text-align: center;
+    margin: 4px 0 8px;
+    border-radius: 2px;
 }
 
 .bookLabel {
@@ -146,41 +154,78 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--dourado);
-    margin: 0 0 4px;
+    margin: 0;
 }
 
 .bookAuthor {
     font-family: 'Playfair Display', serif;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 400;
     color: var(--texto);
-    margin: 0 0 2px;
+    margin: 2px 0 0;
 }
 
 .bookMeta {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 300;
     color: var(--texto-leve);
-    margin: 2px 0;
+    margin: 2px 0 0;
 }
 
-/* ── SECTION GENÉRICA ── */
+.frase {
+    margin: 16px 0 0;
+    padding: 16px 20px;
+    border-left: 3px solid var(--dourado);
+    background: var(--bg-card);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.frase p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--texto-suave);
+    margin: 0 0 8px;
+}
+
+.frase cite {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--dourado);
+    font-style: normal;
+}
+
+/* ════════════════════════════════
+   DIVISOR
+════════════════════════════════ */
+.divisor {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.divisorLine {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--borda), transparent);
+}
+
+.divisorOrnament {
+    font-size: 14px;
+    color: var(--dourado);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+/* ════════════════════════════════
+   SEÇÃO SOBRE
+════════════════════════════════ */
 .section {
     width: 100%;
 }
-
-.sectionInner {
-    width: 100%;
-}
-
-.sectionTitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--texto);
-    margin: 0 0 20px;
-}
-
-.linha { display: none; }
 
 .textBlock {
     background: var(--bg-card);
@@ -199,60 +244,109 @@
     margin: 0;
 }
 
-/* ── DISCIPLINAS / CURSOS ── */
+/* ════════════════════════════════
+   CARDS DE DISCIPLINAS / CURSOS
+   NOVO DESIGN — sem card dentro de card
+════════════════════════════════ */
 .cardsSection {
     display: flex;
-    align-items: stretch;
-    gap: 20px;
+    gap: 24px;
     width: 100%;
     flex-wrap: wrap;
 }
 
-.cardGroup {
+/* cada card ocupa metade do espaço */
+.infoCard {
     flex: 1;
-    min-width: 220px;
+    min-width: 240px;
     background: var(--bg-card);
     border: 1px solid var(--borda);
-    border-radius: var(--radius);
-    padding: 28px;
-}
-
-.cardGroupTitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--texto);
-    margin: 0 0 18px;
-}
-
-.pills {
+    border-radius: 16px;
+    padding: 36px 32px 32px;
+    position: relative;
+    overflow: hidden;
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.pill {
-    background: transparent;
-    border: 1px solid var(--borda);
-    color: var(--texto-suave);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    padding: 6px 14px;
-    border-radius: var(--radius);
-    transition: background 0.2s, color 0.2s;
+    flex-direction: column;
+    gap: 0;
+    transition: box-shadow 0.25s, transform 0.25s;
     cursor: default;
 }
 
-.pill:hover {
-    background: var(--dourado);
-    color: var(--branco);
-    border-color: var(--dourado);
+/* faixa dourada no topo */
+.infoCard::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--dourado), var(--dourado-glow), var(--dourado));
+    border-radius: 16px 16px 0 0;
 }
 
-.cardDivider { display: none; }
+.infoCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(181,146,76,0.15);
+}
 
-/* ── API SECTION ── */
+.infoCardIcon {
+    font-size: 32px;
+    margin-bottom: 14px;
+    line-height: 1;
+}
+
+.infoCardTitle {
+    /* ALTERADO: usa Playfair Display */
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--texto);
+    margin: 0 0 0;
+}
+
+.infoCardDivider {
+    width: 36px;
+    height: 2px;
+    background: var(--dourado);
+    border-radius: 2px;
+    margin: 14px 0 20px;
+}
+
+.infoCardItems {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.infoCardItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--texto-suave);
+    padding: 10px 14px;
+    background: var(--bg);
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.infoCardItem:hover {
+    border-color: var(--borda);
+    color: var(--texto);
+    background: var(--branco);
+}
+
+.infoCardItemDot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--dourado);
+    flex-shrink: 0;
+}
+
+/* ════════════════════════════════
+   API SECTION
+════════════════════════════════ */
 .apiSection {
     background: var(--bg-card);
     border: 1px solid var(--borda);
@@ -274,10 +368,7 @@
     margin-top: 2px;
 }
 
-.apiText {
-    flex: 1;
-    min-width: 200px;
-}
+.apiText { flex: 1; min-width: 200px; }
 
 .apiText h3 {
     font-family: 'Playfair Display', serif;
@@ -318,183 +409,161 @@
     font-size: 16px;
 }
 
-/* ── DIVISOR ORNAMENTAL ── */
-.divider {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+/* ════════════════════════════════
+   EQUIPE
+════════════════════════════════ */
+.equipeSection {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
-.dividerLine {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--borda), transparent);
+.equipeTitulo {
+    text-align: center;
 }
 
-.dividerOrnament {
+/* ALTERADO: título "Equipe" com Playfair Display */
+.equipeH2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    color: var(--texto);
+    margin: 0 0 8px;
+}
+
+.equipeSub {
     font-size: 14px;
-    color: var(--dourado);
-    letter-spacing: 8px;
-    flex-shrink: 0;
+    font-weight: 300;
+    color: var(--texto-leve);
+    letter-spacing: 0.5px;
+    margin: 0;
 }
 
-/* ── LIVROS INTEGRADOS ── */
-.livrosGrid {
+/* ALTERADO: grid com colunas menores para cards verticais maiores */
+.equipeGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
+    gap: 20px;
     width: 100%;
 }
 
-.livroCard {
+/* ALTERADO: card vertical, gordo, sem avatarWrap separado */
+.cardIntegrante {
     background: var(--bg-card);
     border: 1px solid var(--borda);
-    border-radius: var(--radius);
-    padding: 20px 22px;
+    border-radius: 16px;
+    padding: 32px 20px 28px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
-    transition: box-shadow 0.2s;
+    text-align: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: default;
 }
 
-.livroCard:hover {
-    box-shadow: 0 4px 16px rgba(181, 146, 76, 0.15);
+/* faixa dourada no topo */
+.cardIntegrante::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--dourado), var(--dourado-glow), var(--dourado));
+    border-radius: 16px 16px 0 0;
 }
 
-.livroOrnament {
-    font-size: 18px;
-    color: var(--dourado);
-    flex-shrink: 0;
-    line-height: 1;
+.cardIntegrante:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(181,146,76,0.18);
 }
 
-.livroNome {
-    font-family: 'Playfair Display', serif;
-    font-size: 14px;
-    font-style: italic;
-    color: var(--texto);
-    margin: 0;
-    line-height: 1.4;
-}
-
-/* ── PARTICIPANTES ── */
-.participantesGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-    width: 100%;
-}
-
-.participanteCard {
-    background: var(--bg-card);
-    border: 1px solid var(--borda);
-    border-radius: var(--radius);
-    padding: 18px 20px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    transition: box-shadow 0.2s;
-}
-
-.participanteCard:hover {
-    box-shadow: 0 4px 16px rgba(181, 146, 76, 0.15);
-}
-
-.participanteAvatar {
-    width: 42px;
-    height: 42px;
+/* ALTERADO: avatar maior */
+.avatar {
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    background: var(--dourado);
+    background: linear-gradient(135deg, var(--dourado), #8a6030);
     color: var(--branco);
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
+    letter-spacing: 1px;
     flex-shrink: 0;
-    border: 1px solid rgba(181, 146, 76, 0.4);
+    box-shadow: 0 4px 14px rgba(181,146,76,0.35);
+    margin-bottom: 4px;
 }
 
-.participanteInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    min-width: 0;
-}
-
-.participanteNome {
+.integranteNome {
     font-family: 'Playfair Display', serif;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 700;
     color: var(--texto);
     margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.3;
 }
 
-.participanteCurso {
+.integranteCurso {
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 2px 8px;
-    border-radius: 4px;
-    width: fit-content;
-}
-
-.corDS {
-    background: rgba(100, 140, 180, 0.15);
-    color: #4a7aaa;
-    border: 1px solid rgba(100, 140, 180, 0.3);
-}
-
-.corEE {
-    background: rgba(181, 146, 76, 0.15);
     color: var(--dourado);
-    border: 1px solid rgba(181, 146, 76, 0.3);
 }
 
-.corMEC {
-    background: rgba(100, 130, 100, 0.15);
-    color: #567856;
-    border: 1px solid rgba(100, 130, 100, 0.3);
-}
-
-.participanteEmail {
+.integranteEmail {
     font-size: 11px;
     font-weight: 300;
     color: var(--texto-leve);
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.2s;
 }
 
-/* ── RESPONSIVO ── */
+.integranteEmail:hover {
+    color: var(--dourado);
+    text-decoration: underline;
+}
+
+/* ════════════════════════════════
+   RESPONSIVO
+════════════════════════════════ */
 @media (max-width: 700px) {
     .main {
-        padding: 40px 20px 60px;
-        gap: 32px;
+        padding: 100px 20px 60px;
+        gap: 36px;
     }
 
-    .cardsSection {
+    .hero {
         flex-direction: column;
+        align-items: center;
     }
 
-    .apiSection {
-        flex-direction: column;
+    .heroInfo {
+        align-items: center;
+        text-align: center;
+        padding-top: 0;
     }
 
-    .textBlock {
-        padding: 24px 20px;
-    }
+    .heroDividerThin { margin: 4px auto 8px; }
+    .frase { text-align: left; }
 
-    .livrosGrid {
-        grid-template-columns: 1fr 1fr;
-    }
+    .cardsSection { flex-direction: column; }
+    .apiSection   { flex-direction: column; }
+    .textBlock     { padding: 24px 20px; }
 
-    .participantesGrid {
+    .equipeGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 420px) {
+    .equipeGrid {
         grid-template-columns: 1fr;
     }
 }

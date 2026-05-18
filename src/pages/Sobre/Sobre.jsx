@@ -4,73 +4,115 @@ import styles from './Sobre.module.css';
 import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
 
+const integrantes = [
+    {
+        nome_pt: 'Ana Clara Souza',
+        curso_pt: 'Desenvolvimento de Sistemas',
+        email_pt: 'ana.souza@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Bruno Henrique Lima',
+        curso_pt: 'Eletroeletrônica',
+        email_pt: 'bruno.lima@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Carla Mendes Rocha',
+        curso_pt: 'Mecânica',
+        email_pt: 'carla.rocha@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Diego Ferreira Paz',
+        curso_pt: 'Desenvolvimento de Sistemas',
+        email_pt: 'diego.paz@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Eduarda Vieira Neto',
+        curso_pt: 'Eletroeletrônica',
+        email_pt: 'eduarda.neto@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Felipe Castro Melo',
+        curso_pt: 'Mecânica',
+        email_pt: 'felipe.melo@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Gabriela Teixeira',
+        curso_pt: 'Desenvolvimento de Sistemas',
+        email_pt: 'gabriela.t@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Hugo Alves Barbosa',
+        curso_pt: 'Eletroeletrônica',
+        email_pt: 'hugo.barbosa@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Isabela Cunha Dias',
+        curso_pt: 'Mecânica',
+        email_pt: 'isabela.dias@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'João Pedro Martins',
+        curso_pt: 'Desenvolvimento de Sistemas',
+        email_pt: 'joao.martins@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Larissa Pinto Gomes',
+        curso_pt: 'Eletroeletrônica',
+        email_pt: 'larissa.gomes@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Mateus Ramos Silva',
+        curso_pt: 'Mecânica',
+        email_pt: 'mateus.silva@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Natália Costa Luz',
+        curso_pt: 'Desenvolvimento de Sistemas',
+        email_pt: 'natalia.luz@aluno.sesisenai.org.br',
+    },
+    {
+        nome_pt: 'Rafael Oliveira Jr',
+        curso_pt: 'Eletroeletrônica',
+        email_pt: 'rafael.jr@aluno.sesisenai.org.br',
+    },
+];
+
+function iniciais(nome) {
+    return nome
+        .split(' ')
+        .slice(0, 2)
+        .map((p) => p[0])
+        .join('')
+        .toUpperCase();
+}
+
 export default function Sobre() {
     const [idioma, setIdioma] = useState('pt');
     const [capa, setCapa] = useState('');
 
     useEffect(() => {
         fetch('https://clubelivro-backend.onrender.com/api/livros', {
-            headers: {
-                'x-api-key': import.meta.env.VITE_API_KEY,
-            },
+            headers: { 'x-api-key': import.meta.env.VITE_API_KEY },
         })
-            .then((res) => {
-                console.log('Status:', res.status);
-                return res.json();
-            })
+            .then((res) => res.json())
             .then((data) => {
-                console.log('Dados recebidos:', data);
-                if (data && data[0]) {
-                    setCapa(data[0].capa);
-                }
+                if (data && data[0]) setCapa(data[0].capa);
             })
-            .catch((erro) => {
-                console.error('Erro ao buscar capa:', erro);
-            });
+            .catch((erro) => console.error('Erro ao buscar capa:', erro));
     }, []);
-
-    const integrantes = [
-        {
-            nome: 'Ana Beatriz Silva',
-            curso: 'Desenvolvimento de Sistemas',
-            email: 'ana.silva@senai.br',
-        },
-        { nome: 'Bruno Henrique Costa', curso: 'Eletroeletrônica', email: 'bruno.costa@senai.br' },
-        { nome: 'Carla Mendonça', curso: 'Mecânica', email: 'carla.mendonca@senai.br' },
-        {
-            nome: 'Daniel Ferreira',
-            curso: 'Desenvolvimento de Sistemas',
-            email: 'daniel.ferreira@senai.br',
-        },
-        { nome: 'Eduarda Martins', curso: 'Eletroeletrônica', email: 'eduarda.martins@senai.br' },
-        { nome: 'Felipe Rocha', curso: 'Mecânica', email: 'felipe.rocha@senai.br' },
-        {
-            nome: 'Gabriela Souza',
-            curso: 'Desenvolvimento de Sistemas',
-            email: 'gabriela.souza@senai.br',
-        },
-        { nome: 'Henrique Lima', curso: 'Eletroeletrônica', email: 'henrique.lima@senai.br' },
-        { nome: 'Isabela Nunes', curso: 'Mecânica', email: 'isabela.nunes@senai.br' },
-        {
-            nome: 'João Pedro Alves',
-            curso: 'Desenvolvimento de Sistemas',
-            email: 'joao.alves@senai.br',
-        },
-        { nome: 'Karen Oliveira', curso: 'Eletroeletrônica', email: 'karen.oliveira@senai.br' },
-        { nome: 'Lucas Teixeira', curso: 'Mecânica', email: 'lucas.teixeira@senai.br' },
-        {
-            nome: 'Mariana Castro',
-            curso: 'Desenvolvimento de Sistemas',
-            email: 'mariana.castro@senai.br',
-        },
-        { nome: 'Nicolas Barbosa', curso: 'Eletroeletrônica', email: 'nicolas.barbosa@senai.br' },
-    ];
 
     const conteudo = {
         pt: {
             tag_pt: 'Sobre o Projeto',
             titulo_pt: 'A Moreninha',
             subtitulo_pt: 'Plataforma Literária Integrada',
+            frase_pt:
+                '"Amar é a única coisa que nos faz sentir vivos mesmo quando tudo ao redor parece adormecer."',
+            fraseAutor_pt: '— Joaquim Manuel de Macedo, A Moreninha',
+            obraDestaque_pt: 'Obra em Destaque',
+            autor_pt: 'Joaquim Manuel de Macedo',
+            ano_pt: 'Publicado em 1844',
+            genero_pt: 'Romance · 1.º Romance Brasileiro',
             descricao1_pt:
                 'Este projeto é uma iniciativa integrada entre as escolas SESI e SENAI, reunindo alunos dos cursos de Desenvolvimento de Sistemas, Eletroeletrônica e Mecânica em torno de um objetivo comum: explorar a literatura brasileira de vestibular de forma digital e colaborativa.',
             descricao2_pt:
@@ -80,25 +122,27 @@ export default function Sobre() {
             disciplinas_pt: 'Disciplinas Integradas',
             disc1_pt: 'Língua Portuguesa',
             disc2_pt: 'Inglês',
+            cursos_pt: 'Cursos Participantes',
             disc3_pt: 'Desenvolvimento de Sistemas',
             disc4_pt: 'Eletroeletrônica',
             disc5_pt: 'Mecânica',
-            cursos_pt: 'Cursos Participantes',
             apis_pt: 'Integração de APIs',
             apisDesc_pt:
                 'Nossa API expõe os dados de A Moreninha e se conecta às APIs dos outros grupos, que cobrem diferentes livros do vestibular, formando um ecossistema literário colaborativo.',
-            obraDestaque_pt: 'Obra em Destaque',
-            autor_pt: 'Joaquim Manuel de Macedo',
-            ano_pt: 'Publicado em 1844',
-            genero_pt: 'Romance — 1.º Romance Brasileiro',
-            botaoIdioma_pt: 'English',
-            livrosInt_pt: 'Livros Integrados',
-            participantes_pt: 'Participantes',
+            equipe_pt: 'Equipe',
+            equipeSub_pt: 'Conheça os integrantes do projeto',
         },
         en: {
             tag_pt: 'About the Project',
             titulo_pt: 'A Moreninha',
             subtitulo_pt: 'Integrated Literary Platform',
+            frase_pt:
+                '"To love is the only thing that makes us feel alive even when everything around us seems to sleep."',
+            fraseAutor_pt: '— Joaquim Manuel de Macedo, A Moreninha',
+            obraDestaque_pt: 'Featured Work',
+            autor_pt: 'Joaquim Manuel de Macedo',
+            ano_pt: 'Published in 1844',
+            genero_pt: 'Novel · 1st Brazilian Novel',
             descricao1_pt:
                 'This project is a joint initiative between SESI and SENAI schools, bringing together students from Systems Development, Electrical & Electronics, and Mechanics programs around a shared goal: exploring Brazilian entrance-exam literature in a digital and collaborative way.',
             descricao2_pt:
@@ -108,96 +152,106 @@ export default function Sobre() {
             disciplinas_pt: 'Integrated Subjects',
             disc1_pt: 'Portuguese Language',
             disc2_pt: 'English',
+            cursos_pt: 'Participating Programs',
             disc3_pt: 'Systems Development',
             disc4_pt: 'Electrical & Electronics',
             disc5_pt: 'Mechanics',
-            cursos_pt: 'Participating Programs',
             apis_pt: 'API Integration',
             apisDesc_pt:
                 'Our API exposes the data from A Moreninha and connects to APIs from other groups, each covering different entrance-exam books, forming a collaborative literary ecosystem.',
-            obraDestaque_pt: 'Featured Work',
-            autor_pt: 'Joaquim Manuel de Macedo',
-            ano_pt: 'Published in 1844',
-            genero_pt: 'Novel — 1st Brazilian Novel',
-            botaoIdioma_pt: 'Português',
-            livrosInt_pt: 'Integrated Books',
-            participantes_pt: 'Participants',
+            equipe_pt: 'Team',
+            equipeSub_pt: 'Meet the project members',
         },
     };
 
     const t = conteudo[idioma];
 
-
-    const cursoCor = {
-        'Desenvolvimento de Sistemas': 'corDS',
-        Eletroeletrônica: 'corEE',
-        Mecânica: 'corMEC',
-        'Systems Development': 'corDS',
-        'Electrical & Electronics': 'corEE',
-        Mechanics: 'corMEC',
-    };
-
     return (
         <div className={styles.wrapper}>
             <Navbar />
-
             <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
 
             <main className={styles.main}>
                 {/* ── HERO ── */}
                 <section className={styles.hero}>
-                    <div className={styles.heroContent}>
-                        <span className={styles.tag}>{t.tag_pt}</span>
-                        <h1 className={styles.heroTitle}>{t.titulo_pt}</h1>
-                        <p className={styles.heroSub}>{t.subtitulo_pt}</p>
-                    </div>
-
-                    <div className={styles.bookCover}>
+                    <div className={styles.bookCoverWrap}>
                         {capa ? (
-                            <img src={capa} alt={t.titulo_pt} />
+                            <img className={styles.bookImg} src={capa} alt={t.titulo_pt} />
                         ) : (
                             <div className={styles.bookPlaceholder}>
                                 <span className={styles.bookPlaceholderText}>Capa</span>
                             </div>
                         )}
-                        <div className={styles.bookInfo}>
-                            <p className={styles.bookLabel}>{t.obraDestaque_pt}</p>
-                            <p className={styles.bookAuthor}>{t.autor_pt}</p>
-                            <p className={styles.bookMeta}>{t.ano_pt}</p>
-                            <p className={styles.bookMeta}>{t.genero_pt}</p>
-                        </div>
+                        <div className={styles.bookGlow} aria-hidden="true" />
+                    </div>
+
+                    <div className={styles.heroInfo}>
+                        <span className={styles.tag}>{t.tag_pt}</span>
+                        <h1 className={styles.heroTitle}>{t.titulo_pt}</h1>
+                        <p className={styles.heroSub}>{t.subtitulo_pt}</p>
+                        <div className={styles.heroDividerThin} />
+                        <p className={styles.bookLabel}>{t.obraDestaque_pt}</p>
+                        <p className={styles.bookAuthor}>{t.autor_pt}</p>
+                        <p className={styles.bookMeta}>{t.ano_pt}</p>
+                        <p className={styles.bookMeta}>{t.genero_pt}</p>
+                        <blockquote className={styles.frase}>
+                            <p>{t.frase_pt}</p>
+                            <cite>{t.fraseAutor_pt}</cite>
+                        </blockquote>
                     </div>
                 </section>
 
+                {/* ── DIVISOR ── */}
+                <div className={styles.divisor}>
+                    <span className={styles.divisorLine} />
+                    <span className={styles.divisorOrnament}>✦</span>
+                    <span className={styles.divisorLine} />
+                </div>
+
                 {/* ── SOBRE ── */}
                 <section className={styles.section}>
-                    <div className={styles.sectionInner}>
-                        <div className={styles.textBlock}>
-                            <p>{t.descricao1_pt}</p>
-                            <p>{t.descricao2_pt}</p>
-                            <p>{t.descricao3_pt}</p>
-                        </div>
+                    <div className={styles.textBlock}>
+                        <p>{t.descricao1_pt}</p>
+                        <p>{t.descricao2_pt}</p>
+                        <p>{t.descricao3_pt}</p>
                     </div>
                 </section>
 
                 {/* ── DISCIPLINAS / CURSOS ── */}
                 <section className={styles.cardsSection}>
-                    <div className={styles.cardGroup}>
-                        <h3 className={styles.cardGroupTitle}>{t.disciplinas_pt}</h3>
-                        <div className={styles.pills}>
-                            <span className={styles.pill}>{t.disc1_pt}</span>
-                            <span className={styles.pill}>{t.disc2_pt}</span>
+                    <div className={styles.infoCard}>
+                        <div className={styles.infoCardIcon}>📚</div>
+                        <h3 className={styles.infoCardTitle}>{t.disciplinas_pt}</h3>
+                        <div className={styles.infoCardDivider} />
+                        <div className={styles.infoCardItems}>
+                            <div className={styles.infoCardItem}>
+                                <span className={styles.infoCardItemDot} />
+                                {t.disc1_pt}
+                            </div>
+                            <div className={styles.infoCardItem}>
+                                <span className={styles.infoCardItemDot} />
+                                {t.disc2_pt}
+                            </div>
                         </div>
                     </div>
 
-                    <div className={styles.cardDivider} />
-
-                    <div className={styles.cardGroup}>
-                        <h3 className={styles.cardGroupTitle}>{t.cursos_pt}</h3>
-                        <div className={styles.pills}>
-                            <span className={styles.pill}>{t.disc3_pt}</span>
-                            <span className={styles.pill}>{t.disc4_pt}</span>
-                            <span className={styles.pill}>{t.disc5_pt}</span>
+                    <div className={styles.infoCard}>
+                        <div className={styles.infoCardIcon}>🎓</div>
+                        <h3 className={styles.infoCardTitle}>{t.cursos_pt}</h3>
+                        <div className={styles.infoCardDivider} />
+                        <div className={styles.infoCardItems}>
+                            <div className={styles.infoCardItem}>
+                                <span className={styles.infoCardItemDot} />
+                                {t.disc3_pt}
+                            </div>
+                            <div className={styles.infoCardItem}>
+                                <span className={styles.infoCardItemDot} />
+                                {t.disc4_pt}
+                            </div>
+                            <div className={styles.infoCardItem}>
+                                <span className={styles.infoCardItemDot} />
+                                {t.disc5_pt}
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -211,12 +265,12 @@ export default function Sobre() {
                         <h3>{t.apis_pt}</h3>
                         <p>{t.apisDesc_pt}</p>
                     </div>
-                    <div className={styles.apiNodes} aria-hidden="true">
+                    <div className={styles.apiNodes}>
                         <span className={styles.node}>A Moreninha</span>
                         <span className={styles.connector}>↔</span>
                         <span className={styles.node}>Os Ratos</span>
                         <span className={styles.connector}>↔</span>
-                        <span className={styles.node}>Olhos D'água</span>
+                        <span className={styles.node}>Olhos d'Água</span>
                         <span className={styles.connector}>↔</span>
                         <span className={styles.node}>Caminho das Pedras</span>
                         <span className={styles.connector}>↔</span>
@@ -225,28 +279,28 @@ export default function Sobre() {
                 </section>
 
                 {/* ── DIVISOR ── */}
-                <div className={styles.divider} aria-hidden="true">
-                    <span className={styles.dividerLine} />
-                    <span className={styles.dividerOrnament}>✦</span>
-                    <span className={styles.dividerLine} />
+                <div className={styles.divisor}>
+                    <span className={styles.divisorLine} />
+                    <span className={styles.divisorOrnament}>✦</span>
+                    <span className={styles.divisorLine} />
                 </div>
 
+                {/* ── EQUIPE ── */}
+                <section className={styles.equipeSection}>
+                    <div className={styles.equipeTitulo}>
+                        <h2 className={styles.equipeH2}>{t.equipe_pt}</h2>
+                        <p className={styles.equipeSub}>{t.equipeSub_pt}</p>
+                    </div>
 
-                {/* ── PARTICIPANTES ── */}
-                <section className={styles.section}>
-                    <h3 className={styles.sectionTitle}>{t.participantes_pt}</h3>
-                    <div className={styles.participantesGrid}>
-                        {integrantes.map((p) => (
-                            <div key={p.email} className={styles.participanteCard}>
-                                <div className={styles.participanteAvatar}>{p.nome.charAt(0)}</div>
-                                <div className={styles.participanteInfo}>
-                                    <p className={styles.participanteNome}>{p.nome}</p>
-                                    <span
-                                        className={`${styles.participanteCurso} ${styles[cursoCor[p.curso]]}`}>
-                                        {p.curso}
-                                    </span>
-                                    <p className={styles.participanteEmail}>{p.email}</p>
-                                </div>
+                    <div className={styles.equipeGrid}>
+                        {integrantes.map((p, i) => (
+                            <div key={i} className={styles.cardIntegrante}>
+                                <div className={styles.avatar}>{iniciais(p.nome_pt)}</div>
+                                <p className={styles.integranteNome}>{p.nome_pt}</p>
+                                <span className={styles.integranteCurso}>{p.curso_pt}</span>
+                                <a className={styles.integranteEmail} href={`mailto:${p.email_pt}`}>
+                                    {p.email_pt}
+                                </a>
                             </div>
                         ))}
                     </div>
