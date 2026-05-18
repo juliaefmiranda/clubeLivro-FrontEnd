@@ -1,0 +1,19 @@
+.botao {
+    position: absolute;
+    align-self: flex-end;
+    z-index: 10;
+    top: 120px;
+    right: 80px;
+    padding: 8px 20px;
+    background-color: #fffbf4;
+    color: rgb(0, 0, 0);
+    border: 1.5px solid #b89b5e;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    transform: scale(1.05);
+}
