@@ -1,0 +1,84 @@
+.header {
+    min-height: 100vh;
+    background-color: #fcfbf7;
+    color: #1f1f1f;
+}
+
+.obras {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.obrasText {
+    max-width: 58%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.homeText h2 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.15;
+    font-family: 'Georgia', serif;
+    color: #1c2321;
+}
+
+.homeText p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom:18px;
+    color: #333333;
+}
+
+.linha {
+    width: 140px;
+    height: 2px;
+    background-color: #e3cf93;
+    margin: 25px 0 35px 0;
+    border-radius: 2px;
+}
+
+.homeBook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 35%;
+    margin-top: 30px;
+}
+
+.book {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.homeBook img {
+    width: 240px;
+    display: block;
+    border-radius: 4px;
+    border-left: 4px solid #9a0984;
+
+}
+
+.botao {
+    background-color: #b951a1;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 12px rgba(88, 42, 77, 0.15);
+}
+
+.botao:hover {
+    background-color: #75175e;
+}
