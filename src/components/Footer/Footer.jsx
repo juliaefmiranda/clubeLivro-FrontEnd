@@ -13,9 +13,9 @@ export default function Footer() {
             </nav>
 
             <div className={styles.copyright}>
-                <p>&copy; 2026 Entre linhas. Todos os direitos reservados.</p>
+                <p>&copy; {new Date().getFullYear()} Entre linhas. Todos os direitos reservados.</p>
                 <p>Produzido com React, Node.js & PostgreSQL</p>
             </div>
         </footer>
-    )
+    );
 }

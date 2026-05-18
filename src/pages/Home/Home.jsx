@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import styles from './Home.module.css';
 import Footer from '../../components/Footer/Footer';
+import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
 
 export default function Home() {
     const [capa, setCapa] = useState('');
+    const [idioma, setIdioma] = useState('pt');
 
     useEffect(() => {
         fetch('https://clubelivro-backend.onrender.com/api/livros', {
@@ -31,25 +33,26 @@ export default function Home() {
         <div className={styles.header}>
             <Navbar />
 
+            <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
+
             <main className={styles.home}>
                 <section className={styles.homeText}>
-                    <h2>Plataforma de Estudos Literários</h2>
+                    <h2>
+                        {idioma === 'pt' ? 'Plataforma de Estudos Literários' : 'Literary Studies Platform'}
+                    </h2>
 
                     <div className={styles.linha}></div>
 
                     <p>
-                        Este projeto apresenta uma plataforma digital colaborativa voltada ao estudo
-                        de obras literárias, com foco na preparação para vestibulares.
+                        {idioma === 'pt' ? 'Este projeto apresenta uma plataforma digital colaborativa voltada ao estudo de obras literárias, com foco na preparação para vestibulares.' : 'This project presents a collaborative digital platform focused on literary studies, aimed at entrance exam preparation.'}
                     </p>
 
                     <p>
-                        Desenvolvida com tecnologias como Node.js, React e PostgreSQL, a aplicação
-                        oferece conteúdos como resumos, análises, quizzes e videoaulas.
+                        {idioma === 'pt' ? 'Desenvolvida com tecnologias como Node.js, React e PostgreSQL, a aplicação oferece conteúdos como resumos, análises, quizzes e videoaulas.' : 'Developed with technologies such as Node.js, React and PostgreSQL, the application offers summaries, analyses, quizzes and video lessons.'}
                     </p>
 
                     <p>
-                        Além disso, integra dados de outras equipes por meio de APIs, formando uma
-                        biblioteca compartilhada.
+                        {idioma === 'pt' ? 'Além disso, integra dados de outras equipes por meio de APIs, formando uma biblioteca compartilhada.' : 'In addition, it integrates data from other teams through APIs, forming a shared library.'}
                     </p>
                 </section>
 
@@ -59,12 +62,12 @@ export default function Home() {
                     </div>
 
                     <button className={styles.botao}>
-                        Ver mais informações →
+                        {idioma === 'pt' ? 'Ver mais informações →' : 'See more information →'}
                     </button>
                 </section>
             </main>
 
-            <Footer/>
+            <Footer />
         </div>
     );
 }
