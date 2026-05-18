@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
+
+:root {
+    --bg: #e8e6e1;
+    --bg-card: #f0ede8;
+    --borda: #c9b89a;
+    --dourado: #b5924c;
+    --texto: #2a1f0e;
+    --texto-suave: #5a4e3a;
+    --texto-leve: #8a7d6a;
+    --branco: #faf8f5;
+    --radius: 8px;
+}
+
+.wrapper {
+    min-height: 100vh;
+    background-color: var(--bg);
+    font-family: 'Lato', sans-serif;
+    color: var(--texto);
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 32px 80px;
+    gap: 48px;
+    max-width: 960px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* titulo */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+}
+
+/* oculta decoração grande */
+.heroDecor { display: none; }
+.bigLetter  { display: none; }
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dourado);
+}
+
+.heroTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 400;
+    color: var(--texto);
+    line-height: 1.1;
+    margin: 0;
+}
+
+.heroSub {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--texto-leve);
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* botão de traduzir*/
+.langToggle {
+    margin-top: 8px;
+    background: transparent;
+    border: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: background 0.2s, color 0.2s;
+}
+
+.langToggle:hover {
+    background: var(--dourado);
+    color: var(--branco);
+    border-color: var(--dourado);
+}
+
+/* Capa do livro */
+.bookCover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.bookPlaceholder {
+    width: 140px;
+    height: 196px;
+    background: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 16px rgba(0,0,0,0.1);
+}
+
+.bookPlaceholderText {
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    color: var(--texto-leve);
+    letter-spacing: 2px;
+}
+
+.bookCover img {
+    width: 140px;
+    height: 196px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--borda);
+    box-shadow: 4px 4px 16px rgba(0,0,0,0.1);
+}
+
+.bookInfo {
+    text-align: center;
+}
+
+.bookLabel {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    margin: 0 0 4px;
+}
+
+.bookAuthor {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--texto);
+    margin: 0 0 2px;
+}
+
+.bookMeta {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--texto-leve);
+    margin: 2px 0;
+}
+
+/* card principal */
+.section {
+    width: 100%;
+}
+
+.sectionInner {
+    width: 100%;
+}
+
+.linha { display: none; }
+
+.textBlock {
+    background: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: var(--radius);
+    padding: 32px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.textBlock p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--texto-suave);
+    margin: 0;
+}
+
+
+.cardsSection {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.cardGroup {
+    flex: 1;
+    min-width: 220px;
+    background: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: var(--radius);
+    padding: 28px;
+}
+
+.cardGroupTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--texto);
+    margin: 0 0 18px;
+}
+
+.pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pill {
+    background: transparent;
+    border: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: var(--radius);
+    transition: background 0.2s, color 0.2s;
+    cursor: default;
+}
+
+.pill:hover {
+    background: var(--dourado);
+    color: var(--branco);
+    border-color: var(--dourado);
+}
+
+.cardDivider { display: none; }
+
+/* ════════════════════════════════
+   API SECTION
+════════════════════════════════ */
+.apiSection {
+    background: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: var(--radius);
+    padding: 32px 36px;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.apiIcon {
+    font-size: 36px;
+    color: var(--dourado);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.apiText {
+    flex: 1;
+    min-width: 200px;
+}
+
+.apiText h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--texto);
+    margin: 0 0 10px;
+}
+
+.apiText p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--texto-suave);
+    margin: 0;
+}
+
+.apiNodes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.node {
+    background: transparent;
+    border: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 12px;
+    border-radius: var(--radius);
+}
+
+.connector {
+    color: var(--dourado);
+    font-size: 16px;
+}
+
+/*responsivo*/
+
+@media (max-width: 700px) {
+    .main {
+        padding: 40px 20px 60px;
+        gap: 32px;
+    }
+
+    .cardsSection {
+        flex-direction: column;
+    }
+
+    .apiSection {
+        flex-direction: column;
+    }
+
+    .textBlock {
+        padding: 24px 20px;
+    }
+}
