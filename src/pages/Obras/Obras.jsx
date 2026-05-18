@@ -4,7 +4,7 @@ import styles from './Obras.module.css';
 import Footer from '../../components/Footer/Footer';
 
 export default function Obras() {
-    const [livros, setLivros] = useState('');
+    const [livros, setLivros] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -19,12 +19,14 @@ export default function Obras() {
             })
             .then((data) => {
                 console.log('Dados recebidos:', data);
-                if (data && data[0]) {
-                    setCapa(data[0].capa);
+                if (data) {
+                    setLivros(data);
                 }
+                setLoading(false);
             })
             .catch((erro) => {
-                console.error('Erro ao buscar capa:', erro);
+                console.error('Erro ao buscar livros:', erro);
+                setLoading(false);
             });
     }, []);
 
@@ -32,34 +34,28 @@ export default function Obras() {
         <div className={styles.header}>
             <Navbar />
 
-            <main className={styles.obras}>
-                <section className={styles.obrasText}>
-                    <h2>Obras do Vestibular</h2>
+            <main className={styles.mainObras}>
+                <h2 className={styles.titulo}>Obras Do Vestibular</h2>
 
-                    <div className="grid-obras">
+                {loading ? (
+                    <p className={styles.loading}>Carregando obras...</p>
+                ) : (
+                   
+                    <div className={styles.gridObras}>
                         {livros.map((livro) => (
-                            <div key={livro.id} className="card-obra">
-                                <div className="container-capa">
-                                    <img
-                                    src={livro.imagemUrl}
-                                    alt={'Capa do Livro ${livro.titulo}'}
-                                    className="capa-livro"
+                            <div key={livro.id || livro.titulo} className={styles.cardObra}>
+                                <div className={styles.book}>
+                                    <img src={livro.capa} alt={livro.titulo} />
                                 </div>
-                        )}/>
+                                <h3>{livro.titulo}</h3>
+                                <p>{livro.autor}</p>
+                            </div>
+                        ))}
                     </div>
-
-                <section className={styles.homeBook}>
-                    <div className={styles.book}>
-                        <img src={capa} alt="A Moreninha" />
-                    </div>
-
-                    <button className={styles.botao}>
-                        Ver mais informações →
-                    </button>
-                </section>
+                )}
             </main>
 
-            <Footer/>
+            <Footer />
         </div>
     );
 }

@@ -4,81 +4,121 @@
     color: #1f1f1f;
 }
 
-.obras {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+.mainObras {
     padding: 60px 80px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.obrasText {
-    max-width: 58%;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.homeText h2 {
+.titulo {
     font-size: 40px;
     font-weight: 500;
     line-height: 1.15;
     font-family: 'Georgia', serif;
     color: #1c2321;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
-.homeText p {
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom:18px;
-    color: #333333;
+
+.gridObras {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 100%;
 }
 
-.linha {
-    width: 140px;
-    height: 2px;
-    background-color: #e3cf93;
-    margin: 25px 0 35px 0;
-    border-radius: 2px;
-}
 
-.homeBook {
+.cardObra {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 35%;
-    margin-top: 30px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #eae6dc;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.cardObra:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+}
+
 
 .book {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fbfbfb;
 }
 
-.homeBook img {
-    width: 240px;
+
+.book img {
+    height: 100%;
+    width: auto;
     display: block;
     border-radius: 4px;
     border-left: 4px solid #9a0984;
-
+    object-fit: cover;
 }
 
-.botao {
-    background-color: #b951a1;
-    color: #fff;
-    border: none;
-    padding: 10px 24px;
-    font-size: 0.95rem;
-    font-weight: 300;
+
+.cardObra h3 {
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #1c2321;
+    margin: 8px 0 6px 0;
+    line-height: 1.3;
+}
+
+
+.cardObra p {
     font-family: 'Montserrat', sans-serif;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    box-shadow: 0 4px 12px rgba(88, 42, 77, 0.15);
+    font-size: 14px;
+    color: #666666;
+    margin: 0;
 }
 
-.botao:hover {
-    background-color: #75175e;
+.loading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #333333;
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+@media (max-width: 1100px) {
+    .gridObras {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    .mainObras {
+        padding: 40px 40px;
+    }
+}
+
+@media (max-width: 800px) {
+    .gridObras {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .gridObras {
+        grid-template-columns: 1fr; 
+    }
+    .mainObras {
+        padding: 40px 20px;
+    }
+    .titulo {
+        font-size: 32px;
+    }
 }
