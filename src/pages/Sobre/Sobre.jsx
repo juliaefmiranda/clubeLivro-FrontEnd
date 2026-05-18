@@ -29,6 +29,43 @@ export default function Sobre() {
             });
     }, []);
 
+    const integrantes = [
+        {
+            nome: 'Ana Beatriz Silva',
+            curso: 'Desenvolvimento de Sistemas',
+            email: 'ana.silva@senai.br',
+        },
+        { nome: 'Bruno Henrique Costa', curso: 'Eletroeletrônica', email: 'bruno.costa@senai.br' },
+        { nome: 'Carla Mendonça', curso: 'Mecânica', email: 'carla.mendonca@senai.br' },
+        {
+            nome: 'Daniel Ferreira',
+            curso: 'Desenvolvimento de Sistemas',
+            email: 'daniel.ferreira@senai.br',
+        },
+        { nome: 'Eduarda Martins', curso: 'Eletroeletrônica', email: 'eduarda.martins@senai.br' },
+        { nome: 'Felipe Rocha', curso: 'Mecânica', email: 'felipe.rocha@senai.br' },
+        {
+            nome: 'Gabriela Souza',
+            curso: 'Desenvolvimento de Sistemas',
+            email: 'gabriela.souza@senai.br',
+        },
+        { nome: 'Henrique Lima', curso: 'Eletroeletrônica', email: 'henrique.lima@senai.br' },
+        { nome: 'Isabela Nunes', curso: 'Mecânica', email: 'isabela.nunes@senai.br' },
+        {
+            nome: 'João Pedro Alves',
+            curso: 'Desenvolvimento de Sistemas',
+            email: 'joao.alves@senai.br',
+        },
+        { nome: 'Karen Oliveira', curso: 'Eletroeletrônica', email: 'karen.oliveira@senai.br' },
+        { nome: 'Lucas Teixeira', curso: 'Mecânica', email: 'lucas.teixeira@senai.br' },
+        {
+            nome: 'Mariana Castro',
+            curso: 'Desenvolvimento de Sistemas',
+            email: 'mariana.castro@senai.br',
+        },
+        { nome: 'Nicolas Barbosa', curso: 'Eletroeletrônica', email: 'nicolas.barbosa@senai.br' },
+    ];
+
     const conteudo = {
         pt: {
             tag_pt: 'Sobre o Projeto',
@@ -55,6 +92,8 @@ export default function Sobre() {
             ano_pt: 'Publicado em 1844',
             genero_pt: 'Romance — 1.º Romance Brasileiro',
             botaoIdioma_pt: 'English',
+            livrosInt_pt: 'Livros Integrados',
+            participantes_pt: 'Participantes',
         },
         en: {
             tag_pt: 'About the Project',
@@ -81,16 +120,27 @@ export default function Sobre() {
             ano_pt: 'Published in 1844',
             genero_pt: 'Novel — 1st Brazilian Novel',
             botaoIdioma_pt: 'Português',
+            livrosInt_pt: 'Integrated Books',
+            participantes_pt: 'Participants',
         },
     };
 
     const t = conteudo[idioma];
 
+
+    const cursoCor = {
+        'Desenvolvimento de Sistemas': 'corDS',
+        Eletroeletrônica: 'corEE',
+        Mecânica: 'corMEC',
+        'Systems Development': 'corDS',
+        'Electrical & Electronics': 'corEE',
+        Mechanics: 'corMEC',
+    };
+
     return (
         <div className={styles.wrapper}>
             <Navbar />
 
-            {/* Botão de idioma */}
             <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
 
             <main className={styles.main}>
@@ -164,11 +214,41 @@ export default function Sobre() {
                     <div className={styles.apiNodes} aria-hidden="true">
                         <span className={styles.node}>A Moreninha</span>
                         <span className={styles.connector}>↔</span>
-                        <span className={styles.node}>Livro 2</span>
+                        <span className={styles.node}>Os Ratos</span>
                         <span className={styles.connector}>↔</span>
-                        <span className={styles.node}>Livro 3</span>
+                        <span className={styles.node}>Olhos D'água</span>
                         <span className={styles.connector}>↔</span>
-                        <span className={styles.node}>Livro 4</span>
+                        <span className={styles.node}>Caminho das Pedras</span>
+                        <span className={styles.connector}>↔</span>
+                        <span className={styles.node}>Canção para Ninar Menino Grande</span>
+                    </div>
+                </section>
+
+                {/* ── DIVISOR ── */}
+                <div className={styles.divider} aria-hidden="true">
+                    <span className={styles.dividerLine} />
+                    <span className={styles.dividerOrnament}>✦</span>
+                    <span className={styles.dividerLine} />
+                </div>
+
+
+                {/* ── PARTICIPANTES ── */}
+                <section className={styles.section}>
+                    <h3 className={styles.sectionTitle}>{t.participantes_pt}</h3>
+                    <div className={styles.participantesGrid}>
+                        {integrantes.map((p) => (
+                            <div key={p.email} className={styles.participanteCard}>
+                                <div className={styles.participanteAvatar}>{p.nome.charAt(0)}</div>
+                                <div className={styles.participanteInfo}>
+                                    <p className={styles.participanteNome}>{p.nome}</p>
+                                    <span
+                                        className={`${styles.participanteCurso} ${styles[cursoCor[p.curso]]}`}>
+                                        {p.curso}
+                                    </span>
+                                    <p className={styles.participanteEmail}>{p.email}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </section>
             </main>

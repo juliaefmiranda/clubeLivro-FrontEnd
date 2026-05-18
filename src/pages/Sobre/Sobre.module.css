@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
 
-
 :root {
     --bg: #e8e6e1;
     --bg-card: #f0ede8;
@@ -34,7 +33,7 @@
     width: 100%;
 }
 
-/* titulo */
+/* ── HERO ── */
 .hero {
     display: flex;
     flex-direction: column;
@@ -43,7 +42,6 @@
     width: 100%;
 }
 
-/* oculta decoração grande */
 .heroDecor { display: none; }
 .bigLetter  { display: none; }
 
@@ -80,7 +78,6 @@
     margin: 0;
 }
 
-/* botão de traduzir*/
 .langToggle {
     margin-top: 8px;
     background: transparent;
@@ -103,7 +100,7 @@
     border-color: var(--dourado);
 }
 
-/* Capa do livro */
+/* ── CAPA ── */
 .bookCover {
     display: flex;
     flex-direction: column;
@@ -166,13 +163,21 @@
     margin: 2px 0;
 }
 
-/* card principal */
+/* ── SECTION GENÉRICA ── */
 .section {
     width: 100%;
 }
 
 .sectionInner {
     width: 100%;
+}
+
+.sectionTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--texto);
+    margin: 0 0 20px;
 }
 
 .linha { display: none; }
@@ -194,7 +199,7 @@
     margin: 0;
 }
 
-
+/* ── DISCIPLINAS / CURSOS ── */
 .cardsSection {
     display: flex;
     align-items: stretch;
@@ -247,9 +252,7 @@
 
 .cardDivider { display: none; }
 
-/* ════════════════════════════════
-   API SECTION
-════════════════════════════════ */
+/* ── API SECTION ── */
 .apiSection {
     background: var(--bg-card);
     border: 1px solid var(--borda);
@@ -315,8 +318,160 @@
     font-size: 16px;
 }
 
-/*responsivo*/
+/* ── DIVISOR ORNAMENTAL ── */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
 
+.dividerLine {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--borda), transparent);
+}
+
+.dividerOrnament {
+    font-size: 14px;
+    color: var(--dourado);
+    letter-spacing: 8px;
+    flex-shrink: 0;
+}
+
+/* ── LIVROS INTEGRADOS ── */
+.livrosGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+
+.livroCard {
+    background: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: box-shadow 0.2s;
+}
+
+.livroCard:hover {
+    box-shadow: 0 4px 16px rgba(181, 146, 76, 0.15);
+}
+
+.livroOrnament {
+    font-size: 18px;
+    color: var(--dourado);
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.livroNome {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--texto);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ── PARTICIPANTES ── */
+.participantesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+
+.participanteCard {
+    background: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: box-shadow 0.2s;
+}
+
+.participanteCard:hover {
+    box-shadow: 0 4px 16px rgba(181, 146, 76, 0.15);
+}
+
+.participanteAvatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--dourado);
+    color: var(--branco);
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(181, 146, 76, 0.4);
+}
+
+.participanteInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.participanteNome {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--texto);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.participanteCurso {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.corDS {
+    background: rgba(100, 140, 180, 0.15);
+    color: #4a7aaa;
+    border: 1px solid rgba(100, 140, 180, 0.3);
+}
+
+.corEE {
+    background: rgba(181, 146, 76, 0.15);
+    color: var(--dourado);
+    border: 1px solid rgba(181, 146, 76, 0.3);
+}
+
+.corMEC {
+    background: rgba(100, 130, 100, 0.15);
+    color: #567856;
+    border: 1px solid rgba(100, 130, 100, 0.3);
+}
+
+.participanteEmail {
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--texto-leve);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── RESPONSIVO ── */
 @media (max-width: 700px) {
     .main {
         padding: 40px 20px 60px;
@@ -333,5 +488,13 @@
 
     .textBlock {
         padding: 24px 20px;
+    }
+
+    .livrosGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .participantesGrid {
+        grid-template-columns: 1fr;
     }
 }
