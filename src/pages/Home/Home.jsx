@@ -31,7 +31,7 @@ export default function Home() {
 
     return (
         <div className={styles.header}>
-            <Navbar />
+            <Navbar idioma={idioma}/>
 
             <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
 
@@ -67,7 +67,7 @@ export default function Home() {
                 </section>
             </main>
 
-            <Footer />
+            <Footer idioma={idioma} />
         </div>
     );
 }

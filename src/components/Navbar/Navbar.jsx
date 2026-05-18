@@ -1,7 +1,7 @@
 import styles from './Navbar.module.css';
 import { Link } from 'react-router-dom';
 
-export default function Navbar() {
+export default function Navbar({idioma}) {
     return (
         <header className={styles.navbar}>
             <div className={styles.logoContainer}>
@@ -12,22 +12,38 @@ export default function Navbar() {
             <nav>
                 <ul className={styles.navLinks}>
                     <li>
-                        <Link to="/">HOME</Link>
+                        <Link to="/">
+                            {idioma === 'pt' ? 'HOME' : 'HOME'}
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/sobre">
+                            {idioma === 'pt' ? 'SOBRE' : 'ABOUT'}
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/obras">
+                            {idioma === 'pt' ? 'OBRAS' : 'WORKS'}
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link to="/video-aulas">
+                            {idioma === 'pt' ? 'VIDEO AULAS' : 'VIDEO LESSONS'}
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/sobre">SOBRE</Link>
+                        <Link to="/dicas-vestibular">
+                            {idioma === 'pt' ? 'DICAS VESTIBULAR' : 'EXAM TIPS'}
+                        </Link>
                     </li>
+
                     <li>
-                        <Link to="/obras">OBRAS</Link>
-                    </li>
-                    <li>
-                        <Link to="/video-aulas">VIDEO AULAS</Link>
-                    </li>
-                    <li>
-                        <Link to="/dicas-vestibular">DICAS VESTIBULAR</Link>
-                    </li>
-                    <li>
-                        <Link to="/simulados">SIMULADOS</Link>
+                        <Link to="/simulados">
+                            {idioma === 'pt' ? 'SIMULADOS' : 'MOCK EXAMS'}
+                        </Link>
                     </li>
                 </ul>
             </nav>

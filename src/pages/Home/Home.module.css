@@ -77,10 +77,11 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: 0.2s;
     box-shadow: 0 4px 12px rgba(88, 42, 77, 0.15);
 }
 
 .botao:hover {
     background-color: #75175e;
+    transform: scale(1.05);;
 }
