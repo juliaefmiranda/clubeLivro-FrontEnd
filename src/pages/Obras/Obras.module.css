@@ -113,7 +113,7 @@
 
 @media (max-width: 550px) {
     .gridObras {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
     .mainObras {
         padding: 40px 20px;
@@ -121,4 +121,25 @@
     .titulo {
         font-size: 32px;
     }
+}
+
+.botao {
+    background-color: #b951a1;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 12px rgba(88, 42, 77, 0.15);
+}
+
+.botao:hover {
+    background-color: #75175e;
 }
