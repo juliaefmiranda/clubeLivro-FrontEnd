@@ -7,7 +7,7 @@ export default function BotaoIdioma({idioma, setIdioma}) {
 
     return (
         <button className={styles.botao} onClick={trocarIdioma}>
-            {idioma === 'pt' ? 'English ' : 'Português'}
+            {idioma === 'pt' ? '🌐 English ' : '🌐 Português'}
         </button>
     );
 }
