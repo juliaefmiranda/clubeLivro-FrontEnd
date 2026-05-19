@@ -31,9 +31,7 @@ export default function Home() {
 
     return (
         <div className={styles.header}>
-            <Navbar />
-
-            <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
+            <Navbar idioma={idioma} />
 
             <main className={styles.home}>
                 <section className={styles.homeText}>
@@ -57,6 +55,9 @@ export default function Home() {
                 </section>
 
                 <section className={styles.homeBook}>
+                    <div className={styles.idiomaContainer}>
+                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
+                    </div>
                     <div className={styles.book}>
                         <img src={capa} alt="A Moreninha" />
                     </div>
@@ -67,7 +68,7 @@ export default function Home() {
                 </section>
             </main>
 
-            <Footer />
+            <Footer idioma={idioma} />
         </div>
     );
 }
