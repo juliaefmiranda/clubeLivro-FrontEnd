@@ -5,7 +5,6 @@ import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
 
 export default function Home() {
-    const [videoUrl, setVideoUrl] = useState('');
     const [idioma, setIdioma] = useState('pt');
     const [videoUrl, setVideoUrl] = useState(formatarLinkYoutube('https://www.youtube.com/watch?v=pTcc00EpCZc'));
 

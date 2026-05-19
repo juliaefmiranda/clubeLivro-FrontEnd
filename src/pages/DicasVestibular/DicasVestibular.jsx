@@ -5,7 +5,7 @@ import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
 import styles from './DicasVestibular.module.css';
 
 export default function DicasVestibular() {
-    const [livro, setLivro] = useState([]);
+    const [livro, setLivro] = useState({});
     const [dicas, setDicas] = useState([]);
     const [temas, setTemas] = useState([]);
     const [idioma, setIdioma] = useState('pt');
@@ -27,9 +27,9 @@ export default function DicasVestibular() {
                 const dicasData = await dicasRes.json();
                 const temasData = await temasRes.json();
 
-                setLivro(livroData);
+                setLivro(livroData[0]);
                 setDicas(dicasData);
-                setTemas(temasData);
+                setTemas(temasData.data);
             }
 
             catch (erro) {
@@ -51,18 +51,18 @@ export default function DicasVestibular() {
             <main className={styles.main}>
                 <h1>
                     {idioma === 'pt' ? 'Dicas para Vestibulares' : 'College Entrance Exam Tips'}
-                    </h1>
+                </h1>
 
                 <section className={styles.conteudo}>
                     <div className={styles.livroBox}>
-                        <img 
-                        src={livro?.capa} alt={idioma === 'pt' ? livro?.titulo : livro?.titulo_en}
-                         />
+                        <img
+                            src={livro?.capa} alt={idioma === 'pt' ? livro?.titulo : livro?.titulo_en}
+                        />
 
                         <div className={styles.livroDicas}>
                             <h2>
                                 {idioma === 'pt' ? livro?.titulo : livro?.titulo_en}
-                                </h2>
+                            </h2>
 
                             <h3>{livro?.autor}</h3>
 
@@ -77,7 +77,7 @@ export default function DicasVestibular() {
                     <div className={styles.temasBox}>
                         <h3>
                             {idioma === 'pt' ? 'Possíveis temas de Redação:' : 'Possible essay topics:'}
-                            </h3>
+                        </h3>
 
                         <ul>
                             {temas.map((item) => (
@@ -90,7 +90,7 @@ export default function DicasVestibular() {
                 </section>
             </main>
 
-            <Footer idioma={idioma}/>
+            <Footer idioma={idioma} />
         </div>
     )
 }
