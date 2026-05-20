@@ -56,12 +56,12 @@ export default function DicasVestibular() {
                 <section className={styles.conteudo}>
                     <div className={styles.livroBox}>
                         <img
-                            src={livro?.capa} alt={idioma === 'pt' ? livro?.titulo : livro?.titulo_en}
+                            src={livro?.capa} alt={livro?.titulo}
                         />
 
                         <div className={styles.livroDicas}>
                             <h2>
-                                {idioma === 'pt' ? livro?.titulo : livro?.titulo_en}
+                                {livro?.titulo}
                             </h2>
 
                             <h3>{livro?.autor}</h3>
@@ -73,6 +73,15 @@ export default function DicasVestibular() {
                             ))}
                         </div>
                     </div>
+                </section>
+
+                <div className={styles.divisor}>
+                    <span className={styles.divisorLine} />
+                    <span className={styles.divisorOrnament}>✦</span>
+                    <span className={styles.divisorLine} />
+                </div>
+
+                <div className={styles.temaContainer}>
 
                     <div className={styles.temasBox}>
                         <h3>
@@ -87,7 +96,8 @@ export default function DicasVestibular() {
                             ))}
                         </ul>
                     </div>
-                </section>
+                </div>
+
             </main>
 
             <Footer idioma={idioma} />

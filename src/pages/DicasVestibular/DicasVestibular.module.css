@@ -32,7 +32,7 @@
     font-size: 37px;
     font-family: 'Georgia', serif;
     font-weight: 500;
-    margin-bottom: 33px;
+    margin-bottom: 45px;
     color: #1c2321;
 }
 
@@ -40,16 +40,18 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 45px;
-    flex-wrap: wrap;
+    margin:0 auto 30px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .livroBox {
     display: flex;
     align-items: flex-start;
-    gap: 28px;
-    max-width: 720px;
-    flex: 1;
+    gap: 40px;
+    width: 100%;
+    justify-content: center;
 }
 
 .livroBox img {
@@ -65,13 +67,15 @@
     flex-direction: column;
     gap: 10px;
     padding-top: 4px;
+    flex: 1;
+    max-width: 500px;
 }
 
 .livroDicas h2 {
     font-size: 32px;
     font-family: 'Georgia', serif;
     font-weight: 500;
-    color: #8c2e8c;
+    color: #b951a1;
     margin-bottom: 0;
 }
 
@@ -89,26 +93,56 @@
     display: block;
     width: 120px;
     height: 2px;
-    background-color: #e3cf93;
+    background-color: #d062c0;
     margin-top: 18px;
     border-radius: 2px;
 }
 
 .livroDicas p {
     font-size: 17px;
-    line-height: 1.3;
-    margin-bottom: 14px;
+    line-height: 1.5;
+    margin-bottom: 16px;
     color: #333;
     font-family: 'Montserrat', sans-serif;
 }
 
+.divisor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.divisorLine {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--borda), transparent);
+}
+
+.divisorOrnament {
+    font-size: 14px;
+    color: var(--dourado);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.temaContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
 .temasBox {
     background-color: #f2e5f2;
-    padding: 24px;
+    padding: 35px 50px;
     border-radius: 8px;
-    max-width: 320px;
+    max-width: 800px;
     width: 100%;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
 }
 
 .temasBox h3 {
@@ -116,7 +150,7 @@
     font-family: 'Georgia', serif;
     font-weight: 500;
     color: #8c2e8c;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
 .temasBox ul {
@@ -127,8 +161,8 @@
 
 .temasBox li {
     font-size: 17px;
-    line-height: 1.7;
-    padding: 14px 0;
+    line-height: 1.6;
+    padding: 16px 0;
     border-bottom: 1px solid rgba(140, 46, 140, 0.15);
     color: #333;
     font-family: 'Montserrat', sans-serif;
