@@ -73,15 +73,6 @@ export default function DicasVestibular() {
                             ))}
                         </div>
                     </div>
-                </section>
-
-                <div className={styles.divisor}>
-                    <span className={styles.divisorLine} />
-                    <span className={styles.divisorOrnament}>✦</span>
-                    <span className={styles.divisorLine} />
-                </div>
-
-                <div className={styles.temaContainer}>
 
                     <div className={styles.temasBox}>
                         <h3>
@@ -95,8 +86,9 @@ export default function DicasVestibular() {
                                 </li>
                             ))}
                         </ul>
+
                     </div>
-                </div>
+                </section>
 
             </main>
 
