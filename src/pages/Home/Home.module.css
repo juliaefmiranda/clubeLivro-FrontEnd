@@ -1,99 +1,253 @@
-.header {
-    position: relative;
+.pagina {
     min-height: 100vh;
     background-color: #fcfbf7;
-    color: #1f1f1f;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
-.home {
+.main {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 230px;
-    padding: 20px 70px 70px;
+    width: 100%;
+    padding: 60px 30px 80px;
     max-width: 1400px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
-.homeText {
-    max-width: 58%;
-    font-family: 'Montserrat', sans-serif;
-    padding-top: 10px;    
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 10px;
 }
 
-.homeText h2 {
-    font-size: 40px;
-    font-weight: 500;
-    line-height: 1.15;
-    font-family: 'Georgia', serif;
-    color: #1c2321;
+.topoTexto {
+    max-width: 760px;
 }
 
-.homeText p {
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom:18px;
-    color: #333333;
+.titulo {
+    font-size: clamp(2.4rem, 5vw, 5rem);
+    font-weight: 400;
+    color: #1f1f1f;
+    margin: 0;
+    line-height: 1.08;
 }
 
 .linha {
     width: 140px;
     height: 2px;
     background-color: #e3cf93;
-    margin: 25px 0 35px 0;
+    margin-top: 28px;
     border-radius: 2px;
+}
+
+.topoBotao {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 10px;
+    min-width: fit-content;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 90px;
+}
+
+.homeText {
+    flex: 1;
+    max-width: 760px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.homeText p {
+    font-size: 1.15rem;
+    line-height: 1.95;
+    margin-bottom: 28px;
+    color: #333;
 }
 
 .homeBook {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 35%;
-}
-
-.idiomaContainer {
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-    padding-top: 0px;
+    max-width: 320px;
+    flex-shrink: 0;
+    margin-top: -90px;
 }
 
 .book {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
+    margin-bottom: 28px;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .homeBook img {
-    width: 220px;
+    width: 240px;
     display: block;
-    border-radius: 4px;
+    object-fit: cover;
     border-left: 4px solid #9a0984;
-
 }
 
 .botao {
+    width: 100%;
+    max-width: 260px;
     background-color: #b951a1;
     color: #fff;
     border: none;
-    padding: 10px 24px;
+    padding: 12px 24px;
     font-size: 0.95rem;
-    font-weight: 300;
+    font-weight: 400;
     font-family: 'Montserrat', sans-serif;
     border-radius: 6px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px;
-    transition: 0.2s;
+    justify-content: center;
+    transition: transform 0.2s ease,
+        background-color 0.2s ease;
     box-shadow: 0 4px 12px rgba(88, 42, 77, 0.15);
 }
 
 .botao:hover {
     background-color: #75175e;
-    transform: scale(1.05);;
+    transform: scale(1.05);
 }
 
+@media (max-width: 1100px) {
+    .conteudo {
+        gap: 60px;
+    }
+
+    .homeText p {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main {
+        padding: 50px 24px 70px;
+    }
+
+    .topo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        gap: 24px;
+
+        margin-bottom: 35px;
+    }
+
+    .topoTexto {
+        max-width: 100%;
+    }
+
+    .linha {
+        margin: 24px auto 0;
+    }
+
+    .topoBotao {
+        width: 100%;
+        justify-content: center;
+        padding-top: 0;
+    }
+
+    .conteudo {
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        gap: 40px;
+    }
+
+    .homeText {
+        max-width: 100%;
+    }
+
+    .homeBook {
+        max-width: 100%;
+
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .main {
+        padding: 45px 16px 60px;
+    }
+
+    .titulo {
+        text-align: center;
+    }
+
+    .homeText p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .homeBook img {
+        width: 200px;
+    }
+
+    .botao {
+        font-size: 0.9rem;
+        padding: 11px 18px;
+        max-width: 230px;
+    }
+}
+
+@media (max-width: 375px) {
+    .main {
+        padding: 40px 12px 50px;
+    }
+
+    .titulo {
+        font-size: 2.2rem;
+    }
+
+    .homeText p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    .homeBook img {
+        width: 180px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .main {
+        padding: 30px 24px 40px;
+    }
+
+    .conteudo {
+        gap: 28px;
+    }
+
+    .titulo {
+        font-size: 2.5rem;
+    }
+
+    .homeText p {
+        font-size: 0.98rem;
+        line-height: 1.6;
+    }
+
+    .homeBook img {
+        width: 160px;
+    }
+
+    .botao {
+        max-width: 200px;
+        font-size: 0.85rem;
+    }
+}
