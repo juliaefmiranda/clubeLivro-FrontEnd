@@ -3,9 +3,10 @@ import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
 import styles from './DicasVestibular.module.css';
+import { FiCheckCircle } from "react-icons/fi";
 
 export default function DicasVestibular() {
-    const [livro, setLivro] = useState([]);
+    const [livro, setLivro] = useState({});
     const [dicas, setDicas] = useState([]);
     const [temas, setTemas] = useState([]);
     const [idioma, setIdioma] = useState('pt');
@@ -27,9 +28,9 @@ export default function DicasVestibular() {
                 const dicasData = await dicasRes.json();
                 const temasData = await temasRes.json();
 
-                setLivro(livroData);
+                setLivro(livroData[0]);
                 setDicas(dicasData);
-                setTemas(temasData);
+                setTemas(temasData.data);
             }
 
             catch (erro) {
@@ -50,19 +51,25 @@ export default function DicasVestibular() {
 
             <main className={styles.main}>
                 <h1>
-                    {idioma === 'pt' ? 'Dicas para Vestibulares' : 'College Entrance Exam Tips'}
-                    </h1>
+                    {idioma === 'pt' ? 'Dicas Literárias para Vestibular' : 'Literary Tips for College Entrance Exams'}
+                </h1>
+
+                <div className={styles.divisor}>
+                    <span className={styles.linhaDivisor} />
+                    <span className={styles.simbolo}>✦</span>
+                    <span className={styles.linhaDivisor} />
+                </div>
 
                 <section className={styles.conteudo}>
                     <div className={styles.livroBox}>
-                        <img 
-                        src={livro?.capa} alt={idioma === 'pt' ? livro?.titulo : livro?.titulo_en}
-                         />
+                        <img
+                            src={livro?.capa} alt={livro?.titulo}
+                        />
 
                         <div className={styles.livroDicas}>
                             <h2>
-                                {idioma === 'pt' ? livro?.titulo : livro?.titulo_en}
-                                </h2>
+                                {livro?.titulo}
+                            </h2>
 
                             <h3>{livro?.autor}</h3>
 
@@ -77,20 +84,23 @@ export default function DicasVestibular() {
                     <div className={styles.temasBox}>
                         <h3>
                             {idioma === 'pt' ? 'Possíveis temas de Redação:' : 'Possible essay topics:'}
-                            </h3>
+                        </h3>
 
                         <ul>
                             {temas.map((item) => (
                                 <li key={item.id}>
+                                    <FiCheckCircle className={styles.icone} />
                                     {idioma === 'pt' ? item.tema : item.tema_en}
                                 </li>
                             ))}
                         </ul>
+
                     </div>
                 </section>
+
             </main>
 
-            <Footer idioma={idioma}/>
+            <Footer idioma={idioma} />
         </div>
     )
 }

@@ -4,6 +4,7 @@
     flex-direction: column;
     background-color: #fcfbf7;
     color: #1f1f1f;
+    overflow-x: hidden;
 }
 
 .main {
@@ -11,43 +12,45 @@
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding: 40px 70px 60px;
+    padding: 0px 70px 50px;
+    box-sizing: border-box;
 }
 
 .idiomaContainer {
-    display: flex;
-    justify-content: flex-end;
     max-width: 1400px;
     width: 100%;
-    margin: 20px auto 0;
-    padding: 0 70px;
+    margin: 0 auto;
+    padding: 15px 70px 0;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
 }
 
 .main h1 {
     text-align: center;
-    font-size: 42px;
+    font-size: 37px;
     font-family: 'Georgia', serif;
     font-weight: 500;
-    margin-bottom: 70px;
+    margin-bottom: 25px;
     color: #1c2321;
 }
 
-.content {
+.conteudo {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 70px;
-    flex-wrap: wrap;
+    align-items: stretch;
 }
 
-.livroArea {
-    display: flex;
-    gap: 35px;
-    max-width: 700px;
+.livroBox {
     flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    max-width: 800px;
+    width: 100%;
 }
 
-.livroArea img {
+.livroBox img {
     width: 220px;
     height: auto;
     border-left: 4px solid #9a0984;
@@ -55,47 +58,91 @@
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-.infoLivro {
+.livroDicas {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
+    padding-top: 4px;
+    flex: 1;
 }
 
-.infoLivro h2 {
-    font-size: 34px;
+.livroDicas h2 {
+    font-size: 32px;
     font-family: 'Georgia', serif;
     font-weight: 500;
-    color: #8c2e8c;
+    color: #b951a1;
+    margin-bottom: 0;
 }
 
-.infoLivro h3 {
-    font-size: 20px;
+.livroDicas h3 {
+    font-size: 18px;
     font-weight: 400;
     color: #444;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
+    margin-top: 4px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.infoLivro p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #333;
+.livroDicas h3::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 2px;
+    background-color: #d062c0;
+    margin-top: 18px;
+    border-radius: 2px;
 }
+
+.livroDicas p {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.divisor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.linhaDivisor {
+    align-items: center;
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--borda), transparent);
+}
+
+.simbolo {
+    font-size: 14px;
+    color: var(--dourado);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
 
 .temasBox {
+    flex: 1;
     background-color: #f2e5f2;
     padding: 30px;
     border-radius: 8px;
-    max-width: 400px;
+    max-width: 500px;
     width: 100%;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    min-width: 280px;
 }
 
 .temasBox h3 {
-    font-size: 24px;
+    font-size: 23px;
     font-family: 'Georgia', serif;
     font-weight: 500;
     color: #8c2e8c;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .temasBox ul {
@@ -105,11 +152,27 @@
 }
 
 .temasBox li {
-    font-size: 18px;
-    line-height: 1.8;
-    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 17px;
+    line-height: 1.6;
+    padding: 16px 0;
     border-bottom: 1px solid rgba(140, 46, 140, 0.15);
     color: #333;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.icone {
+    font-size: 20px;
+    color: #9a0984;
+    background-color: #f3e5f5;
+    border-radius: 50%;
+    padding: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .temasBox li:last-child {
