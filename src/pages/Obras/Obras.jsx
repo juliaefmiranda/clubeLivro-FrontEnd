@@ -44,10 +44,12 @@ export default function Obras() {
                             : 'Entrance Exam Books'}
                     </h1>
 
-                    <BotaoIdioma
-                        idioma={idioma}
-                        setIdioma={setIdioma}
-                    />
+                    <div className={styles.botaoContainer}>
+                        <BotaoIdioma
+                            idioma={idioma}
+                            setIdioma={setIdioma}
+                        />
+                    </div>
                 </div>
 
                 {loading ? (

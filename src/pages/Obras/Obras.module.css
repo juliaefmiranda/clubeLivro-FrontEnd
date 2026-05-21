@@ -16,12 +16,24 @@
 }
 
 .topo {
+    width: 100%;
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 24px;
-    margin-bottom: 70px;
+    margin-bottom: 42px;
+}
+
+.topoTexto {
+    text-align: center;
+}
+
+.botaoContainer {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .titulo {
@@ -30,9 +42,8 @@
     color: #1f1f1f;
     margin: 0;
     text-align: center;
-    line-height: 1.1;
+    line-height: 1.08;
 }
-
 
 .gridObras {
     display: grid;
@@ -40,7 +51,6 @@
     gap: 35px;
     width: 100%;
 }
-
 
 .cardObra {
     display: flex;
@@ -68,7 +78,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
 
 .imagem {
@@ -84,19 +94,19 @@
 }
 
 .nomeLivro {
-    font-size: 1.9rem;
+    font-size: 1.45rem;
     font-weight: 400;
     color: #1f1f1f;
     margin: 0 0 10px;
-    line-height: 1.2;
+    line-height: 1.25;
     word-break: break-word;
 }
 
 .autor {
-    font-size: 0.95rem;
-    color: #8a8a8a;
+    font-size: 1rem;
+    color: #7c7c7c;
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .loadingContainer {
@@ -140,73 +150,83 @@
 }
 
 .erroConteudo p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #777;
     line-height: 1.5;
     margin: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .main {
         padding: 50px 24px 70px;
     }
 
-
     .gridObras {
-        gap: 28px;
+        gap: 30px;
     }
 
-
     .nomeLivro {
-        font-size: 1.7rem;
+        font-size: 1.35rem;
+    }
+
+    .autor {
+        font-size: 0.98rem;
     }
 }
 
+@media (max-width: 768px) {
+    .topo {
+        flex-direction: column;
+
+        gap: 22px;
+    }
+
+    .botaoContainer {
+        position: static;
+
+        justify-content: center;
+
+        width: 100%;
+    }
+
+    .gridObras {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+        gap: 26px;
+    }
+}
 
 @media (max-width: 500px) {
     .main {
         padding: 45px 16px 60px;
     }
 
-
-    .topo {
-        margin-bottom: 50px;
-    }
-
-
     .gridObras {
         grid-template-columns: 1fr;
 
-
         justify-items: center;
-
 
         gap: 24px;
     }
-
 
     .cardObra,
     .cardErro {
         max-width: 100%;
     }
 
-
     .imagem {
         width: 150px;
         height: 220px;
     }
 
-
-    .titulo {
-        text-align: center;
+    .nomeLivro {
+        font-size: 1.3rem;
     }
 
-
-    .nomeLivro {
-        font-size: 1.6rem;
+    .autor {
+        font-size: 0.95rem;
     }
 }
-
 
 @media (max-width: 375px) {
     .main {
@@ -214,7 +234,7 @@
     }
 
     .titulo {
-        font-size: 30px;
+        font-size: 2rem;
     }
 
     .cardObra,
@@ -222,19 +242,52 @@
         padding: 20px 16px 16px;
     }
 
-
     .imagem {
         width: 140px;
         height: 205px;
     }
 
-
     .nomeLivro {
-        font-size: 1.45rem;
+        font-size: 1.2rem;
     }
 
+    .autor {
+        font-size: 0.92rem;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .main {
+        padding: 30px 24px 40px;
+    }
+
+    .topo {
+        margin-bottom: 28px;
+    }
+
+    .titulo {
+        font-size: 2.5rem;
+    }
+
+    .gridObras {
+        gap: 20px;
+    }
+
+    .cardObra,
+    .cardErro {
+        max-width: 210px;
+    }
+
+    .imagem {
+        width: 120px;
+        height: 180px;
+    }
+
+    .nomeLivro {
+        font-size: 1.05rem;
+    }
 
     .autor {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
