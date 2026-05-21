@@ -19,5 +19,10 @@ export const APIs = [
         url: "https://olhosdagua.onrender.com/api/livro",
         apiKey: import.meta.env.VITE_API_KEY_OLHOS_AGUA,
     },
+    {
+        origem: 'the-rats',
+        url: "https://ratsjs.onrender.com/api/livros",
+        apiKey: import.meta.env.VITE_API_KEY_THE_RATS,
+    },
 ];
 
