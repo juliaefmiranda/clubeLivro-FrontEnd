@@ -1,65 +1,104 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import Navbar from '../../components/Navbar/Navbar';
-import styles from './Obras.module.css';
 import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
 
+import { getAllLivros } from '../../services/livrosService.js'
+
+import styles from './Obras.module.css';
+
 export default function Obras() {
+    const [idioma, setIdioma] = useState('pt');
     const [livros, setLivros] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [idioma, setIdioma] = useState('pt');
+    const [erros, setErros] = useState([]);
 
     useEffect(() => {
-        fetch('https://clubelivro-backend.onrender.com/api/livros', {
-            headers: {
-                'x-api-key': import.meta.env.VITE_API_KEY,
-            },
-        })
-            .then((res) => {
-                console.log('Status:', res.status);
-                return res.json();
-            })
-            .then((data) => {
-                console.log('Dados recebidos:', data);
-                if (data) {
-                    setLivros(data);
-                }
+        async function carregarLivros() {
+            try {
+                const resultado = await getAllLivros();
+
+                setLivros(resultado.livros);
+                setErros(resultado.erros);
+            } catch (erro) {
+                console.log('Erro ao carregar livros:', erro);
+            } finally {
                 setLoading(false);
-            })
-            .catch((erro) => {
-                console.error('Erro ao buscar livros:', erro);
-                setLoading(false);
-            });
+            }
+        }
+
+        carregarLivros();
     }, []);
 
     return (
-        <div className={styles.header}>
-            <Navbar />
+        <div className={styles.pagina}>
+            <Navbar idioma={idioma} />
 
-            <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
+            <main className={styles.main}>
+                <div className={styles.topo}>
+                    <h1 className={styles.titulo}>
+                        {idioma === 'pt'
+                            ? 'Obras do Vestibular'
+                            : 'Entrance Exam Books'}
+                    </h1>
 
-            <main className={styles.mainObras}>
-                <h2 className={styles.titulo}>Obras Do Vestibular</h2>
+                    <BotaoIdioma
+                        idioma={idioma}
+                        setIdioma={setIdioma}
+                    />
+                </div>
 
                 {loading ? (
-                    <p className={styles.loading}>Carregando obras...</p>
+                    <div className={styles.loadingContainer}>
+                        <p className={styles.loading}>
+                            {idioma === 'pt'
+                                ? 'Carregando obras ...'
+                                : 'Loading Books ...'}
+                        </p>
+                    </div>
                 ) : (
-
-                    <div className={styles.gridObras}>
+                    <section className={styles.gridObras}>
                         {livros.map((livro) => (
-                            <div key={livro.id || livro.titulo} className={styles.cardObra}>
-                                <div className={styles.book}>
-                                    <img src={livro.capa} alt={livro.titulo} />
+                            <Link
+                                key={`${livro.origem}
+                                -${livro.id}`}
+                                to={`/obras/${livro.origem}/${livro.id}`}
+                                className={styles.cardObra}>
+                                <div className={styles.imagemContainer}>
+                                    <img src={livro.capa} alt={livro.tituo} className={styles.imagem} />
                                 </div>
-                                <h3>{livro.titulo}</h3>
-                                <p>{livro.autor}</p>
+
+                                <div className={styles.info}>
+                                    <h2 className={styles.nomeLivro}>{livro.titulo}</h2>
+
+                                    <p className={styles.autor}>{livro.autor}</p>
+                                </div>
+                            </Link>
+                        ))}
+
+                        {erros.map((_, index) => (
+                            <div
+                                key={index}
+                                className={styles.cardErro}>
+                                <div className={styles.erroConteudo}>
+                                    <h2>{idioma === 'pt'
+                                        ? 'Obra indisponível'
+                                        : 'Book unavailable'}</h2>
+
+                                    <p> {
+                                        idioma === 'pt'
+                                            ? 'Não foi possível carregar esta obra'
+                                            : 'Could not load this book'}</p>
+                                </div>
                             </div>
                         ))}
-                    </div>
+                    </section>
                 )}
             </main>
 
-            <Footer />
+            <Footer idioma={idioma}></Footer>
         </div>
     );
 }

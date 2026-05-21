@@ -1,145 +1,240 @@
-.header {
+.pagina {
     min-height: 100vh;
     background-color: #fcfbf7;
-    color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
-.mainObras {
-    padding: 60px 80px;
+.main {
+    flex: 1;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
+    padding: 60px 30px 80px;
+    box-sizing: border-box;
+}
+
+.topo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 70px;
 }
 
 .titulo {
-    font-size: 40px;
-    font-weight: 500;
-    line-height: 1.15;
-    font-family: 'Georgia', serif;
-    color: #1c2321;
-    margin-bottom: 50px;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 400;
+    color: #1f1f1f;
+    margin: 0;
     text-align: center;
+    line-height: 1.1;
 }
 
 
 .gridObras {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 35px;
     width: 100%;
 }
 
 
 .cardObra {
     display: flex;
+    width: 100%;
+    max-width: 240px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 24px 20px 18px;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    background-color: #ffffff;
-    border-radius: 8px;
-    border: 1px solid #eae6dc;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    background-color: #f7f5f1;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid #b89b5e;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cardObra:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-
-.book {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
-    margin-bottom: 24px;
-    border-radius: 4px;
-    overflow: hidden;
-    height: 280px;
+.imagemContainer {
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: #fbfbfb;
+    margin-bottom: 22px;
 }
 
-
-.book img {
-    height: 100%;
-    width: auto;
-    display: block;
-    border-radius: 4px;
-    border-left: 4px solid #9a0984;
+.imagem {
+    width: 160px;
+    height: 240px;
     object-fit: cover;
+    border-radius: 4px;
 }
 
-
-.cardObra h3 {
-    font-family: 'Georgia', serif;
-    font-size: 20px;
-    font-weight: 500;
-    color: #1c2321;
-    margin: 8px 0 6px 0;
-    line-height: 1.3;
+.info {
+    text-align: center;
+    width: 100%;
 }
 
+.nomeLivro {
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: #1f1f1f;
+    margin: 0 0 10px;
+    line-height: 1.2;
+    word-break: break-word;
+}
 
-.cardObra p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: #666666;
+.autor {
+    font-size: 0.95rem;
+    color: #8a8a8a;
     margin: 0;
+    line-height: 1.4;
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    padding: 80px 0;
 }
 
 .loading {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    color: #333333;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.cardErro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 240px;
+    min-height: 420px;
+    margin: 0 auto;
+    padding: 24px 20px 18px;
+    background-color: #f7f5f1;
+    border: 1.5px dashed #c7b38a;
+    border-radius: 12px;
+}
+
+.erroConteudo {
     text-align: center;
-    margin-top: 60px;
 }
 
+.erroConteudo h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #8a6c2f;
+    margin-bottom: 12px;
+}
 
-@media (max-width: 1100px) {
+.erroConteudo p {
+    font-size: 0.95rem;
+    color: #777;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .main {
+        padding: 50px 24px 70px;
+    }
+
+
     .gridObras {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        gap: 28px;
     }
-    .mainObras {
-        padding: 40px 40px;
+
+
+    .nomeLivro {
+        font-size: 1.7rem;
     }
 }
 
-@media (max-width: 800px) {
-    .gridObras {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 550px) {
+@media (max-width: 500px) {
+    .main {
+        padding: 45px 16px 60px;
+    }
+
+
+    .topo {
+        margin-bottom: 50px;
+    }
+
+
     .gridObras {
         grid-template-columns: 1fr;
+
+
+        justify-items: center;
+
+
+        gap: 24px;
     }
-    .mainObras {
-        padding: 40px 20px;
+
+
+    .cardObra,
+    .cardErro {
+        max-width: 100%;
     }
+
+
+    .imagem {
+        width: 150px;
+        height: 220px;
+    }
+
+
     .titulo {
-        font-size: 32px;
+        text-align: center;
+    }
+
+
+    .nomeLivro {
+        font-size: 1.6rem;
     }
 }
 
-.botao {
-    background-color: #b951a1;
-    color: #fff;
-    border: none;
-    padding: 10px 24px;
-    font-size: 0.95rem;
-    font-weight: 300;
-    font-family: 'Montserrat', sans-serif;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    box-shadow: 0 4px 12px rgba(88, 42, 77, 0.15);
-}
 
-.botao:hover {
-    background-color: #75175e;
+@media (max-width: 375px) {
+    .main {
+        padding: 40px 12px 50px;
+    }
+
+    .titulo {
+        font-size: 30px;
+    }
+
+    .cardObra,
+    .cardErro {
+        padding: 20px 16px 16px;
+    }
+
+
+    .imagem {
+        width: 140px;
+        height: 205px;
+    }
+
+
+    .nomeLivro {
+        font-size: 1.45rem;
+    }
+
+
+    .autor {
+        font-size: 0.9rem;
+    }
 }

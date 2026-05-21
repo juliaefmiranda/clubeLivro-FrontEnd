@@ -6,11 +6,34 @@
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
-    transition: 0.2s;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
 }
 
 .botao:hover {
     transform: scale(1.05);
     color: #ffffff;
     background-color: #b89b5e;
+}
+
+@media (max-width: 600px) {
+    .botao {
+        padding: 8px 18px;
+
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    .botao {
+        width: 100%;
+        max-width: 220px;
+
+        font-size: 13px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
