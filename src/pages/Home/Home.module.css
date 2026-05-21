@@ -55,12 +55,12 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 90px;
+    gap: 45px;
 }
 
 .homeText {
-    flex: 1;
-    max-width: 760px;
+    flex: 1.25;
+    max-width: 850px;
     font-family: 'Montserrat', sans-serif;
 }
 
