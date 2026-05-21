@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
 import styles from './DicasVestibular.module.css';
+import { FiCheckCircle } from "react-icons/fi";
 
 export default function DicasVestibular() {
     const [livro, setLivro] = useState({});
@@ -50,8 +51,14 @@ export default function DicasVestibular() {
 
             <main className={styles.main}>
                 <h1>
-                    {idioma === 'pt' ? 'Dicas para Vestibulares' : 'College Entrance Exam Tips'}
+                    {idioma === 'pt' ? 'Dicas Literárias para Vestibular' : 'Literary Tips for College Entrance Exams'}
                 </h1>
+
+                <div className={styles.divisor}>
+                    <span className={styles.linhaDivisor} />
+                    <span className={styles.simbolo}>✦</span>
+                    <span className={styles.linhaDivisor} />
+                </div>
 
                 <section className={styles.conteudo}>
                     <div className={styles.livroBox}>
@@ -82,6 +89,7 @@ export default function DicasVestibular() {
                         <ul>
                             {temas.map((item) => (
                                 <li key={item.id}>
+                                    <FiCheckCircle className={styles.icone} />
                                     {idioma === 'pt' ? item.tema : item.tema_en}
                                 </li>
                             ))}

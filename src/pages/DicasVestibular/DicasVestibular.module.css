@@ -31,7 +31,7 @@
     font-size: 37px;
     font-family: 'Georgia', serif;
     font-weight: 500;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     color: #1c2321;
 }
 
@@ -101,6 +101,29 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.divisor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.linhaDivisor {
+    align-items: center;
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--borda), transparent);
+}
+
+.simbolo {
+    font-size: 14px;
+    color: var(--dourado);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
 
 .temasBox {
     flex: 1;
@@ -129,12 +152,27 @@
 }
 
 .temasBox li {
+    display: flex;
+    align-items: center;
+    gap: 2px;
     font-size: 17px;
     line-height: 1.6;
     padding: 16px 0;
     border-bottom: 1px solid rgba(140, 46, 140, 0.15);
     color: #333;
     font-family: 'Montserrat', sans-serif;
+}
+
+.icone {
+    font-size: 20px;
+    color: #9a0984;
+    background-color: #f3e5f5;
+    border-radius: 50%;
+    padding: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .temasBox li:last-child {
