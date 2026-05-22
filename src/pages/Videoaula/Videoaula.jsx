@@ -4,30 +4,22 @@ import styles from './Videoaula.module.css';
 import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
 
-export default function Home() {
-    const [idioma, setIdioma] = useState('pt');
-    const [videoUrl, setVideoUrl] = useState(formatarLinkYoutube('https://www.youtube.com/watch?v=pTcc00EpCZc'));
-
-   
+export default function Videoaulas() {
     const formatarLinkYoutube = (url) => {
         if (!url) return '';
-        
-        
+
         if (url.includes('youtube.com/embed/')) return url;
 
-        
         if (url.includes('youtube.com/shorts/')) {
             const id = url.split('shorts/')[1]?.split('?')[0];
             return `https://www.youtube.com/embed/${id}`;
         }
-        
-     
+
         if (url.includes('v=')) {
             const id = url.split('v=')[1]?.split('&')[0];
             return `https://www.youtube.com/embed/${id}`;
         }
-        
-       
+
         if (url.includes('youtu.be/')) {
             const id = url.split('youtu.be/')[1]?.split('?')[0];
             return `https://www.youtube.com/embed/${id}`;
@@ -35,6 +27,10 @@ export default function Home() {
 
         return url;
     };
+
+    const [idioma, setIdioma] = useState('pt');
+    const [videoUrl, setVideoUrl] = useState(() => formatarLinkYoutube('https://www.youtube.com/watch?v=pTcc00EpCZc'));
+        
 
     useEffect(() => {
         fetch('https://clubelivro-backend.onrender.com/api/livros', {
@@ -89,7 +85,7 @@ export default function Home() {
                         <span className={styles.dataPost}>2 Aug, 2021</span>
                     </section>
 
-                    {/* Lado Direito: Texto */}
+                    
                     <section className={styles.secaoTexto}>
                         <h3>
                             {idioma === 'pt' 
