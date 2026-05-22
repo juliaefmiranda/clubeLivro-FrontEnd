@@ -12,7 +12,7 @@
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding: 0px 70px 50px;
+    padding: 20px 40px 55px;
     box-sizing: border-box;
 }
 
@@ -20,7 +20,7 @@
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding: 15px 70px 0;
+    padding: 15px 40px 0;
     display: flex;
     justify-content: flex-end;
     box-sizing: border-box;
@@ -28,10 +28,11 @@
 
 .main h1 {
     text-align: center;
-    font-size: 37px;
+    font-size: clamp(2rem, 3vw, 3.2rem);
     font-family: 'Georgia', serif;
-    font-weight: 500;
-    margin-bottom: 25px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 38px;
     color: #1c2321;
 }
 
@@ -39,64 +40,67 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
+    gap: 36px;
 }
 
 .livroBox {
     flex: 1;
     display: flex;
     align-items: flex-start;
-    gap: 35px;
-    max-width: 800px;
+    gap: 30px;
+    max-width: 760px;
     width: 100%;
 }
 
 .livroBox img {
-    width: 220px;
+    width: 210px;
     height: auto;
     border-left: 4px solid #9a0984;
-    border-radius: 4px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    box-shadow:
+        0 16px 30px rgba(0, 0, 0, 0.07),
+        0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .livroDicas {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-top: 4px;
     flex: 1;
+    padding-top: 4px;
 }
 
 .livroDicas h2 {
-    font-size: 32px;
+    font-size: 2.2rem;
     font-family: 'Georgia', serif;
-    font-weight: 500;
-    color: #b951a1;
-    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #1f1f1f;
+    margin: 0;
 }
 
 .livroDicas h3 {
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 400;
-    color: #444;
-    margin-bottom: 18px;
-    margin-top: 4px;
+    color: #666;
+    margin: 0;
     font-family: 'Montserrat', sans-serif;
 }
 
 .livroDicas h3::after {
     content: '';
     display: block;
-    width: 120px;
+    width: 100px;
     height: 2px;
-    background-color: #d062c0;
-    margin-top: 18px;
+    background-color: #d9b35f;
+    margin-top: 14px;
     border-radius: 2px;
 }
 
 .livroDicas p {
-    font-size: 17px;
-    line-height: 1.5;
-    margin-bottom: 16px;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0;
     color: #333;
     font-family: 'Montserrat', sans-serif;
 }
@@ -105,44 +109,47 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1px;
+    gap: 8px;
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .linhaDivisor {
-    align-items: center;
-    width: 300px;
+    width: 500px;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--borda), transparent);
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--borda),
+        transparent
+    );
 }
 
 .simbolo {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--dourado);
     line-height: 1;
     flex-shrink: 0;
 }
 
-
 .temasBox {
     flex: 1;
-    background-color: #f2e5f2;
-    padding: 30px;
-    border-radius: 8px;
-    max-width: 500px;
+    background-color: #f7edf7;
+    padding: 28px;
+    border-radius: 12px;
+    max-width: 470px;
     width: 100%;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
     box-sizing: border-box;
-    min-width: 280px;
+    min-width: 260px;
 }
 
 .temasBox h3 {
-    font-size: 23px;
+    font-size: 1.5rem;
     font-family: 'Georgia', serif;
-    font-weight: 500;
+    font-weight: 400;
     color: #8c2e8c;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
 .temasBox ul {
@@ -154,27 +161,27 @@
 .temasBox li {
     display: flex;
     align-items: center;
-    gap: 2px;
-    font-size: 17px;
+    gap: 10px;
+    font-size: 0.98rem;
     line-height: 1.6;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(140, 46, 140, 0.15);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(140, 46, 140, 0.12);
     color: #333;
     font-family: 'Montserrat', sans-serif;
 }
 
+.temasBox li:last-child {
+    border-bottom: none;
+}
+
 .icone {
-    font-size: 20px;
+    font-size: 16px;
     color: #9a0984;
     background-color: #f3e5f5;
     border-radius: 50%;
-    padding: 6px;
+    padding: 7px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.temasBox li:last-child {
-    border-bottom: none;
 }
