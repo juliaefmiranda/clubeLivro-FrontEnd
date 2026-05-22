@@ -283,7 +283,7 @@ export default function QuestoesSimulado() {
                         disabled={currentIndex === 0}
                         className={`${styles.botaoNav} ${currentIndex === 0 ? styles.desabilitado : ''}`}
                     >
-                        {idioma === 'pt' ? '◀ Anterior' : '◀ Previous'}
+                        {idioma === 'pt' ? '← Anterior' : '← Previous'}
                     </button>
                     
                     {currentIndex === questoes.length - 1 ? (
@@ -299,7 +299,7 @@ export default function QuestoesSimulado() {
                             onClick={handleProxima}
                             className={styles.botaoNav}
                         >
-                            {idioma === 'pt' ? 'Próxima ▶' : 'Next ▶'}
+                            {idioma === 'pt' ? 'Próxima →' : 'Next →'}
                         </button>
                     )}
                 </div>
@@ -308,8 +308,8 @@ export default function QuestoesSimulado() {
                     <div className={styles.avisoContainer}>
                         <p className={styles.aviso}>
                             {idioma === 'pt' 
-                                ? `⚠️ Você respondeu ${Object.keys(respostas).length} de ${questoes.length} questões. Responda todas para finalizar.`
-                                : `⚠️ You have answered ${Object.keys(respostas).length} out of ${questoes.length} questions. Answer all to finish.`}
+                                ? `Você respondeu ${Object.keys(respostas).length} de ${questoes.length} questões. Responda todas para finalizar.`
+                                : `You have answered ${Object.keys(respostas).length} out of ${questoes.length} questions. Answer all to finish.`}
                         </p>
                     </div>
                 )}

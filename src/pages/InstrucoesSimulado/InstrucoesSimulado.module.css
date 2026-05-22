@@ -9,7 +9,7 @@
 .main {
     flex: 1;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 60px 30px 80px;
     box-sizing: border-box;
@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 42px;
+    margin-bottom: 10px;
 }
 
 .titulo {
@@ -42,113 +42,57 @@
 }
 
 .conteudo {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .subtitulo {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 400;
     color: #1f1f1f;
-    margin-bottom: 30px;
-    text-align: center;
+    margin-bottom: 25px;
+    text-align: left;
     border-bottom: 2px solid #e3cf93;
     padding-bottom: 15px;
     display: inline-block;
     width: auto;
 }
 
-.infoCard {
-    background: linear-gradient(135deg, #f7f5f1 0%, #fefcf8 100%);
-    border: 1px solid #e3cf93;
-    border-radius: 16px;
-    padding: 25px 30px;
+.textoInfo {
+    background-color: transparent;
+    padding: 0;
     margin-bottom: 40px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+    width: 100%;
 }
 
-.infoItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.infoLabel {
-    font-size: 1rem;
-    color: #8a6c2f;
-    font-weight: 500;
-}
-
-.infoValue {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #b951a1;
-}
-
-.instrucoesTexto {
-    background-color: #fff;
-    border-radius: 16px;
-    padding: 35px 40px;
-    margin-bottom: 40px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    border: 1px solid #f0e8dc;
-}
-
-.instrucoesTitulo {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #1f1f1f;
-    margin: 25px 0 15px 0;
-}
-
-.instrucoesTitulo:first-of-type {
-    margin-top: 0;
-}
-
-.instrucoesTexto p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #444;
-    margin-bottom: 20px;
+.textoInfo p {
+    font-size: 1.2rem;
+    line-height: 1.95;
+    margin-bottom: 28px;
+    color: #333;
     font-family: 'Montserrat', sans-serif;
-}
-
-.listaInstrucoes {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 25px;
-}
-
-.listaInstrucoes li {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
 }
 
 .botaoContainerFinal {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .botaoIniciar {
     background-color: #b951a1;
     color: #fff;
     border: none;
-    padding: 14px 42px;
+    padding: 12px 32px;
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 400;
     font-family: 'Montserrat', sans-serif;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.2s ease;
-    box-shadow: 0 4px 12px rgba(88, 42, 77, 0.2);
+    box-shadow: 0 4px 12px rgba(88, 42, 77, 0.15);
 }
 
 .botaoIniciar:hover {
@@ -156,14 +100,23 @@
     transform: scale(1.05);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+    .textoInfo p {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 1024px) {
     .main {
         padding: 50px 24px 70px;
     }
+}
 
+@media (max-width: 768px) {
     .topo {
         flex-direction: column;
         gap: 22px;
+        margin-bottom: 25px;
     }
 
     .botaoContainer {
@@ -173,25 +126,20 @@
     }
 
     .subtitulo {
-        font-size: 1.5rem;
-        text-align: center;
+        font-size: 1.8rem;
         display: block;
+        text-align: center;
+        margin-bottom: 20px;
     }
 
-    .instrucoesTexto {
-        padding: 25px 20px;
+    .textoInfo p {
+        font-size: 1rem;
+        line-height: 1.8;
+        text-align: left;
     }
 
-    .instrucoesTitulo {
-        font-size: 1.25rem;
-    }
-
-    .infoCard {
-        padding: 20px;
-    }
-
-    .infoValue {
-        font-size: 1.2rem;
+    .textoInfo {
+        margin-bottom: 30px;
     }
 }
 
@@ -201,18 +149,18 @@
     }
 
     .subtitulo {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
-    .instrucoesTexto p,
-    .listaInstrucoes li {
+    .textoInfo p {
         font-size: 0.95rem;
+        line-height: 1.75;
     }
 
     .botaoIniciar {
-        padding: 12px 32px;
+        padding: 10px 28px;
         font-size: 1rem;
         width: 100%;
-        max-width: 280px;
+        max-width: 250px;
     }
 }
