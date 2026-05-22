@@ -3,20 +3,30 @@ import { useParams } from "react-router-dom";
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from "../../components/BotaoIdioma/BotaoIdioma";
+import { Link } from "react-router-dom";
+import { APIs } from "../../config/apis"
 
 import styles from './DetalhesLivro.module.css';
 
 export default function DetalhesLivro() {
-    const { id } = useParams();
+    const { origem, id } = useParams();
     const [livro, setLivro] = useState(null);
     const [idioma, setIdioma] = useState('pt');
     const [abaAtiva, setAbaAtiva] = useState('visao');
 
     useEffect(() => {
 
-        fetch(`https://clubelivro-backend.onrender.com/api/livros/${id}`, {
+        const apiSelecionada = APIs.find(
+            (api) => api.origem === origem
+        );
+
+        console.log('Origem:', origem);
+        console.log('API:', apiSelecionada);
+        if (!apiSelecionada) return;
+
+        fetch(`${apiSelecionada.url}/${id}`, {
             headers: {
-                'x-api-key': import.meta.env.VITE_API_KEY_ENTRE_LINHAS,
+                'x-api-key': apiSelecionada.apiKey,
             },
         })
             .then((res) => {
@@ -31,7 +41,7 @@ export default function DetalhesLivro() {
                 console.error('Erro ao buscar livro:', erro);
             });
 
-    }, [id]);
+    }, [id, origem]);
 
     if (!livro) {
         return (
@@ -51,7 +61,11 @@ export default function DetalhesLivro() {
             <Navbar idioma={idioma} />
 
             <main className={styles.detalhes}>
-                <div className={styles.topBar}>
+                <div className={styles.topoDetalhes}>
+
+                    <Link to="/obras" className={styles.botaoVoltar}>
+                        ← Voltar para obras
+                    </Link>
 
                     <BotaoIdioma
                         idioma={idioma}
