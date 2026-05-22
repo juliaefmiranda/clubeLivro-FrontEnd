@@ -67,10 +67,14 @@ export default function Home() {
                         <div className={styles.book}>
                             <img src={capa} alt="A Moreninha" />
                         </div>
-
-                        <button className={styles.botao}>
-                            {idioma === 'pt' ? 'Ver mais informações →' : 'See more information →'}
-                        </button>
+                        <Link
+                            to="/obras/entre-linhas/1"
+                            className={styles.botao}
+                        >
+                            {idioma === 'pt'
+                                ? 'Ver mais informações →'
+                                : 'See more information →'}
+                        </Link>
                     </section>
                 </section>
             </main>
