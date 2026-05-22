@@ -1,0 +1,460 @@
+.pagina {
+    min-height: 100vh;
+    background-color: #fcfbf7;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.main {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 30px 80px;
+    box-sizing: border-box;
+}
+
+.topo {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 42px;
+}
+
+.titulo {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: #1f1f1f;
+    margin: 0;
+    text-align: center;
+    line-height: 1.08;
+}
+
+.botaoContainer {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.progressoContainer {
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #f0e8dc;
+}
+
+.progressoInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.progressoBarra {
+    width: 100%;
+    height: 8px;
+    background-color: #f0e8dc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progressoPreenchido {
+    height: 100%;
+    background-color: #b951a1;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.questaoCard {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0e8dc;
+}
+
+.pergunta {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #1f1f1f;
+    margin-bottom: 35px;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.opcaoLabel {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fcfbf7;
+    border: 1px solid #e3d5c0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.opcaoLabel:hover {
+    background-color: #f7f5f1;
+    border-color: #b951a1;
+    transform: translateX(5px);
+}
+
+.radio {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+    accent-color: #b951a1;
+}
+
+.opcaoLetra {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #b951a1;
+    margin-right: 15px;
+    min-width: 30px;
+}
+
+.opcaoTexto {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.4;
+    flex: 1;
+}
+
+.navegacaoBotoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.botaoNav {
+    background-color: #fff;
+    color: #b951a1;
+    border: 2px solid #b951a1;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botaoNav:hover:not(.desabilitado) {
+    background-color: #b951a1;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.desabilitado {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.botaoFinalizar {
+    background-color: #b951a1;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botaoFinalizar:hover:not(:disabled) {
+    background-color: #9a0984;
+    transform: scale(1.05);
+}
+
+.botaoFinalizar:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.avisoContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.aviso {
+    font-size: 0.9rem;
+    color: #e67e22;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff3e0;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.loading {
+    font-size: 1.1rem;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.resultadoContainer {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.notaCard {
+    background: linear-gradient(135deg, #b951a1 0%, #9a0984 100%);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.notaCirculo {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.notaValor {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.notaMax {
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
+
+.notaTexto {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.questoesRevisao {
+    margin-bottom: 40px;
+}
+
+.revisaoTitulo {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #1f1f1f;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.cardRevisao {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 4px solid;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.cardRevisao.correta {
+    border-left-color: #27ae60;
+}
+
+.cardRevisao.errada {
+    border-left-color: #e74c3c;
+}
+
+.perguntaRevisao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0e8dc;
+}
+
+.numeroQuestao {
+    font-weight: 600;
+    color: #b951a1;
+    font-size: 1rem;
+}
+
+.statusIcone {
+    font-size: 1.2rem;
+}
+
+.textoPergunta {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.respostaRevisao p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.explicacao {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed #e0d5c5;
+    color: #666;
+}
+
+.botoesResultado {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.botaoReiniciar, .botaoVoltar {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botaoReiniciar {
+    background-color: #fff;
+    color: #b951a1;
+    border: 2px solid #b951a1;
+}
+
+.botaoReiniciar:hover {
+    background-color: #b951a1;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.botaoVoltar {
+    background-color: #b89b5e;
+    color: #fff;
+    border: none;
+}
+
+.botaoVoltar:hover {
+    background-color: #9a7f4a;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 50px 24px 70px;
+    }
+
+    .topo {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .botaoContainer {
+        position: static;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .questaoCard {
+        padding: 25px;
+    }
+
+    .pergunta {
+        font-size: 1.2rem;
+    }
+
+    .opcaoLabel {
+        padding: 12px 15px;
+    }
+
+    .opcaoTexto {
+        font-size: 0.9rem;
+    }
+
+    .navegacaoBotoes {
+        flex-direction: column;
+    }
+
+    .botaoNav, .botaoFinalizar {
+        width: 100%;
+    }
+
+    .notaValor {
+        font-size: 3rem;
+    }
+
+    .revisaoTitulo {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .main {
+        padding: 45px 16px 60px;
+    }
+
+    .questaoCard {
+        padding: 20px;
+    }
+
+    .pergunta {
+        font-size: 1.1rem;
+    }
+
+    .opcoes {
+        gap: 12px;
+    }
+
+    .opcaoLabel {
+        padding: 10px 12px;
+    }
+
+    .opcaoLetra {
+        font-size: 1rem;
+        margin-right: 10px;
+    }
+
+    .opcaoTexto {
+        font-size: 0.85rem;
+    }
+
+    .notaCard {
+        padding: 25px;
+    }
+
+    .notaValor {
+        font-size: 2.5rem;
+    }
+
+    .cardRevisao {
+        padding: 18px;
+    }
+}

@@ -1,0 +1,218 @@
+.pagina {
+    min-height: 100vh;
+    background-color: #fcfbf7;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 30px 80px;
+    box-sizing: border-box;
+}
+
+.topo {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 42px;
+}
+
+.titulo {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 400;
+    color: #1f1f1f;
+    margin: 0;
+    text-align: center;
+    line-height: 1.08;
+}
+
+.botaoContainer {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.conteudo {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.subtitulo {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #1f1f1f;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid #e3cf93;
+    padding-bottom: 15px;
+    display: inline-block;
+    width: auto;
+}
+
+.infoCard {
+    background: linear-gradient(135deg, #f7f5f1 0%, #fefcf8 100%);
+    border: 1px solid #e3cf93;
+    border-radius: 16px;
+    padding: 25px 30px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.infoLabel {
+    font-size: 1rem;
+    color: #8a6c2f;
+    font-weight: 500;
+}
+
+.infoValue {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #b951a1;
+}
+
+.instrucoesTexto {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 35px 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0e8dc;
+}
+
+.instrucoesTitulo {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #1f1f1f;
+    margin: 25px 0 15px 0;
+}
+
+.instrucoesTitulo:first-of-type {
+    margin-top: 0;
+}
+
+.instrucoesTexto p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.listaInstrucoes {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.listaInstrucoes li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.botaoContainerFinal {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.botaoIniciar {
+    background-color: #b951a1;
+    color: #fff;
+    border: none;
+    padding: 14px 42px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 12px rgba(88, 42, 77, 0.2);
+}
+
+.botaoIniciar:hover {
+    background-color: #9a0984;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 50px 24px 70px;
+    }
+
+    .topo {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .botaoContainer {
+        position: static;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .subtitulo {
+        font-size: 1.5rem;
+        text-align: center;
+        display: block;
+    }
+
+    .instrucoesTexto {
+        padding: 25px 20px;
+    }
+
+    .instrucoesTitulo {
+        font-size: 1.25rem;
+    }
+
+    .infoCard {
+        padding: 20px;
+    }
+
+    .infoValue {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .main {
+        padding: 45px 16px 60px;
+    }
+
+    .subtitulo {
+        font-size: 1.3rem;
+    }
+
+    .instrucoesTexto p,
+    .listaInstrucoes li {
+        font-size: 0.95rem;
+    }
+
+    .botaoIniciar {
+        padding: 12px 32px;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 280px;
+    }
+}
