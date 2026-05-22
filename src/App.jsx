@@ -3,7 +3,8 @@ import Home from './pages/Home/Home';
 import Obras from './pages/Obras/Obras';
 import Sobre from './pages/Sobre/Sobre';
 import Videoaulas from './pages/Videoaula/Videoaula';
-import DicasVestibular from './pages/DicasVestibular/DicasVestibular'
+import DicasVestibular from './pages/DicasVestibular/DicasVestibular';
+import DetalhesLivro from './pages/DetalhesLivro/DetalhesLivro';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/sobre" element={<Sobre />} />
                 <Route path="/video-aulas" element={<Videoaulas />} />
                 <Route path="/dicas-vestibular" element={<DicasVestibular />} />
+                <Route path='/obras/:origem/:id' element={<DetalhesLivro/>}/>
             </Routes>
         </BrowserRouter>
     );
