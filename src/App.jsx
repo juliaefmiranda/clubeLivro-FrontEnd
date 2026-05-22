@@ -19,7 +19,7 @@ function App() {
                 <Route path="/video-aulas" element={<Videoaulas />} />
                 <Route path="/dicas-vestibular" element={<DicasVestibular />} />
                 <Route path="/simulado" element={<InstrucoesSimulado />} />
-                <Route path="/simulados" element={<InstrucoesSimulado />} /> {/* Adicione esta linha */}
+                <Route path="/simulados" element={<InstrucoesSimulado />} />
                 <Route path="/simulado/questoes" element={<QuestoesSimulado />} />
                 <Route path='/obras/:origem/:id' element={<DetalhesLivro/>}/>
             </Routes>
