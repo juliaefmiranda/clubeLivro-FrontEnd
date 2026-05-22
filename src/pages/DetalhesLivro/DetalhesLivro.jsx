@@ -7,7 +7,7 @@ import BotaoIdioma from "../../components/BotaoIdioma/BotaoIdioma";
 import styles from './DetalhesLivro.module.css';
 
 export default function DetalhesLivro() {
-    const { origem, id } = useParams();
+    const { id } = useParams();
     const [livro, setLivro] = useState(null);
     const [idioma, setIdioma] = useState('pt');
     const [abaAtiva, setAbaAtiva] = useState('visao');
@@ -24,8 +24,8 @@ export default function DetalhesLivro() {
                 return res.json();
             })
             .then((data) => {
-                console.log('Livro recebido:', data);
-                setLivro(data);
+                console.log(JSON.stringify(data, null, 2));
+                setLivro(data.data);
             })
             .catch((erro) => {
                 console.error('Erro ao buscar livro:', erro);
