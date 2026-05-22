@@ -16,7 +16,7 @@
 .wrapper {
     min-height: 100vh;
     background-color: var(--bg);
-    font-family: 'Georgia', serif;
+    font-family: 'Georgia', ;
     color: var(--texto);
     display: flex;
     flex-direction: column;
