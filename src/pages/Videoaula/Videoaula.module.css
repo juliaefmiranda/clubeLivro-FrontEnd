@@ -83,7 +83,7 @@
     margin-top: 15px;
 }
 
-/* Seção de Texto */
+
 .secaoTexto {
     width: 45%;
     display: flex;
@@ -108,7 +108,7 @@
     color: #333333;
 }
 
-/* Responsividade */
+
 @media (max-width: 850px) {
     .conteudoGrid {
         flex-direction: column;
