@@ -34,7 +34,7 @@ export default function Obras() {
 
     return (
         <div className={styles.pagina}>
-            <Navbar idioma={idioma} />
+            <Navbar idioma={idioma}/>
 
             <main className={styles.main}>
                 <div className={styles.topo}>
