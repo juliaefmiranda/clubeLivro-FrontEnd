@@ -6,6 +6,8 @@ import Videoaulas from './pages/Videoaula/Videoaula';
 import DicasVestibular from './pages/DicasVestibular/DicasVestibular';
 import QuestoesSimulado from './pages/QuestoesSimulado/QuestoesSimulado';
 import InstrucoesSimulado from './pages/InstrucoesSimulado/InstrucoesSimulado';
+import DetalhesLivro from './pages/DetalhesLivro/DetalhesLivro';
+
 
 function App() {
     return (
@@ -19,6 +21,7 @@ function App() {
                 <Route path="/simulado" element={<InstrucoesSimulado />} />
                 <Route path="/simulados" element={<InstrucoesSimulado />} /> {/* Adicione esta linha */}
                 <Route path="/simulado/questoes" element={<QuestoesSimulado />} />
+                <Route path='/obras/:origem/:id' element={<DetalhesLivro/>}/>
             </Routes>
         </BrowserRouter>
     );

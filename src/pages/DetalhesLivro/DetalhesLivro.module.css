@@ -1,0 +1,159 @@
+.pagina {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fcfbf7;
+    color: #1f1f1f;
+    overflow-x: hidden;
+}
+
+.detalhes {
+    flex: 1;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 70px 70px;
+    box-sizing: border-box;
+}
+
+.topBar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.carregando {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #b951a1;
+}
+
+.secaoPrincipal {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(135deg, #f8eef7, #f4ebf8);
+    border-radius: 14px;
+    padding: 45px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 45px;
+}
+
+.capaLivro img {
+    width: 280px;
+    border-left: 5px solid #9a0984;
+    border-radius: 6px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1);
+}
+
+.infoLivro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.generoLivro {
+    width: fit-content;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background-color: #f3e5f5;
+    color: #9a0984;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(154, 9, 132, 0.2);
+}
+
+.infoLivro h1 {
+    font-size: 52px;
+    font-family: 'Georgia', serif;
+    font-weight: 500;
+    color: #1c2321;
+    line-height: 1.1;
+}
+
+.infoLivro h2 {
+    font-size: 22px;
+    color: #666;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.anoLivro {
+    font-size: 15px;
+    color: #888;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.resumoLivro {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 8px;
+}
+
+.tabsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+.tabsContainer button {
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(154, 9, 132, 0.15);
+    background-color: white;
+    color: #8c2e8c;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tabsContainer button:hover {
+    background-color: #f3e5f5;
+    transform: translateY(-2px);
+}
+
+.active {
+    background-color: #b951a1 !important;
+    color: white !important;
+    border-color: #b951a1 !important;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.cardInfo {
+    background-color: white;
+    border-radius: 12px;
+    padding: 35px;
+    border-left: 4px solid #b951a1;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.cardInfo h3 {
+    font-size: 28px;
+    font-family: 'Georgia', serif;
+    font-weight: 500;
+    color: #383838;
+    margin-bottom: 18px;
+}
+
+.cardInfo p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #383838;
+    font-family: 'Montserrat', sans-serif;
+}

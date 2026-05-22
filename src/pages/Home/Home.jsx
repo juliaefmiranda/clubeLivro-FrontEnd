@@ -3,9 +3,10 @@ import Navbar from '../../components/Navbar/Navbar';
 import styles from './Home.module.css';
 import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
-    const [capa, setCapa] = useState('');
+    const [livro, setLivro] = useState('');
     const [idioma, setIdioma] = useState('pt');
 
     useEffect(() => {
@@ -21,7 +22,7 @@ export default function Home() {
             .then((data) => {
                 console.log('Dados recebidos:', data);
                 if (data && data[0]) {
-                    setCapa(data[0].capa);
+                    setLivro(data[0].capa);
                 }
             })
             .catch((erro) => {
@@ -64,12 +65,19 @@ export default function Home() {
 
                     <section className={styles.homeBook}>
                         <div className={styles.book}>
-                            <img src={capa} alt="A Moreninha" />
+                            <img src={livro?.capa} alt={livro?.titulo} />
                         </div>
 
-                        <button className={styles.botao}>
-                            {idioma === 'pt' ? 'Ver mais informações →' : 'See more information →'}
-                        </button>
+                        <Link
+                            to={`/obras/${livro?.origem}/${livro?.id}`}
+                            className={styles.botao}
+                        >
+
+                            {idioma === 'pt'
+                                ? 'Ver mais informações →'
+                                : 'See more information →'}
+
+                        </Link>
                     </section>
                 </section>
             </main>
