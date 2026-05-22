@@ -92,7 +92,7 @@ export default function Sobre() {
             <Navbar idioma={idioma} />
 
             <main className={styles.main}>
-                {/* ── TOPO ── */}
+                {/* topo */}
                 <div className={styles.topo}>
                     <div className={styles.topoBotao}>
                         <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
@@ -105,14 +105,14 @@ export default function Sobre() {
                     </div>
                 </div>
 
-                {/* ── DIVISOR ── */}
+                {/* divisor */}
                 <div className={styles.divisor}>
                     <span className={styles.divisorLine} />
                     <span className={styles.divisorOrnament}>✦</span>
                     <span className={styles.divisorLine} />
                 </div>
 
-                {/* ── SOBRE ── */}
+                {/* sobre */}
                 <section className={styles.section}>
                     <div className={styles.textBlock}>
                         <p>{t.descricao1_pt}</p>
@@ -121,7 +121,7 @@ export default function Sobre() {
                     </div>
                 </section>
 
-                {/* ── DISCIPLINAS / CURSOS ── */}
+                {/* disciplinas */}
                 <section className={styles.cardsSection}>
                     <div className={styles.infoCard}>
                         <h3 className={styles.infoCardTitle}>{t.disciplinas_pt}</h3>
@@ -158,7 +158,7 @@ export default function Sobre() {
                     </div>
                 </section>
 
-                {/* ── APIs ── */}
+                {/* api´s */}
                 <section className={styles.apiSection}>
                     <div className={styles.apiIcon} aria-hidden="true">
                         ⚙
@@ -180,14 +180,14 @@ export default function Sobre() {
                     </div>
                 </section>
 
-                {/* ── DIVISOR ── */}
+                {/* divisor*/}
                 <div className={styles.divisor}>
                     <span className={styles.divisorLine} />
                     <span className={styles.divisorOrnament}>✦</span>
                     <span className={styles.divisorLine} />
                 </div>
 
-                {/* ── EQUIPE ── */}
+                {/* equipe */}
                 <section className={styles.equipeSection}>
                     <div className={styles.equipeTitulo}>
                         <h2 className={styles.equipeH2}>{t.equipe_pt}</h2>
