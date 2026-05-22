@@ -19,13 +19,7 @@
     width: 100%;
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 42px;
-}
-
-.topoTexto {
-    text-align: center;
+    margin-bottom: 28px;
 }
 
 .botaoContainer {
@@ -37,12 +31,21 @@
 }
 
 .titulo {
-    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-size: clamp(2.4rem, 5vw, 5rem);
     font-weight: 400;
     color: #1f1f1f;
     margin: 0;
-    text-align: center;
     line-height: 1.08;
+    margin-left: 15px;
+}
+
+.linha {
+    width: 140px;
+    height: 2px;
+    background-color: #e3cf93;
+    margin-bottom: 30px;
+    border-radius: 2px;
+    margin-left: 15px;
 }
 
 .gridObras {
