@@ -11,10 +11,10 @@ export default function Footer({idioma}) {
                     {idioma === 'pt' ? 'Sobre' : 'About'}
                 </a>
                 <a href="#obras">
-                    {idioma === 'pt' ? 'Obras' : 'Works'}
+                    {idioma === 'pt' ? 'Obras' : 'Books'}
                 </a>
                 <a href="#videoaulas">
-                    {idioma === 'pt' ? 'Video aulas' : 'Video lessons'}
+                    {idioma === 'pt' ? 'Videoaulas' : 'Video lessons'}
                 </a>
                 <a href="#dicas-vestibular">
                     {idioma === 'pt' ? 'Dicas vestibular' : 'Exam Tips'}

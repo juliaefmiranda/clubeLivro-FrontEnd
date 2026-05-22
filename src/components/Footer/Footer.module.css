@@ -1,4 +1,6 @@
 .footer {
+    width: 100%;
+    overflow-x: hidden;
     background-color: #f6f3ed;
     padding: 30px 40px 20px 40px;
     font-family: 'Montserrat', sans-serif;
@@ -9,10 +11,10 @@
 
 .links {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 18px 30px;
     margin-bottom: 20px;
     width: 100%;
 }
@@ -41,10 +43,68 @@
     border-top: 1px solid #eadeca;
     padding-top: 25px;
     width: 100%;
+    text-align: center;
 }
 
 .copyright p {
     margin: 0;
     font-size: 13px;
     color: #777;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 28px 24px 20px;
+    }
+
+    .links {
+        gap: 16px 22px;
+    }
+
+    .links a {
+        font-size: 13px;
+    }
+
+    .copyright p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        padding: 24px 16px 18px;
+    }
+
+    .links {
+        display: grid;
+
+        grid-template-columns: repeat(2, auto);
+
+        justify-content: center;
+
+        gap: 14px 28px;
+
+        text-align: center;
+    }
+
+    .links a {
+        font-size: 12px;
+    }
+
+    .copyright {
+        padding-top: 20px;
+    }
+
+    .copyright p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 360px) {
+    .links {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
 }
