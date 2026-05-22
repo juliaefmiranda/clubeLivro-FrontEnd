@@ -1,0 +1,162 @@
+.pagina {
+    min-height: 100vh;
+    background-color: #f6f1ea;
+    display: flex;
+    flex-direction: column;
+}
+
+.detalhes {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 50px 30px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.carregando {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5c3b2e;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.topBar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.secaoPrincipal {
+    width: 100%;
+    background-color: #eadfce;
+    border-radius: 30px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    gap: 55px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+}
+
+.capaLivro {
+    flex-shrink: 0;
+}
+
+.capaLivro img {
+    width: 300px;
+    border-radius: 22px;
+    object-fit: cover;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    transition: 0.3s ease;
+}
+
+.capaLivro img:hover {
+    transform: scale(1.02);
+}
+
+.infoLivro {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.generoLivro {
+    width: fit-content;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: #6e402d;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;    
+}
+
+.infoLivro h1 {
+    font-size: 3.3rem;
+    color: #151515;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.infoLivro h2 {
+    font-size: 1.5rem;
+    color: #7a5a49;
+    font-weight: 500;
+}
+
+.anoLivro {
+    font-size: 1rem;
+    color: #8b6b59;
+}
+
+.resumoLivro {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #4b2e2e;
+    max-width: 720px;
+}
+
+.tabsContainer {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tabsContainer button {
+    padding: 13px 24px;
+    border: none;
+    border-radius: 999px;
+    background: #dfcfbc;
+    color: #4b2e2e;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.tabsContainer button:hover {
+    transform: translateY(-2px);
+    background: #d4bea6;
+}
+
+.active {
+    background: #6e402d !important;
+    color: white !important;
+}
+
+.conteudoTabs {
+    width: 100%;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.cardInfo {
+    background: white;
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    transition: 0.3s ease;
+}
+
+.cardInfo:hover {
+    transform: translateY(-3px);
+}
+
+.cardInfo h3 {
+    font-size: 1.4rem;
+    color: #3b2418;
+    margin-bottom: 18px;
+}
+
+.cardInfo p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #5f4336;
+}
