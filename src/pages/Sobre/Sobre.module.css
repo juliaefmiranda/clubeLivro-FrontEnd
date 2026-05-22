@@ -5,19 +5,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
 
 :root {
-    --bg:          #e8e6e1;
-    --bg-card:     #f0ede8;
-    --borda:       #c9b89a;
-    --dourado:     #b5924c;
-    --dourado-glow:#d4a96a;
-    --texto:       #2a1f0e;
-    --texto-suave: #5a4e3a;
-    --texto-leve:  #8a7d6a;
-    --branco:      #faf8f5;
-    --radius:      8px;
+    --bg:           #e8e6e1;
+    --bg-card:      #f0ede8;
+    --borda:        #c9b89a;
+    --dourado:      #b5924c;
+    --dourado-glow: #d4a96a;
+    --texto:        #2a1f0e;
+    --texto-suave:  #5a4e3a;
+    --texto-leve:   #8a7d6a;
+    --branco:       #faf8f5;
+    --radius:       8px;
 }
 
-/* ── Wrapper ── */
 .wrapper {
     min-height: 100vh;
     background-color: var(--bg);
@@ -32,7 +31,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* ALTERADO: mais padding-top para descer o conteúdo */
     padding: 130px 32px 80px;
     gap: 52px;
     max-width: 980px;
@@ -42,79 +40,34 @@
 }
 
 /* ════════════════════════════════
-   HERO
+   TOPO
 ════════════════════════════════ */
-.hero {
+.topo {
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 56px;
+    gap: 40px;
     width: 100%;
 }
 
-.bookCoverWrap {
-    position: relative;
-    flex-shrink: 0;
-    cursor: default;
-}
-
-.bookImg,
-.bookPlaceholder {
-    width: 200px;
-    height: 280px;
-    border-radius: 4px;
-    border: 1px solid var(--borda);
-    box-shadow: 6px 6px 24px rgba(0,0,0,0.15);
-    display: block;
-    object-fit: cover;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-    position: relative;
-    z-index: 1;
-}
-
-.bookPlaceholder {
-    background: var(--bg-card);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.bookPlaceholderText {
-    font-family: 'Playfair Display', serif;
-    font-size: 13px;
-    color: var(--texto-leve);
-    letter-spacing: 2px;
-}
-
-.bookGlow {
-    position: absolute;
-    inset: 0;
-    border-radius: 4px;
-    background: radial-gradient(ellipse at center, var(--dourado-glow) 0%, transparent 70%);
-    opacity: 0;
-    z-index: 0;
-    transition: opacity 0.35s ease;
-    filter: blur(18px);
-    transform: scale(1.1);
-}
-
-.bookCoverWrap:hover .bookImg,
-.bookCoverWrap:hover .bookPlaceholder {
-    transform: translateY(-10px);
-    box-shadow: 6px 18px 40px rgba(181,146,76,0.35), 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.bookCoverWrap:hover .bookGlow {
-    opacity: 0.75;
-}
-
-.heroInfo {
-    flex: 1;
+.topoTexto {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding-top: 8px;
+    gap: 6px;
+    flex: 1;
 }
 
+.topoBotao {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 4px;
+    min-width: fit-content;
+}
+
+/* ════════════════════════════════
+   HERO TEXTO
+════════════════════════════════ */
 .tag {
     font-size: 11px;
     font-weight: 700;
@@ -137,14 +90,14 @@
     font-weight: 300;
     color: var(--texto-leve);
     letter-spacing: 1px;
-    margin: 0 0 4px;
+    margin: 0;
 }
 
 .heroDividerThin {
     width: 48px;
     height: 2px;
     background: var(--dourado);
-    margin: 4px 0 8px;
+    margin: 4px 0 0;
     border-radius: 2px;
 }
 
@@ -157,27 +110,42 @@
     margin: 0;
 }
 
+/* ════════════════════════════════
+   INFO DO LIVRO + BOTÃO
+════════════════════════════════ */
+.livroInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    width: 100%;
+}
+
 .bookAuthor {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
     font-weight: 400;
     color: var(--texto);
-    margin: 2px 0 0;
+    margin: 0;
 }
 
 .bookMeta {
     font-size: 13px;
     font-weight: 300;
     color: var(--texto-leve);
-    margin: 2px 0 0;
+    margin: 0;
 }
 
 .frase {
-    margin: 16px 0 0;
+    margin: 8px 0 0;
     padding: 16px 20px;
     border-left: 3px solid var(--dourado);
     background: var(--bg-card);
     border-radius: 0 var(--radius) var(--radius) 0;
+    text-align: left;
+    max-width: 560px;
+    width: 100%;
 }
 
 .frase p {
@@ -195,6 +163,31 @@
     letter-spacing: 0.5px;
     color: var(--dourado);
     font-style: normal;
+}
+
+.botao {
+    background-color: #b951a1;
+    color: var(--branco);
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    border-radius: var(--radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 12px #b951a1;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+}
+
+.botao:hover {
+    background-color: #75175e;;
+    transform: scale(1.05);
 }
 
 /* ════════════════════════════════
@@ -245,87 +238,57 @@
 }
 
 /* ════════════════════════════════
-   CARDS DE DISCIPLINAS / CURSOS
-   NOVO DESIGN — sem card dentro de card
+   CARDS DISCIPLINAS / CURSOS
 ════════════════════════════════ */
 .cardsSection {
     display: flex;
-    gap: 24px;
+    gap: 20px;
     width: 100%;
     flex-wrap: wrap;
 }
 
-/* cada card ocupa metade do espaço */
 .infoCard {
     flex: 1;
-    min-width: 240px;
+    min-width: 220px;
     background: var(--bg-card);
     border: 1px solid var(--borda);
-    border-radius: 16px;
-    padding: 36px 32px 32px;
-    position: relative;
-    overflow: hidden;
+    border-radius: 12px;
+    padding: 20px 24px;
     display: flex;
     flex-direction: column;
-    gap: 0;
-    transition: box-shadow 0.25s, transform 0.25s;
-    cursor: default;
-}
-
-/* faixa dourada no topo */
-.infoCard::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--dourado), var(--dourado-glow), var(--dourado));
-    border-radius: 16px 16px 0 0;
-}
-
-.infoCard:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(181,146,76,0.15);
-}
-
-.infoCardIcon {
-    font-size: 32px;
-    margin-bottom: 14px;
-    line-height: 1;
 }
 
 .infoCardTitle {
-    /* ALTERADO: usa Playfair Display */
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-size: 15px;
     font-weight: 700;
     color: var(--texto);
-    margin: 0 0 0;
+    margin: 0;
 }
 
 .infoCardDivider {
-    width: 36px;
+    width: 28px;
     height: 2px;
     background: var(--dourado);
     border-radius: 2px;
-    margin: 14px 0 20px;
+    margin: 10px 0 14px;
 }
 
 .infoCardItems {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 .infoCardItem {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 14px;
-    font-weight: 400;
+    gap: 10px;
+    font-size: 13px;
     color: var(--texto-suave);
-    padding: 10px 14px;
+    padding: 8px 12px;
     background: var(--bg);
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid transparent;
     transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
@@ -337,8 +300,8 @@
 }
 
 .infoCardItemDot {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: var(--dourado);
     flex-shrink: 0;
@@ -368,7 +331,10 @@
     margin-top: 2px;
 }
 
-.apiText { flex: 1; min-width: 200px; }
+.apiText {
+    flex: 1;
+    min-width: 200px;
+}
 
 .apiText h3 {
     font-family: 'Playfair Display', serif;
@@ -423,7 +389,6 @@
     text-align: center;
 }
 
-/* ALTERADO: título "Equipe" com Playfair Display */
 .equipeH2 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(28px, 4vw, 40px);
@@ -440,7 +405,6 @@
     margin: 0;
 }
 
-/* ALTERADO: grid com colunas menores para cards verticais maiores */
 .equipeGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -448,7 +412,6 @@
     width: 100%;
 }
 
-/* ALTERADO: card vertical, gordo, sem avatarWrap separado */
 .cardIntegrante {
     background: var(--bg-card);
     border: 1px solid var(--borda);
@@ -465,7 +428,6 @@
     cursor: default;
 }
 
-/* faixa dourada no topo */
 .cardIntegrante::before {
     content: '';
     position: absolute;
@@ -477,10 +439,9 @@
 
 .cardIntegrante:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(181,146,76,0.18);
+    box-shadow: 0 16px 40px rgba(181, 146, 76, 0.18);
 }
 
-/* ALTERADO: avatar maior */
 .avatar {
     width: 72px;
     height: 72px;
@@ -495,7 +456,7 @@
     justify-content: center;
     letter-spacing: 1px;
     flex-shrink: 0;
-    box-shadow: 0 4px 14px rgba(181,146,76,0.35);
+    box-shadow: 0 4px 14px rgba(181, 146, 76, 0.35);
     margin-bottom: 4px;
 }
 
@@ -530,6 +491,17 @@
     text-decoration: underline;
 }
 
+.fotoParticipante {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--dourado);
+    box-shadow: 0 4px 14px rgba(181, 146, 76, 0.35);
+    margin-bottom: 4px;
+}
+
+
 /* ════════════════════════════════
    RESPONSIVO
 ════════════════════════════════ */
@@ -539,22 +511,20 @@
         gap: 36px;
     }
 
-    .hero {
+    .topo {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        gap: 20px;
     }
 
-    .heroInfo {
-        align-items: center;
-        text-align: center;
+    .topoBotao {
+        width: 100%;
+        justify-content: flex-end;
         padding-top: 0;
     }
 
-    .heroDividerThin { margin: 4px auto 8px; }
-    .frase { text-align: left; }
-
-    .cardsSection { flex-direction: column; }
-    .apiSection   { flex-direction: column; }
+    .cardsSection  { flex-direction: column; }
+    .apiSection    { flex-direction: column; }
     .textBlock     { padding: 24px 20px; }
 
     .equipeGrid {
