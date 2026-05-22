@@ -55,14 +55,18 @@ export default function Videoaulas() {
         <div className={styles.header}>
             <Navbar idioma={idioma} />
 
-            <div className={styles.idiomaContainer}>
-                <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
-            </div>
-
             <main className={styles.home}>
-                <h1 className={styles.tituloPrincipal}>
-                    {idioma === 'pt' ? 'Assista Nossa Video Aula!' : 'Watch Our Video Lesson!'}
-                </h1>
+                <div className={styles.topo}>
+                    <div className={styles.topoTexto}>
+                        <h1 className={styles.tituloPrincipal}>
+                            {idioma === 'pt' ? 'Assista Nossa Video Aula!' : 'Watch Our Video Lesson!'}
+                        </h1>
+                        <div className={styles.linha}></div>
+                    </div>
+                    <div className={styles.topoBotao}>
+                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
+                    </div>
+                </div>
 
                 <div className={styles.conteudoGrid}>
                     

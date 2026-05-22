@@ -68,7 +68,7 @@ export default function Home() {
                             <img src={capa} alt="A Moreninha" />
                         </div>
                         <Link
-                            to="/obras/entre-linhas/1"
+                            to="/obras/minha-api/1"
                             className={styles.botao}
                         >
                             {idioma === 'pt'

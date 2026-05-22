@@ -25,7 +25,7 @@
 }
 
 .titulo {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.2rem, 5vw, 4rem);
     font-weight: 400;
     color: #1f1f1f;
     margin: 0;
@@ -80,7 +80,6 @@
     margin-bottom: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     border: 1px solid #f0e8dc;
-    
 }
 
 .pergunta {
@@ -150,8 +149,8 @@
     background-color: #b951a1;
     color: #fff;
     border: none;
-    padding: 10px 24px; /* MUDADO: de 12px 24px para 10px 24px */
-    font-size: 1rem; /* MUDADO: de 1.2rem para 1rem */
+    padding: 10px 24px;
+    font-size: 1rem;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
     border-radius: 6px;
@@ -173,16 +172,18 @@
     opacity: 0.5;
     cursor: not-allowed;
 }
-/* Botão Finalizar - diminuir tamanho */
+
 .botaoFinalizar {
+    width: 100%;
+    max-width: 250px;
     background-color: #b951a1;
     color: #fff;
     border: none;
-    padding: 10px 24px; /* MUDADO: de 12px 28px para 10px 24px */
-    font-size: 1rem; /* MUDADO: de 1rem para 1rem (já estava ok) */
-    font-weight: 400; /* MUDADO: de 500 para 400 */
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 400;
     font-family: 'Montserrat', sans-serif;
-    border-radius: 6px; /* MUDADO: de 8px para 6px */
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -226,39 +227,53 @@
 }
 
 .resultadoContainer {
+    width: 100%;
     max-width: 900px;
     margin: 0 auto;
 }
 
 .notaCard {
-    background: linear-gradient(135deg, #b951a1 0%, #9a0984 100%);
-    border-radius: 20px;
-    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f5f1;
+    border: 1px solid #c4a258;
+    border-radius: 16px;
+    padding: 34px 28px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
     text-align: center;
-    margin-bottom: 40px;
-    color: #fff;
 }
 
 .notaCirculo {
-    display: inline-flex;
-    align-items: baseline;
+    display: flex;
+    align-items: flex-end;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .notaValor {
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 3.2rem;
+    font-weight: 600;
     line-height: 1;
 }
 
 .notaMax {
-    font-size: 1.5rem;
-    margin-left: 5px;
+    font-size: 1.2rem;
+    margin-left: 6px;
+    margin-bottom: 6px;
+    color: #8d7f74;
 }
 
 .notaTexto {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4b4b4b;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 300px;
     margin: 0;
 }
 
@@ -267,98 +282,107 @@
 }
 
 .revisaoTitulo {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 400;
     color: #1f1f1f;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
     text-align: center;
 }
 
 .cardRevisao {
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-left: 4px solid;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    background-color: #f7f5f1;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 50px;
+    border: 1px solid #eadfce;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease;
+}
+
+.cardRevisao:hover {
+    transform: translateY(-2px);
 }
 
 .cardRevisao.correta {
-    border-left-color: #27ae60;
+    border: 1.9px solid #4caf50;
 }
 
 .cardRevisao.errada {
-    border-left-color: #e74c3c;
+    border: 1.9px solid #f56f6f;
 }
 
 .perguntaRevisao {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #f0e8dc;
+    border-bottom: 1px solid #e9ddcb;
 }
 
 .numeroQuestao {
     font-weight: 600;
     color: #b951a1;
-    font-size: 1rem;
-}
-
-.statusIcone {
     font-size: 1.2rem;
 }
 
+.statusIcone {
+    font-size: 1.05rem;
+}
+
 .textoPergunta {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #333;
-    line-height: 1.5;
-    margin-bottom: 15px;
+    line-height: 1.7;
+    margin-bottom: 14px;
     font-family: 'Montserrat', sans-serif;
 }
 
 .respostaRevisao p {
     margin: 8px 0;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     color: #555;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .explicacao {
     margin-top: 12px;
     padding-top: 12px;
-    border-top: 1px dashed #e0d5c5;
+    border-top: 1px dashed #dccdb7;
     color: #666;
 }
 
 .botoesResultado {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 18px;
     flex-wrap: wrap;
 }
 
-.botaoReiniciar, .botaoVoltar {
-    padding: 12px 28px;
+.botaoReiniciar,
+.botaoVoltar {
+    background-color: #b951a1;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400;
     font-family: 'Montserrat', sans-serif;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.botaoReiniciar {
-    background-color: #fff;
-    color: #b951a1;
-    border: 2px solid #b951a1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
 }
 
 .botaoReiniciar:hover {
-    background-color: #b951a1;
-    color: #fff;
-    transform: translateY(-2px);
+    background-color: #9a0984;
+    transform: scale(1.05);
 }
 
 .botaoVoltar {
@@ -369,55 +393,32 @@
 
 .botaoVoltar:hover {
     background-color: #9a7f4a;
-    transform: translateY(-2px);
+    transform: scale(1.03);
 }
 
-@media (max-width: 768px) {
-    .main {
-        padding: 50px 24px 70px;
-    }
-
-    .topo {
-        flex-direction: column;
-        gap: 22px;
-    }
-
-    .botaoContainer {
-        position: static;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .questaoCard {
-        padding: 25px;
-    }
-
-    .pergunta {
-        font-size: 1.2rem;
-    }
-
-    .opcaoLabel {
-        padding: 12px 15px;
-    }
-
-    .opcaoTexto {
-        font-size: 0.9rem;
-    }
-
-    .navegacaoBotoes {
-        flex-direction: column;
-    }
-
-    .botaoNav, .botaoFinalizar {
-        width: 100%;
+@media (max-width: 500px) {
+    .notaCard {
+        padding: 28px 20px;
     }
 
     .notaValor {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .revisaoTitulo {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .cardRevisao {
+        padding: 18px;
+    }
+
+    .textoPergunta {
+        font-size: 0.95rem;
+    }
+
+    .respostaRevisao p {
+        font-size: 0.9rem;
     }
 }
 
