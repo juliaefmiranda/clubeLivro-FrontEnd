@@ -6,7 +6,7 @@ import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-    const [livro, setLivro] = useState('');
+    const [capa, setCapa] = useState('');
     const [idioma, setIdioma] = useState('pt');
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export default function Home() {
             .then((data) => {
                 console.log('Dados recebidos:', data);
                 if (data && data[0]) {
-                    setLivro(data[0].capa);
+                    setCapa(data[0].capa);
                 }
             })
             .catch((erro) => {
@@ -65,19 +65,12 @@ export default function Home() {
 
                     <section className={styles.homeBook}>
                         <div className={styles.book}>
-                            <img src={livro?.capa} alt={livro?.titulo} />
+                            <img src={capa} alt="A Moreninha" />
                         </div>
 
-                        <Link
-                            to={`/obras/${livro?.origem}/${livro?.id}`}
-                            className={styles.botao}
-                        >
-
-                            {idioma === 'pt'
-                                ? 'Ver mais informações →'
-                                : 'See more information →'}
-
-                        </Link>
+                        <button className={styles.botao}>
+                            {idioma === 'pt' ? 'Ver mais informações →' : 'See more information →'}
+                        </button>
                     </section>
                 </section>
             </main>

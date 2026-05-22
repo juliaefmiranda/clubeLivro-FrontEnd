@@ -4,6 +4,8 @@ import Obras from './pages/Obras/Obras';
 import Sobre from './pages/Sobre/Sobre';
 import Videoaulas from './pages/Videoaula/Videoaula';
 import DicasVestibular from './pages/DicasVestibular/DicasVestibular';
+import QuestoesSimulado from './pages/QuestoesSimulado/QuestoesSimulado';
+import InstrucoesSimulado from './pages/InstrucoesSimulado/InstrucoesSimulado';
 import DetalhesLivro from './pages/DetalhesLivro/DetalhesLivro';
 
 
@@ -16,6 +18,9 @@ function App() {
                 <Route path="/sobre" element={<Sobre />} />
                 <Route path="/video-aulas" element={<Videoaulas />} />
                 <Route path="/dicas-vestibular" element={<DicasVestibular />} />
+                <Route path="/simulado" element={<InstrucoesSimulado />} />
+                <Route path="/simulados" element={<InstrucoesSimulado />} />
+                <Route path="/simulado/questoes" element={<QuestoesSimulado />} />
                 <Route path='/obras/:origem/:id' element={<DetalhesLivro/>}/>
             </Routes>
         </BrowserRouter>
