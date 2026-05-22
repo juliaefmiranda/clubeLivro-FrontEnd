@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
 import styles from './DicasVestibular.module.css';
-
+import { FiCheckCircle } from 'react-icons/fi';
 
 export default function DicasVestibular() {
     const [livro, setLivro] = useState({});
@@ -31,10 +31,8 @@ export default function DicasVestibular() {
                 setLivro(livroData[0]);
                 setDicas(dicasData);
                 setTemas(temasData.data);
-            }
-
-            catch (erro) {
-                console.error('Erro ao buscar dados:', erro)
+            } catch (erro) {
+                console.error('Erro ao buscar dados:', erro);
             }
         }
 
@@ -45,14 +43,17 @@ export default function DicasVestibular() {
         <div className={styles.container}>
             <Navbar idioma={idioma} />
 
-            <div className={styles.idiomaContainer}>
-                <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
-            </div>
-
             <main className={styles.main}>
-                <h1>
-                    {idioma === 'pt' ? 'Dicas Literárias para Vestibular' : 'Literary Tips for College Entrance Exams'}
-                </h1>
+                <div className={styles.topo}>
+                    <div className={styles.idiomaContainer}>
+                        <h1>
+                            {idioma === 'pt'
+                                ? 'Dicas Literárias para Vestibular'
+                                : 'Literary Tips for College Entrance Exams'}
+                        </h1>
+                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
+                    </div>
+                </div>
 
                 <div className={styles.divisor}>
                     <span className={styles.linhaDivisor} />
@@ -62,28 +63,24 @@ export default function DicasVestibular() {
 
                 <section className={styles.conteudo}>
                     <div className={styles.livroBox}>
-                        <img
-                            src={livro?.capa} alt={livro?.titulo}
-                        />
+                        <img src={livro?.capa} alt={livro?.titulo} />
 
                         <div className={styles.livroDicas}>
-                            <h2>
-                                {livro?.titulo}
-                            </h2>
+                            <h2>{livro?.titulo}</h2>
 
                             <h3>{livro?.autor}</h3>
 
                             {dicas.map((item) => (
-                                <p key={item.id}>
-                                    {idioma === 'pt' ? item.dica : item.dica_en}
-                                </p>
+                                <p key={item.id}>{idioma === 'pt' ? item.dica : item.dica_en}</p>
                             ))}
                         </div>
                     </div>
 
                     <div className={styles.temasBox}>
                         <h3>
-                            {idioma === 'pt' ? 'Possíveis temas de Redação:' : 'Possible essay topics:'}
+                            {idioma === 'pt'
+                                ? 'Possíveis temas de Redação:'
+                                : 'Possible essay topics:'}
                         </h3>
 
                         <ul>
@@ -94,13 +91,11 @@ export default function DicasVestibular() {
                                 </li>
                             ))}
                         </ul>
-
                     </div>
                 </section>
-
             </main>
 
             <Footer idioma={idioma} />
         </div>
-    )
+    );
 }
