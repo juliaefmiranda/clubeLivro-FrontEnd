@@ -3,6 +3,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
 import styles from './DicasVestibular.module.css';
+import { FiCheckCircle } from "react-icons/fi";
 
 export default function DicasVestibular() {
     const [livro, setLivro] = useState({});

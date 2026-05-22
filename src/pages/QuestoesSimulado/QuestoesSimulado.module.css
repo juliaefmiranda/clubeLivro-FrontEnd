@@ -80,6 +80,7 @@
     margin-bottom: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     border: 1px solid #f0e8dc;
+    
 }
 
 .pergunta {
@@ -146,38 +147,42 @@
 }
 
 .botaoNav {
-    background-color: #fff;
-    color: #b951a1;
-    border: 2px solid #b951a1;
-    padding: 12px 28px;
-    font-size: 1rem;
-    font-weight: 500;
+    background-color: #b951a1;
+    color: #fff;
+    border: none;
+    padding: 10px 24px; /* MUDADO: de 12px 24px para 10px 24px */
+    font-size: 1rem; /* MUDADO: de 1.2rem para 1rem */
+    font-weight: 400;
     font-family: 'Montserrat', sans-serif;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 12px rgba(88, 42, 77, 0.15);
+    text-decoration: none;
 }
 
 .botaoNav:hover:not(.desabilitado) {
-    background-color: #b951a1;
-    color: #fff;
-    transform: translateY(-2px);
+    background-color: #75175e;
+    transform: scale(1.05);
 }
 
 .desabilitado {
     opacity: 0.5;
     cursor: not-allowed;
 }
-
+/* Botão Finalizar - diminuir tamanho */
 .botaoFinalizar {
     background-color: #b951a1;
     color: #fff;
     border: none;
-    padding: 12px 28px;
-    font-size: 1rem;
-    font-weight: 500;
+    padding: 10px 24px; /* MUDADO: de 12px 28px para 10px 24px */
+    font-size: 1rem; /* MUDADO: de 1rem para 1rem (já estava ok) */
+    font-weight: 400; /* MUDADO: de 500 para 400 */
     font-family: 'Montserrat', sans-serif;
-    border-radius: 8px;
+    border-radius: 6px; /* MUDADO: de 8px para 6px */
     cursor: pointer;
     transition: all 0.2s ease;
 }
