@@ -3,81 +3,9 @@ import Navbar from '../../components/Navbar/Navbar';
 import styles from './Sobre.module.css';
 import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
+import { Link } from 'react-router-dom';
 
-const integrantes = [
-    {
-        nome_pt: 'Ana Clara Souza',
-        curso_pt: 'Desenvolvimento de Sistemas',
-        email_pt: 'ana.souza@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Bruno Henrique Lima',
-        curso_pt: 'Eletroeletrônica',
-        email_pt: 'bruno.lima@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Carla Mendes Rocha',
-        curso_pt: 'Mecânica',
-        email_pt: 'carla.rocha@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Diego Ferreira Paz',
-        curso_pt: 'Desenvolvimento de Sistemas',
-        email_pt: 'diego.paz@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Eduarda Vieira Neto',
-        curso_pt: 'Eletroeletrônica',
-        email_pt: 'eduarda.neto@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Felipe Castro Melo',
-        curso_pt: 'Mecânica',
-        email_pt: 'felipe.melo@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Gabriela Teixeira',
-        curso_pt: 'Desenvolvimento de Sistemas',
-        email_pt: 'gabriela.t@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Hugo Alves Barbosa',
-        curso_pt: 'Eletroeletrônica',
-        email_pt: 'hugo.barbosa@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Isabela Cunha Dias',
-        curso_pt: 'Mecânica',
-        email_pt: 'isabela.dias@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'João Pedro Martins',
-        curso_pt: 'Desenvolvimento de Sistemas',
-        email_pt: 'joao.martins@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Larissa Pinto Gomes',
-        curso_pt: 'Eletroeletrônica',
-        email_pt: 'larissa.gomes@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Mateus Ramos Silva',
-        curso_pt: 'Mecânica',
-        email_pt: 'mateus.silva@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Natália Costa Luz',
-        curso_pt: 'Desenvolvimento de Sistemas',
-        email_pt: 'natalia.luz@aluno.sesisenai.org.br',
-    },
-    {
-        nome_pt: 'Rafael Oliveira Jr',
-        curso_pt: 'Eletroeletrônica',
-        email_pt: 'rafael.jr@aluno.sesisenai.org.br',
-    },
-];
-
-function iniciais(nome) {
+function iniciais(nome = '') {
     return nome
         .split(' ')
         .slice(0, 2)
@@ -88,18 +16,52 @@ function iniciais(nome) {
 
 export default function Sobre() {
     const [idioma, setIdioma] = useState('pt');
-    const [capa, setCapa] = useState('');
+    const [livro, setLivro] = useState(null);
+    const [integrantes, setIntegrantes] = useState([]);
 
-    useEffect(() => {
-        fetch('https://clubelivro-backend.onrender.com/api/livros', {
-            headers: { 'x-api-key': import.meta.env.VITE_API_KEY },
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                if (data && data[0]) setCapa(data[0].capa);
-            })
-            .catch((erro) => console.error('Erro ao buscar capa:', erro));
-    }, []);
+  useEffect(() => {
+      // ── LIVROS ──
+      fetch('https://clubelivro-backend.onrender.com/api/livros', {
+          headers: {
+              'x-api-key': import.meta.env.VITE_API_KEY_ENTRE_LINHAS,
+          },
+      })
+          .then((res) => {
+              console.log('STATUS LIVROS:', res.status);
+              return res.json();
+          })
+          .then((data) => {
+              console.log('DADOS LIVROS:', data);
+
+              if (Array.isArray(data) && data[0]) {
+                  setLivro(data[0]);
+              }
+          })
+          .catch((erro) => console.error('Erro ao buscar livro:', erro));
+
+      // ── PARTICIPANTES ──
+      fetch('https://clubelivro-backend.onrender.com/api/participantes', {
+          headers: {
+              'x-api-key': import.meta.env.VITE_API_KEY_ENTRE_LINHAS,
+          },
+      })
+          .then((res) => {
+              console.log('STATUS PARTICIPANTES:', res.status);
+              return res.json();
+          })
+          .then((data) => {
+              console.log('DADOS PARTICIPANTES:', data);
+
+              if (Array.isArray(data)) {
+                  setIntegrantes(data);
+              } else if (Array.isArray(data.participantes)) {
+                  setIntegrantes(data.participantes);
+              } else {
+                  setIntegrantes([]);
+              }
+          })
+          .catch((erro) => console.error('Erro ao buscar participantes:', erro));
+  }, []);
 
     const conteudo = {
         pt: {
@@ -131,6 +93,7 @@ export default function Sobre() {
                 'Nossa API expõe os dados de A Moreninha e se conecta às APIs dos outros grupos, que cobrem diferentes livros do vestibular, formando um ecossistema literário colaborativo.',
             equipe_pt: 'Equipe',
             equipeSub_pt: 'Conheça os integrantes do projeto',
+            botao_pt: 'Ver mais informações →',
         },
         en: {
             tag_pt: 'About the Project',
@@ -161,6 +124,7 @@ export default function Sobre() {
                 'Our API exposes the data from A Moreninha and connects to APIs from other groups, each covering different entrance-exam books, forming a collaborative literary ecosystem.',
             equipe_pt: 'Team',
             equipeSub_pt: 'Meet the project members',
+            botao_pt: 'See more information →',
         },
     };
 
@@ -168,37 +132,37 @@ export default function Sobre() {
 
     return (
         <div className={styles.wrapper}>
-            <Navbar />
-            <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
+            <Navbar idioma={idioma} />
 
             <main className={styles.main}>
-                {/* ── HERO ── */}
-                <section className={styles.hero}>
-                    <div className={styles.bookCoverWrap}>
-                        {capa ? (
-                            <img className={styles.bookImg} src={capa} alt={t.titulo_pt} />
-                        ) : (
-                            <div className={styles.bookPlaceholder}>
-                                <span className={styles.bookPlaceholderText}>Capa</span>
-                            </div>
-                        )}
-                        <div className={styles.bookGlow} aria-hidden="true" />
-                    </div>
-
-                    <div className={styles.heroInfo}>
+                {/* ── TOPO ── */}
+                <div className={styles.topo}>
+                    <div className={styles.topoTexto}>
+                        <p className={styles.bookLabel}>{t.obraDestaque_pt}</p>
                         <span className={styles.tag}>{t.tag_pt}</span>
                         <h1 className={styles.heroTitle}>{t.titulo_pt}</h1>
                         <p className={styles.heroSub}>{t.subtitulo_pt}</p>
                         <div className={styles.heroDividerThin} />
-                        <p className={styles.bookLabel}>{t.obraDestaque_pt}</p>
-                        <p className={styles.bookAuthor}>{t.autor_pt}</p>
-                        <p className={styles.bookMeta}>{t.ano_pt}</p>
-                        <p className={styles.bookMeta}>{t.genero_pt}</p>
-                        <blockquote className={styles.frase}>
-                            <p>{t.frase_pt}</p>
-                            <cite>{t.fraseAutor_pt}</cite>
-                        </blockquote>
                     </div>
+                    <div className={styles.topoBotao}>
+                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
+                    </div>
+                </div>
+
+                {/* ── INFO DO LIVRO + BOTÃO ── */}
+                <section className={styles.livroInfo}>
+                    <p className={styles.bookAuthor}>{t.autor_pt}</p>
+                    <p className={styles.bookMeta}>{t.ano_pt}</p>
+                    <p className={styles.bookMeta}>{t.genero_pt}</p>
+                    <blockquote className={styles.frase}>
+                        <p>{t.frase_pt}</p>
+                        <cite>{t.fraseAutor_pt}</cite>
+                    </blockquote>
+                    {livro && (
+                        <Link to={`/obras/${livro.origem}/${livro.id}`} className={styles.botao}>
+                            {t.botao_pt}
+                        </Link>
+                    )}
                 </section>
 
                 {/* ── DIVISOR ── */}
@@ -220,7 +184,6 @@ export default function Sobre() {
                 {/* ── DISCIPLINAS / CURSOS ── */}
                 <section className={styles.cardsSection}>
                     <div className={styles.infoCard}>
-                        <div className={styles.infoCardIcon}>📚</div>
                         <h3 className={styles.infoCardTitle}>{t.disciplinas_pt}</h3>
                         <div className={styles.infoCardDivider} />
                         <div className={styles.infoCardItems}>
@@ -236,7 +199,6 @@ export default function Sobre() {
                     </div>
 
                     <div className={styles.infoCard}>
-                        <div className={styles.infoCardIcon}>🎓</div>
                         <h3 className={styles.infoCardTitle}>{t.cursos_pt}</h3>
                         <div className={styles.infoCardDivider} />
                         <div className={styles.infoCardItems}>
@@ -293,21 +255,20 @@ export default function Sobre() {
                     </div>
 
                     <div className={styles.equipeGrid}>
-                        {integrantes.map((p, i) => (
-                            <div key={i} className={styles.cardIntegrante}>
-                                <div className={styles.avatar}>{iniciais(p.nome_pt)}</div>
-                                <p className={styles.integranteNome}>{p.nome_pt}</p>
-                                <span className={styles.integranteCurso}>{p.curso_pt}</span>
-                                <a className={styles.integranteEmail} href={`mailto:${p.email_pt}`}>
-                                    {p.email_pt}
-                                </a>
-                            </div>
-                        ))}
+                        {Array.isArray(integrantes) &&
+                            integrantes.map((p) => (
+                                <div key={p.id} className={styles.cardIntegrante}>
+                                    <div className={styles.avatar}>{iniciais(p.nome)}</div>
+                                    <p className={styles.integranteNome}>{p.nome}</p>
+
+                                    <span className={styles.integranteCurso}>{p.curso}</span>
+                                </div>
+                            ))}
                     </div>
                 </section>
             </main>
 
-            <Footer />
+            <Footer idioma={idioma} />
         </div>
     );
 }
