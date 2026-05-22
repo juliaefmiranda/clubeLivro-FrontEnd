@@ -3,7 +3,6 @@ import Navbar from '../../components/Navbar/Navbar';
 import styles from './Sobre.module.css';
 import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
-import { Link } from 'react-router-dom';
 
 function iniciais(nome = '') {
     return nome
@@ -16,65 +15,32 @@ function iniciais(nome = '') {
 
 export default function Sobre() {
     const [idioma, setIdioma] = useState('pt');
-    const [livro, setLivro] = useState(null);
     const [integrantes, setIntegrantes] = useState([]);
 
-  useEffect(() => {
-      // ── LIVROS ──
-      fetch('https://clubelivro-backend.onrender.com/api/livros', {
-          headers: {
-              'x-api-key': import.meta.env.VITE_API_KEY_ENTRE_LINHAS,
-          },
-      })
-          .then((res) => {
-              console.log('STATUS LIVROS:', res.status);
-              return res.json();
-          })
-          .then((data) => {
-              console.log('DADOS LIVROS:', data);
-
-              if (Array.isArray(data) && data[0]) {
-                  setLivro(data[0]);
-              }
-          })
-          .catch((erro) => console.error('Erro ao buscar livro:', erro));
-
-      // ── PARTICIPANTES ──
-      fetch('https://clubelivro-backend.onrender.com/api/participantes', {
-          headers: {
-              'x-api-key': import.meta.env.VITE_API_KEY_ENTRE_LINHAS,
-          },
-      })
-          .then((res) => {
-              console.log('STATUS PARTICIPANTES:', res.status);
-              return res.json();
-          })
-          .then((data) => {
-              console.log('DADOS PARTICIPANTES:', data);
-
-              if (Array.isArray(data)) {
-                  setIntegrantes(data);
-              } else if (Array.isArray(data.participantes)) {
-                  setIntegrantes(data.participantes);
-              } else {
-                  setIntegrantes([]);
-              }
-          })
-          .catch((erro) => console.error('Erro ao buscar participantes:', erro));
-  }, []);
+    useEffect(() => {
+        fetch('https://clubelivro-backend.onrender.com/api/participantes', {
+            headers: {
+                'x-api-key': import.meta.env.VITE_API_KEY_ENTRE_LINHAS,
+            },
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (Array.isArray(data)) {
+                    setIntegrantes(data);
+                } else if (Array.isArray(data.participantes)) {
+                    setIntegrantes(data.participantes);
+                } else {
+                    setIntegrantes([]);
+                }
+            })
+            .catch((erro) => console.error('Erro ao buscar participantes:', erro));
+    }, []);
 
     const conteudo = {
         pt: {
             tag_pt: 'Sobre o Projeto',
             titulo_pt: 'A Moreninha',
             subtitulo_pt: 'Plataforma Literária Integrada',
-            frase_pt:
-                '"Amar é a única coisa que nos faz sentir vivos mesmo quando tudo ao redor parece adormecer."',
-            fraseAutor_pt: '— Joaquim Manuel de Macedo, A Moreninha',
-            obraDestaque_pt: 'Obra em Destaque',
-            autor_pt: 'Joaquim Manuel de Macedo',
-            ano_pt: 'Publicado em 1844',
-            genero_pt: 'Romance · 1.º Romance Brasileiro',
             descricao1_pt:
                 'Este projeto é uma iniciativa integrada entre as escolas SESI e SENAI, reunindo alunos dos cursos de Desenvolvimento de Sistemas, Eletroeletrônica e Mecânica em torno de um objetivo comum: explorar a literatura brasileira de vestibular de forma digital e colaborativa.',
             descricao2_pt:
@@ -93,19 +59,11 @@ export default function Sobre() {
                 'Nossa API expõe os dados de A Moreninha e se conecta às APIs dos outros grupos, que cobrem diferentes livros do vestibular, formando um ecossistema literário colaborativo.',
             equipe_pt: 'Equipe',
             equipeSub_pt: 'Conheça os integrantes do projeto',
-            botao_pt: 'Ver mais informações →',
         },
         en: {
             tag_pt: 'About the Project',
             titulo_pt: 'A Moreninha',
             subtitulo_pt: 'Integrated Literary Platform',
-            frase_pt:
-                '"To love is the only thing that makes us feel alive even when everything around us seems to sleep."',
-            fraseAutor_pt: '— Joaquim Manuel de Macedo, A Moreninha',
-            obraDestaque_pt: 'Featured Work',
-            autor_pt: 'Joaquim Manuel de Macedo',
-            ano_pt: 'Published in 1844',
-            genero_pt: 'Novel · 1st Brazilian Novel',
             descricao1_pt:
                 'This project is a joint initiative between SESI and SENAI schools, bringing together students from Systems Development, Electrical & Electronics, and Mechanics programs around a shared goal: exploring Brazilian entrance-exam literature in a digital and collaborative way.',
             descricao2_pt:
@@ -124,7 +82,6 @@ export default function Sobre() {
                 'Our API exposes the data from A Moreninha and connects to APIs from other groups, each covering different entrance-exam books, forming a collaborative literary ecosystem.',
             equipe_pt: 'Team',
             equipeSub_pt: 'Meet the project members',
-            botao_pt: 'See more information →',
         },
     };
 
@@ -137,33 +94,16 @@ export default function Sobre() {
             <main className={styles.main}>
                 {/* ── TOPO ── */}
                 <div className={styles.topo}>
+                    <div className={styles.topoBotao}>
+                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
+                    </div>
                     <div className={styles.topoTexto}>
-                        <p className={styles.bookLabel}>{t.obraDestaque_pt}</p>
                         <span className={styles.tag}>{t.tag_pt}</span>
                         <h1 className={styles.heroTitle}>{t.titulo_pt}</h1>
                         <p className={styles.heroSub}>{t.subtitulo_pt}</p>
                         <div className={styles.heroDividerThin} />
                     </div>
-                    <div className={styles.topoBotao}>
-                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
-                    </div>
                 </div>
-
-                {/* ── INFO DO LIVRO + BOTÃO ── */}
-                <section className={styles.livroInfo}>
-                    <p className={styles.bookAuthor}>{t.autor_pt}</p>
-                    <p className={styles.bookMeta}>{t.ano_pt}</p>
-                    <p className={styles.bookMeta}>{t.genero_pt}</p>
-                    <blockquote className={styles.frase}>
-                        <p>{t.frase_pt}</p>
-                        <cite>{t.fraseAutor_pt}</cite>
-                    </blockquote>
-                    {livro && (
-                        <Link to={`/obras/${livro.origem}/${livro.id}`} className={styles.botao}>
-                            {t.botao_pt}
-                        </Link>
-                    )}
-                </section>
 
                 {/* ── DIVISOR ── */}
                 <div className={styles.divisor}>
@@ -260,7 +200,6 @@ export default function Sobre() {
                                 <div key={p.id} className={styles.cardIntegrante}>
                                     <div className={styles.avatar}>{iniciais(p.nome)}</div>
                                     <p className={styles.integranteNome}>{p.nome}</p>
-
                                     <span className={styles.integranteCurso}>{p.curso}</span>
                                 </div>
                             ))}
