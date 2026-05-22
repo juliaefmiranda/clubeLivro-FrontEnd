@@ -112,47 +112,46 @@ export default function Sobre() {
                     <span className={styles.divisorLine} />
                 </div>
 
-                {/* sobre */}
+                {/* sobre + disciplinas juntos */}
                 <section className={styles.section}>
                     <div className={styles.textBlock}>
                         <p>{t.descricao1_pt}</p>
                         <p>{t.descricao2_pt}</p>
                         <p>{t.descricao3_pt}</p>
-                    </div>
-                </section>
 
-                {/* disciplinas */}
-                <section className={styles.cardsSection}>
-                    <div className={styles.infoCard}>
-                        <h3 className={styles.infoCardTitle}>{t.disciplinas_pt}</h3>
-                        <div className={styles.infoCardDivider} />
-                        <div className={styles.infoCardItems}>
-                            <div className={styles.infoCardItem}>
-                                <span className={styles.infoCardItemDot} />
-                                {t.disc1_pt}
+                        <div className={styles.cardsSection}>
+                            <div className={styles.infoCard}>
+                                <h3 className={styles.infoCardTitle}>{t.disciplinas_pt}</h3>
+                                <div className={styles.infoCardDivider} />
+                                <div className={styles.infoCardItems}>
+                                    <div className={styles.infoCardItem}>
+                                        <span className={styles.infoCardItemDot} />
+                                        {t.disc1_pt}
+                                    </div>
+                                    <div className={styles.infoCardItem}>
+                                        <span className={styles.infoCardItemDot} />
+                                        {t.disc2_pt}
+                                    </div>
+                                </div>
                             </div>
-                            <div className={styles.infoCardItem}>
-                                <span className={styles.infoCardItemDot} />
-                                {t.disc2_pt}
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className={styles.infoCard}>
-                        <h3 className={styles.infoCardTitle}>{t.cursos_pt}</h3>
-                        <div className={styles.infoCardDivider} />
-                        <div className={styles.infoCardItems}>
-                            <div className={styles.infoCardItem}>
-                                <span className={styles.infoCardItemDot} />
-                                {t.disc3_pt}
-                            </div>
-                            <div className={styles.infoCardItem}>
-                                <span className={styles.infoCardItemDot} />
-                                {t.disc4_pt}
-                            </div>
-                            <div className={styles.infoCardItem}>
-                                <span className={styles.infoCardItemDot} />
-                                {t.disc5_pt}
+                            <div className={styles.infoCard}>
+                                <h3 className={styles.infoCardTitle}>{t.cursos_pt}</h3>
+                                <div className={styles.infoCardDivider} />
+                                <div className={styles.infoCardItems}>
+                                    <div className={styles.infoCardItem}>
+                                        <span className={styles.infoCardItemDot} />
+                                        {t.disc3_pt}
+                                    </div>
+                                    <div className={styles.infoCardItem}>
+                                        <span className={styles.infoCardItemDot} />
+                                        {t.disc4_pt}
+                                    </div>
+                                    <div className={styles.infoCardItem}>
+                                        <span className={styles.infoCardItemDot} />
+                                        {t.disc5_pt}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
