@@ -149,7 +149,7 @@ export default function QuestoesSimulado() {
                                     <div className={styles.perguntaRevisao}>
                                         <span className={styles.numeroQuestao}>Questão {idx + 1}</span>
                                         <span className={styles.statusIcone}>
-                                            {questao.correta ? '✅' : '❌'}
+                                            {questao.correta ? '✓' : 'X'}
                                         </span>
                                     </div>
                                     <p className={styles.textoPergunta}>
@@ -183,10 +183,10 @@ export default function QuestoesSimulado() {
 
                         <div className={styles.botoesResultado}>
                             <button onClick={handleReiniciar} className={styles.botaoReiniciar}>
-                                {idioma === 'pt' ? '🔄 Refazer simulado' : '🔄 Retake exam'}
+                                {idioma === 'pt' ? 'Refazer simulado' : 'Retake exam'}
                             </button>
                             <button onClick={handleVoltarHome} className={styles.botaoVoltar}>
-                                {idioma === 'pt' ? '📚 Voltar para simulados' : '📚 Back to mock exams'}
+                                {idioma === 'pt' ? '← Voltar para simulados' : '← Back to mock exams'}
                             </button>
                         </div>
                     </div>

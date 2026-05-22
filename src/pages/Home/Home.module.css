@@ -97,12 +97,12 @@
 
 .botao {
     width: 100%;
-    max-width: 260px;
+    max-width: 250px;
     background-color: #b951a1;
     color: #fff;
     border: none;
-    padding: 12px 24px;
-    font-size: 1.2rem;
+    padding: 12px 2px;
+    font-size: 1rem;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
     border-radius: 6px;
