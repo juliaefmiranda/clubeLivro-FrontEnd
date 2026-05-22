@@ -24,11 +24,11 @@ export default function QuestoesSimulado() {
                         'x-api-key': API_KEY,
                     },
                 });
-                
+
                 if (!response.ok) {
                     throw new Error('Erro ao carregar questões');
                 }
-                
+
                 const data = await response.json();
                 setQuestoes(data);
             } catch (error) {
@@ -74,7 +74,7 @@ export default function QuestoesSimulado() {
                 correta
             };
         });
-        
+
         const nota = (acertos / questoes.length) * 100;
         setResultado({
             total: questoes.length,
@@ -134,8 +134,8 @@ export default function QuestoesSimulado() {
                                 <span className={styles.notaMax}>/100</span>
                             </div>
                             <p className={styles.notaTexto}>
-                                {idioma === 'pt' 
-                                    ? `Você acertou ${resultado.acertos} de ${resultado.total} questões` 
+                                {idioma === 'pt'
+                                    ? `Você acertou ${resultado.acertos} de ${resultado.total} questões`
                                     : `You got ${resultado.acertos} out of ${resultado.total} questions correct`}
                             </p>
                         </div>
@@ -159,7 +159,7 @@ export default function QuestoesSimulado() {
                                         <p>
                                             <strong>{idioma === 'pt' ? 'Sua resposta:' : 'Your answer:'}</strong>{' '}
                                             {questao.respostaUsuario && (
-                                                idioma === 'pt' 
+                                                idioma === 'pt'
                                                     ? questao[`opcao${questao.respostaUsuario}`]
                                                     : questao[`opcao${questao.respostaUsuario}_en`]
                                             )}
@@ -167,7 +167,7 @@ export default function QuestoesSimulado() {
                                         {!questao.correta && (
                                             <p>
                                                 <strong>{idioma === 'pt' ? 'Resposta correta:' : 'Correct answer:'}</strong>{' '}
-                                                {idioma === 'pt' 
+                                                {idioma === 'pt'
                                                     ? questao[`opcao${questao.respostaCorreta}`]
                                                     : questao[`opcao${questao.respostaCorreta}_en`]}
                                             </p>
@@ -218,7 +218,7 @@ export default function QuestoesSimulado() {
     return (
         <div className={styles.pagina}>
             <Navbar idioma={idioma} />
-            
+
             <main className={styles.main}>
                 <div className={styles.topo}>
                     <h1 className={styles.titulo}>
@@ -232,17 +232,20 @@ export default function QuestoesSimulado() {
                 <div className={styles.progressoContainer}>
                     <div className={styles.progressoInfo}>
                         <span>
-                            {idioma === 'pt' ? 'Questão' : 'Question'} {currentIndex + 1} {idioma === 'pt' ? 'de' : 'of'} {questoes.length}
+                            {idioma === 'pt' ? 'Questão' : 'Question'} {currentIndex + 1}{' '}
+                            {idioma === 'pt' ? 'de' : 'of'} {questoes.length}
                         </span>
                         <span>
-                            {idioma === 'pt' ? 'Respondidas:' : 'Answered:'} {Object.keys(respostas).length}/{questoes.length}
+                            {idioma === 'pt' ? 'Respondidas:' : 'Answered:'}{' '}
+                            {Object.keys(respostas).length}/{questoes.length}
                         </span>
                     </div>
                     <div className={styles.progressoBarra}>
-                        <div 
+                        <div
                             className={styles.progressoPreenchido}
-                            style={{ width: `${(Object.keys(respostas).length / questoes.length) * 100}%` }}
-                        ></div>
+                            style={{
+                                width: `${(Object.keys(respostas).length / questoes.length) * 100}%`,
+                            }}></div>
                     </div>
                 </div>
 
@@ -252,13 +255,14 @@ export default function QuestoesSimulado() {
                     </h2>
 
                     <div className={styles.opcoes}>
-                        {opcoes.map(opcao => {
-                            const textoOpcao = idioma === 'pt' 
-                                ? questaoAtual[`opcao${opcao}`]
-                                : questaoAtual[`opcao${opcao}_en`];
-                            
+                        {opcoes.map((opcao) => {
+                            const textoOpcao =
+                                idioma === 'pt'
+                                    ? questaoAtual[`opcao${opcao}`]
+                                    : questaoAtual[`opcao${opcao}_en`];
+
                             if (!textoOpcao) return null;
-                            
+
                             return (
                                 <label key={opcao} className={styles.opcaoLabel}>
                                     <input
@@ -278,27 +282,22 @@ export default function QuestoesSimulado() {
                 </div>
 
                 <div className={styles.navegacaoBotoes}>
-                    <button 
+                    <button
                         onClick={handleAnterior}
                         disabled={currentIndex === 0}
-                        className={`${styles.botaoNav} ${currentIndex === 0 ? styles.desabilitado : ''}`}
-                    >
+                        className={`${styles.botaoNav} ${currentIndex === 0 ? styles.desabilitado : ''}`}>
                         {idioma === 'pt' ? '← Anterior' : '← Previous'}
                     </button>
-                    
+
                     {currentIndex === questoes.length - 1 ? (
-                        <button 
+                        <button
                             onClick={handleFinalizar}
                             className={styles.botaoFinalizar}
-                            disabled={Object.keys(respostas).length !== questoes.length}
-                        >
-                            {idioma === 'pt' ? '✅ Finalizar simulado' : '✅ Finish exam'}
+                            disabled={Object.keys(respostas).length !== questoes.length}>
+                            {idioma === 'pt' ? '✓ Finalizar simulado' : '✓ Finish exam'}
                         </button>
                     ) : (
-                        <button 
-                            onClick={handleProxima}
-                            className={styles.botaoNav}
-                        >
+                        <button onClick={handleProxima} className={styles.botaoNav}>
                             {idioma === 'pt' ? 'Próxima →' : 'Next →'}
                         </button>
                     )}
@@ -307,7 +306,7 @@ export default function QuestoesSimulado() {
                 {Object.keys(respostas).length !== questoes.length && (
                     <div className={styles.avisoContainer}>
                         <p className={styles.aviso}>
-                            {idioma === 'pt' 
+                            {idioma === 'pt'
                                 ? `Você respondeu ${Object.keys(respostas).length} de ${questoes.length} questões. Responda todas para finalizar.`
                                 : `You have answered ${Object.keys(respostas).length} out of ${questoes.length} questions. Answer all to finish.`}
                         </p>
