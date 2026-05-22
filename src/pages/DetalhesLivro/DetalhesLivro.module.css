@@ -1,18 +1,27 @@
 .pagina {
     min-height: 100vh;
-    background-color: #f6f1ea;
     display: flex;
     flex-direction: column;
+    background-color: #fcfbf7;
+    color: #1f1f1f;
+    overflow-x: hidden;
 }
 
 .detalhes {
+    flex: 1;
+    max-width: 1400px;
     width: 100%;
-    max-width: 1250px;
     margin: 0 auto;
-    padding: 50px 30px 80px;
+    padding: 0px 70px 70px;
+    box-sizing: border-box;
+}
+
+.topBar {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 40px;
+    justify-content: flex-end;
+    padding-top: 15px;
+    margin-bottom: 20px;
 }
 
 .carregando {
@@ -20,115 +29,104 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #5c3b2e;
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-
-.topBar {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+    font-size: 20px;
+    color: #b951a1;
 }
 
 .secaoPrincipal {
-    width: 100%;
-    background-color: #eadfce;
-    border-radius: 30px;
-    padding: 50px;
     display: flex;
     align-items: center;
-    gap: 55px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
-}
-
-.capaLivro {
-    flex-shrink: 0;
+    gap: 50px;
+    background: linear-gradient(135deg, #f8eef7, #f4ebf8);
+    border-radius: 14px;
+    padding: 45px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 45px;
 }
 
 .capaLivro img {
-    width: 300px;
-    border-radius: 22px;
-    object-fit: cover;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-    transition: 0.3s ease;
-}
-
-.capaLivro img:hover {
-    transform: scale(1.02);
+    width: 280px;
+    border-left: 5px solid #9a0984;
+    border-radius: 6px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1);
 }
 
 .infoLivro {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 14px;
 }
 
 .generoLivro {
     width: fit-content;
     padding: 8px 18px;
     border-radius: 999px;
-    background: #6e402d;
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 600;    
+    background-color: #f3e5f5;
+    color: #9a0984;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(154, 9, 132, 0.2);
 }
 
 .infoLivro h1 {
-    font-size: 3.3rem;
-    color: #151515;
+    font-size: 52px;
+    font-family: 'Georgia', serif;
+    font-weight: 500;
+    color: #1c2321;
     line-height: 1.1;
-    font-weight: 700;
 }
 
 .infoLivro h2 {
-    font-size: 1.5rem;
-    color: #7a5a49;
-    font-weight: 500;
+    font-size: 22px;
+    color: #666;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .anoLivro {
-    font-size: 1rem;
-    color: #8b6b59;
+    font-size: 15px;
+    color: #888;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .resumoLivro {
-    font-size: 1.05rem;
-    line-height: 1.9;
-    color: #4b2e2e;
-    max-width: 720px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 8px;
 }
 
 .tabsContainer {
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 35px;
 }
 
 .tabsContainer button {
-    padding: 13px 24px;
-    border: none;
+    padding: 12px 22px;
     border-radius: 999px;
-    background: #dfcfbc;
-    color: #4b2e2e;
-    font-size: 0.95rem;
-    font-weight: 600;
+    border: 1px solid rgba(154, 9, 132, 0.15);
+    background-color: white;
+    color: #8c2e8c;
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.25s ease;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .tabsContainer button:hover {
+    background-color: #f3e5f5;
     transform: translateY(-2px);
-    background: #d4bea6;
 }
 
 .active {
-    background: #6e402d !important;
+    background-color: #b951a1 !important;
     color: white !important;
-}
-
-.conteudoTabs {
-    width: 100%;
+    border-color: #b951a1 !important;
 }
 
 .cardContainer {
@@ -138,25 +136,24 @@
 }
 
 .cardInfo {
-    background: white;
-    border-radius: 24px;
+    background-color: white;
+    border-radius: 12px;
     padding: 35px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
-    transition: 0.3s ease;
-}
-
-.cardInfo:hover {
-    transform: translateY(-3px);
+    border-left: 4px solid #b951a1;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
 }
 
 .cardInfo h3 {
-    font-size: 1.4rem;
-    color: #3b2418;
+    font-size: 28px;
+    font-family: 'Georgia', serif;
+    font-weight: 500;
+    color: #383838;
     margin-bottom: 18px;
 }
 
 .cardInfo p {
-    font-size: 1rem;
-    line-height: 1.9;
-    color: #5f4336;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #383838;
+    font-family: 'Montserrat', sans-serif;
 }

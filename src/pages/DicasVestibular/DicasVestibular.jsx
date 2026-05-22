@@ -15,7 +15,7 @@ export default function DicasVestibular() {
         async function buscarDados() {
             try {
                 const headers = {
-                    'x-api-key': import.meta.env.VITE_API_KEY,
+                    'x-api-key': import.meta.env.VITE_API_KEY_ENTRE_LINHAS,
                 };
 
                 const [livroRes, dicasRes, temasRes] = await Promise.all([

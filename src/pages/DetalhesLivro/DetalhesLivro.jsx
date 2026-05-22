@@ -16,7 +16,7 @@ export default function DetalhesLivro() {
 
         fetch(`https://clubelivro-backend.onrender.com/api/livros/${id}`, {
             headers: {
-                'x-api-key': import.meta.env.VITE_API_KEY,
+                'x-api-key': import.meta.env.VITE_API_KEY_ENTRE_LINHAS,
             },
         })
             .then((res) => {
