@@ -110,9 +110,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease,
-        background-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
     box-shadow: 0 4px 12px rgba(88, 42, 77, 0.15);
+    text-decoration: none;
 }
 
 .botao:hover {
