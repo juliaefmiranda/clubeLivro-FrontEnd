@@ -15,7 +15,6 @@ export default function DetalhesLivro() {
     const [personagens, setPersonagens] = useState([]);
 
     useEffect(() => {
-
         const apiSelecionada = APIs.find(
             (api) => api.origem === origem
         );
@@ -73,6 +72,7 @@ export default function DetalhesLivro() {
     }
 
     return (
+
         <div className={styles.pagina}>
 
             <Navbar idioma={idioma} />
@@ -302,21 +302,21 @@ export default function DetalhesLivro() {
                                 {origem === 'minha-api' ? (
                                     (personagens || []).map((personagem) => (
                                         <div key={personagem.id} className={styles.personagemCard} >
-                                        <h4>
-                                            {personagem.nome}
-                                        </h4>
-                                        <p>
-                                            {idioma === 'pt'
-                                                ? personagem.caracteristicas
-                                                : personagem.caracteristicas_en}
-                                        </p>
-                                        <p>
-                                            {idioma === 'pt'
-                                                ? personagem.representacao
-                                                : personagem.representacao_en}
+                                            <h4>
+                                                {personagem.nome}
+                                            </h4>
+                                            <p>
+                                                {idioma === 'pt'
+                                                    ? personagem.caracteristicas
+                                                    : personagem.caracteristicas_en}
+                                            </p>
+                                            <p>
+                                                {idioma === 'pt'
+                                                    ? personagem.representacao
+                                                    : personagem.representacao_en}
 
-                                        </p>
-                                    </div>
+                                            </p>
+                                        </div>
                                     ))
                                 ) : (
                                     <p>
