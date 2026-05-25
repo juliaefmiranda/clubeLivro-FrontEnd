@@ -1,7 +1,7 @@
 import styles from './Navbar.module.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-export default function Navbar({idioma}) {
+export default function Navbar({ idioma }) {
     return (
         <header className={styles.navbar}>
             <div className={styles.logoContainer}>
@@ -12,38 +12,46 @@ export default function Navbar({idioma}) {
             <nav>
                 <ul className={styles.navLinks}>
                     <li>
-                        <Link to="/">
+                        <NavLink to="/"
+                            className={({ isActive }) =>
+                                isActive ? styles.ativo : styles.link}>
                             {idioma === 'pt' ? 'HOME' : 'HOME'}
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to="/sobre">
+                        <NavLink to="/sobre"
+                            className={({ isActive }) =>
+                                isActive ? styles.ativo : styles.link}>
                             {idioma === 'pt' ? 'SOBRE' : 'ABOUT'}
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to="/obras">
+                        <NavLink to="/obras" className={({ isActive }) =>
+                            isActive ? styles.ativo : styles.link}>
                             {idioma === 'pt' ? 'OBRAS' : 'WORKS'}
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to="/video-aulas">
+                        <NavLink to="/video-aulas" className={({ isActive }) =>
+                            isActive ? styles.ativo : styles.link}>
                             {idioma === 'pt' ? 'VIDEO AULAS' : 'VIDEO LESSONS'}
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/dicas-vestibular">
+                        <NavLink to="/dicas-vestibular" className={({ isActive }) =>
+                            isActive ? styles.ativo : styles.link}>
                             {idioma === 'pt' ? 'DICAS VESTIBULAR' : 'EXAM TIPS'}
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to="/simulados">
+                        <NavLink to="/simulados" className={({ isActive }) =>
+                            isActive ? styles.ativo : styles.link}>
                             {idioma === 'pt' ? 'SIMULADOS' : 'MOCK EXAMS'}
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>
