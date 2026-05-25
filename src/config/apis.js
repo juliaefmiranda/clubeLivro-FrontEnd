@@ -2,6 +2,7 @@ export const APIs = [
     {
         origem: 'minha-api',
         url: "https://clubelivro-backend.onrender.com/api/livros",
+        personagensUrl: "https://clubelivro-backend.onrender.com/api/personagens",
         apiKey: import.meta.env.VITE_API_KEY_ENTRE_LINHAS,
     },
     {

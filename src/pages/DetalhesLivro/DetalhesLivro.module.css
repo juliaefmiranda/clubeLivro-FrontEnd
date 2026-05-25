@@ -184,3 +184,23 @@
     color: #383838;
     font-family: 'Montserrat', sans-serif;
 }
+
+.personagemCard {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fdf1ffe7;
+    border: 1.5px solid #f3d5f9cb;
+}
+
+.personagemCard h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-family: 'Georgia', serif;
+}
+
+.personagemCard p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+}
