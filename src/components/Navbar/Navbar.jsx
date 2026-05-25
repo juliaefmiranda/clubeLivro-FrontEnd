@@ -1,7 +1,9 @@
 import styles from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
 
-export default function Navbar({ idioma }) {
+import BotaoIdioma from '../BotaoIdioma/BotaoIdioma';
+
+export default function Navbar({ idioma, setIdioma }) {
     return (
         <header className={styles.navbar}>
             <div className={styles.logoContainer}>
@@ -12,49 +14,57 @@ export default function Navbar({ idioma }) {
             <nav>
                 <ul className={styles.navLinks}>
                     <li>
-                        <NavLink to="/"
-                            className={({ isActive }) =>
-                                isActive ? styles.ativo : styles.link}>
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
                             {idioma === 'pt' ? 'HOME' : 'HOME'}
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/sobre"
-                            className={({ isActive }) =>
-                                isActive ? styles.ativo : styles.link}>
+                        <NavLink
+                            to="/sobre"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
                             {idioma === 'pt' ? 'SOBRE' : 'ABOUT'}
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/obras" className={({ isActive }) =>
-                            isActive ? styles.ativo : styles.link}>
+                        <NavLink
+                            to="/obras"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
                             {idioma === 'pt' ? 'OBRAS' : 'WORKS'}
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/video-aulas" className={({ isActive }) =>
-                            isActive ? styles.ativo : styles.link}>
+                        <NavLink
+                            to="/video-aulas"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
                             {idioma === 'pt' ? 'VIDEO AULAS' : 'VIDEO LESSONS'}
                         </NavLink>
                     </li>
+
                     <li>
-                        <NavLink to="/dicas-vestibular" className={({ isActive }) =>
-                            isActive ? styles.ativo : styles.link}>
+                        <NavLink
+                            to="/dicas-vestibular"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
                             {idioma === 'pt' ? 'DICAS VESTIBULAR' : 'EXAM TIPS'}
                         </NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/simulados" className={({ isActive }) =>
-                            isActive ? styles.ativo : styles.link}>
+                        <NavLink
+                            to="/simulados"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
                             {idioma === 'pt' ? 'SIMULADOS' : 'MOCK EXAMS'}
                         </NavLink>
+                    </li>
+                    <li>
+                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
                     </li>
                 </ul>
             </nav>
         </header>
-    )
+    );
 }

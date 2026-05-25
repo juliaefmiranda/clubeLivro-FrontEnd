@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
+import { useIdioma } from '../../hooks/useIdioma';
 
-import { getAllLivros } from '../../services/livrosService.js'
+import { getAllLivros } from '../../services/livrosService.js';
 
 import styles from './Obras.module.css';
 
 export default function Obras() {
-    const [idioma, setIdioma] = useState('pt');
+    const { idioma, setIdioma } = useIdioma();
     const [livros, setLivros] = useState([]);
     const [loading, setLoading] = useState(true);
     const [erros, setErros] = useState([]);
@@ -34,30 +34,19 @@ export default function Obras() {
 
     return (
         <div className={styles.pagina}>
-            <Navbar idioma={idioma} />
+            <Navbar idioma={idioma} setIdioma={setIdioma} />
 
             <main className={styles.main}>
                 <div className={styles.topo}>
                     <h1 className={styles.titulo}>
-                        {idioma === 'pt'
-                            ? 'Obras do Vestibular'
-                            : 'Entrance Exam Books'}
+                        {idioma === 'pt' ? 'Obras do Vestibular' : 'Entrance Exam Books'}
                     </h1>
-
-                    <div className={styles.botaoContainer}>
-                        <BotaoIdioma
-                            idioma={idioma}
-                            setIdioma={setIdioma}
-                        />
-                    </div>
                 </div>
 
                 {loading ? (
                     <div className={styles.loadingContainer}>
                         <p className={styles.loading}>
-                            {idioma === 'pt'
-                                ? 'Carregando obras ...'
-                                : 'Loading Books ...'}
+                            {idioma === 'pt' ? 'Carregando obras ...' : 'Loading Books ...'}
                         </p>
                     </div>
                 ) : (
@@ -69,7 +58,11 @@ export default function Obras() {
                                 to={`/obras/${livro.origem}/${livro.id}`}
                                 className={styles.cardObra}>
                                 <div className={styles.imagemContainer}>
-                                    <img src={livro.capa} alt={livro.tituo} className={styles.imagem} />
+                                    <img
+                                        src={livro.capa}
+                                        alt={livro.titulo}
+                                        className={styles.imagem}
+                                    />
                                 </div>
 
                                 <div className={styles.info}>
@@ -81,18 +74,18 @@ export default function Obras() {
                         ))}
 
                         {erros.map((_, index) => (
-                            <div
-                                key={index}
-                                className={styles.cardErro}>
+                            <div key={index} className={styles.cardErro}>
                                 <div className={styles.erroConteudo}>
-                                    <h2>{idioma === 'pt'
-                                        ? 'Obra indisponível'
-                                        : 'Book unavailable'}</h2>
+                                    <h2>
+                                        {idioma === 'pt' ? 'Obra indisponível' : 'Book unavailable'}
+                                    </h2>
 
-                                    <p> {
-                                        idioma === 'pt'
+                                    <p>
+                                        {' '}
+                                        {idioma === 'pt'
                                             ? 'Não foi possível carregar esta obra'
-                                            : 'Could not load this book'}</p>
+                                            : 'Could not load this book'}
+                                    </p>
                                 </div>
                             </div>
                         ))}
