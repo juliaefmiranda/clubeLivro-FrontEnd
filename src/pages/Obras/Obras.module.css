@@ -28,14 +28,6 @@
     text-align: center;
 }
 
-.botaoContainer {
-    position: absolute;
-    right: 0;
-    top: 8px;
-    display: flex;
-    justify-content: flex-end;
-}
-
 .titulo {
     font-size: clamp(2.2rem, 5vw, 4rem);
     font-weight: 400;
@@ -157,14 +149,24 @@
 }
 
 @media (max-width: 1440px) {
+    .topo {
+        margin-bottom: 27px;
+    }
+
+    .gridObras {
+        grid-template-columns: repeat(auto-fit, minmax(190px, 190px));
+        justify-content: center;
+    }
+
     .main {
-        padding: 30px 15px 40px;
+        padding: 30px 15px;
     }
 
     .cardObra,
     .cardErro {
         max-width: 190px;
         padding: 15px 16px;
+        margin: 0;
     }
 
     .imagem {
@@ -183,46 +185,18 @@
     }
 
     .titulo {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .main {
-        padding: 50px 24px 70px;
-    }
-
-    .gridObras {
-        gap: 30px;
-    }
-
-    .nomeLivro {
-        font-size: 1.35rem;
-    }
-
-    .autor {
-        font-size: 0.98rem;
+        font-size: 2.3rem;
     }
 }
 
 @media (max-width: 768px) {
     .topo {
         flex-direction: column;
-
         gap: 22px;
-    }
-
-    .botaoContainer {
-        position: static;
-
-        justify-content: center;
-
-        width: 100%;
     }
 
     .gridObras {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
         gap: 26px;
     }
 }
@@ -234,9 +208,7 @@
 
     .gridObras {
         grid-template-columns: 1fr;
-
         justify-items: center;
-
         gap: 24px;
     }
 

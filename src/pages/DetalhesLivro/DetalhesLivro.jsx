@@ -5,7 +5,6 @@ import Footer from '../../components/Footer/Footer';
 import BotaoIdioma from "../../components/BotaoIdioma/BotaoIdioma";
 import { Link } from "react-router-dom";
 import { APIs } from "../../config/apis"
-
 import styles from './DetalhesLivro.module.css';
 
 export default function DetalhesLivro() {
@@ -13,9 +12,9 @@ export default function DetalhesLivro() {
     const [livro, setLivro] = useState(null);
     const [idioma, setIdioma] = useState('pt');
     const [abaAtiva, setAbaAtiva] = useState('visao');
+    const [personagens, setPersonagens] = useState([]);
 
     useEffect(() => {
-
         const apiSelecionada = APIs.find(
             (api) => api.origem === origem
         );
@@ -36,6 +35,23 @@ export default function DetalhesLivro() {
             .then((data) => {
                 console.log(JSON.stringify(data, null, 2));
                 setLivro(data.data);
+                if (origem === 'minha-api') {
+                    fetch(apiSelecionada.personagensUrl, {
+                        headers: {
+                            'x-api-key': apiSelecionada.apiKey,
+                        },
+                    })
+                        .then((res) => res.json())
+                        .then((personagensData) => {
+                            setPersonagens(personagensData.data || personagensData || []);
+                        })
+                        .catch((erro) => {
+                            console.error(
+                                'Erro ao buscar personagens:', erro
+                            )
+                        })
+
+                }
             })
             .catch((erro) => {
                 console.error('Erro ao buscar livro:', erro);
@@ -56,6 +72,7 @@ export default function DetalhesLivro() {
     }
 
     return (
+
         <div className={styles.pagina}>
 
             <Navbar idioma={idioma} />
@@ -272,20 +289,42 @@ export default function DetalhesLivro() {
                     )}
 
                     {abaAtiva === 'personagens' && (
+
                         <div className={styles.cardContainer}>
+
                             <div className={styles.cardInfo}>
+
                                 <h3>
                                     {idioma === 'pt'
                                         ? 'Personagens'
                                         : 'Characters'}
                                 </h3>
+                                {origem === 'minha-api' ? (
+                                    (personagens || []).map((personagem) => (
+                                        <div key={personagem.id} className={styles.personagemCard} >
+                                            <h4>
+                                                {personagem.nome}
+                                            </h4>
+                                            <p>
+                                                {idioma === 'pt'
+                                                    ? personagem.caracteristicas
+                                                    : personagem.caracteristicas_en}
+                                            </p>
+                                            <p>
+                                                {idioma === 'pt'
+                                                    ? personagem.representacao
+                                                    : personagem.representacao_en}
 
-                                <p>
-                                    {livro.personagens}
-                                </p>
+                                            </p>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p>
+                                        {livro.personagens}
+                                    </p>
+                                )}
                             </div>
                         </div>
-
                     )}
 
                     {abaAtiva === 'conclusao' && (

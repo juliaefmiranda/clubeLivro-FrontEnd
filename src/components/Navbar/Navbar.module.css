@@ -46,6 +46,11 @@
     padding: 0;
 }
 
+.navLinks li {
+    display: flex;
+    align-items: center;
+}
+
 .navLinks a {
     text-decoration: none;
     color: inherit;
@@ -56,14 +61,46 @@
     color: #8a6c2f;
 }
 
-@media (max-width: 900px) {
-    .navbar {
-        padding: 20px 25px;
+.link,
+.ativo {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 4px;
+}
 
-        flex-direction: column;
-        justify-content: center;
-    }
+.link {
+    color: #8a6c2f;
+}
 
+.ativo {
+    color: #e3cf93;
+}
+
+.link::after,
+.ativo::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: #b69c4e;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    /* faz a animação começar da esquerda */
+    transition: transform 0.3s ease;
+}
+
+.link:hover::after {
+    transform: scaleX(1);
+}
+
+.ativo::after {
+    transform: scaleX(1);
+}
+
+@media (max-width: 1440px) {
     .navLinks {
         gap: 14px;
         font-size: 0.8rem;
@@ -78,6 +115,15 @@
     }
 }
 
+@media (max-width: 900px) {
+    .navbar {
+        padding: 20px 25px;
+
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 600px) {
     .navLinks {
         display: grid;
@@ -87,6 +133,17 @@
         gap: 12px 24px;
 
         text-align: center;
+
+        justify-content: center;
+    }
+
+    .itemIdioma {
+        grid-column: span 2;
+
+        display: flex;
+        justify-content: center;
+
+        margin-top: 6px;
     }
 
     .logo,

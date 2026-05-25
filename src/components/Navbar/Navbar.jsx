@@ -1,7 +1,9 @@
 import styles from './Navbar.module.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-export default function Navbar({idioma}) {
+import BotaoIdioma from '../BotaoIdioma/BotaoIdioma';
+
+export default function Navbar({ idioma, setIdioma }) {
     return (
         <header className={styles.navbar}>
             <div className={styles.logoContainer}>
@@ -12,41 +14,60 @@ export default function Navbar({idioma}) {
             <nav>
                 <ul className={styles.navLinks}>
                     <li>
-                        <Link to="/">
+                        <NavLink
+                            to="/"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
                             {idioma === 'pt' ? 'HOME' : 'HOME'}
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to="/sobre">
+                        <NavLink
+                            to="/sobre"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
                             {idioma === 'pt' ? 'SOBRE' : 'ABOUT'}
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to="/obras">
+                        <NavLink
+                            to="/obras"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
                             {idioma === 'pt' ? 'OBRAS' : 'WORKS'}
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to="/video-aulas">
+                        <NavLink
+                            to="/video-aulas"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
                             {idioma === 'pt' ? 'VIDEO AULAS' : 'VIDEO LESSONS'}
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/dicas-vestibular">
-                            {idioma === 'pt' ? 'DICAS VESTIBULAR' : 'EXAM TIPS'}
-                        </Link>
+                        </NavLink>
                     </li>
 
                     <li>
-                        <Link to="/simulados">
+                        <NavLink
+                            to="/dicas-vestibular"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
+                            {idioma === 'pt' ? 'DICAS VESTIBULAR' : 'EXAM TIPS'}
+                        </NavLink>
+                    </li>
+
+                    <li>
+                        <NavLink
+                            to="/simulados"
+                            className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
                             {idioma === 'pt' ? 'SIMULADOS' : 'MOCK EXAMS'}
-                        </Link>
+                        </NavLink>
+                    </li>
+                    <li className={styles.itemIdioma}>
+                        <BotaoIdioma
+                            idioma={idioma}
+                            setIdioma={setIdioma}
+                        />
                     </li>
                 </ul>
             </nav>
         </header>
-    )
+    );
 }
