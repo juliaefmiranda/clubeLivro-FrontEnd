@@ -183,6 +183,8 @@
     line-height: 1.8;
     color: #383838;
     font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+    white-space: pre-line;
 }
 
 .personagemCard {
