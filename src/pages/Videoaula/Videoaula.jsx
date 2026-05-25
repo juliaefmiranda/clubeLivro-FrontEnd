@@ -30,7 +30,7 @@ export default function Videoaulas() {
 
     const [idioma, setIdioma] = useState('pt');
     const [videoUrl, setVideoUrl] = useState(() => formatarLinkYoutube('https://www.youtube.com/watch?v=pTcc00EpCZc'));
-        
+
 
     useEffect(() => {
         fetch('https://clubelivro-backend.onrender.com/api/livros', {
@@ -41,7 +41,7 @@ export default function Videoaulas() {
             .then((res) => res.json())
             .then((data) => {
                 if (data && data[0]) {
-            
+
                     const urlOriginal = data[0].video || data[0].url || '';
                     setVideoUrl(formatarLinkYoutube(urlOriginal));
                 }
@@ -55,18 +55,21 @@ export default function Videoaulas() {
         <div className={styles.header}>
             <Navbar idioma={idioma} />
 
-            <div className={styles.idiomaContainer}>
-                <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
-            </div>
-
             <main className={styles.home}>
-                <h1 className={styles.tituloPrincipal}>
-                    {idioma === 'pt' ? 'Assista Nossa Video Aula!' : 'Watch Our Video Lesson!'}
-                </h1>
+                <div className={styles.topo}>
+                    <div className={styles.topoTexto}>
+                        <h1 className={styles.tituloPrincipal}>
+                            {idioma === 'pt' ? 'Assista Nossa Video Aula!' : 'Watch Our Video Lesson!'}
+                        </h1>
+                    </div>
+                    <div className={styles.topoBotao}>
+                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
+                    </div>
+                </div>
 
                 <div className={styles.conteudoGrid}>
-                    
-                
+
+
                     <section className={styles.secaoVideo}>
                         <div className={styles.videoContainer}>
                             {videoUrl ? (
@@ -82,19 +85,19 @@ export default function Videoaulas() {
                                 <div className={styles.carregando}>Carregando vídeo...</div>
                             )}
                         </div>
-                        <span className={styles.dataPost}>2 Aug, 2021</span>
+                        <span className={styles.dataPost}>22 May, 2026</span>
                     </section>
 
-                    
+
                     <section className={styles.secaoTexto}>
                         <h3>
-                            {idioma === 'pt' 
-                                ? 'Letras e Contexto Histórico da Obra' 
+                            {idioma === 'pt'
+                                ? 'Letras e Contexto Histórico da Obra'
                                 : 'Literature and Historical Context of the Work'}
                         </h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                         </p>
                     </section>

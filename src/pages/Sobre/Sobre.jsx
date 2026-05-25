@@ -92,7 +92,7 @@ export default function Sobre() {
             <Navbar idioma={idioma} />
 
             <main className={styles.main}>
-                {/* ── TOPO ── */}
+                {/* topo */}
                 <div className={styles.topo}>
                     <div className={styles.topoBotao}>
                         <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
@@ -105,60 +105,59 @@ export default function Sobre() {
                     </div>
                 </div>
 
-                {/* ── DIVISOR ── */}
+                {/* divisor */}
                 <div className={styles.divisor}>
                     <span className={styles.divisorLine} />
                     <span className={styles.divisorOrnament}>✦</span>
                     <span className={styles.divisorLine} />
                 </div>
 
-                {/* ── SOBRE ── */}
+                {/* sobre + disciplinas juntos */}
                 <section className={styles.section}>
                     <div className={styles.textBlock}>
                         <p>{t.descricao1_pt}</p>
                         <p>{t.descricao2_pt}</p>
                         <p>{t.descricao3_pt}</p>
-                    </div>
-                </section>
 
-                {/* ── DISCIPLINAS / CURSOS ── */}
-                <section className={styles.cardsSection}>
-                    <div className={styles.infoCard}>
-                        <h3 className={styles.infoCardTitle}>{t.disciplinas_pt}</h3>
-                        <div className={styles.infoCardDivider} />
-                        <div className={styles.infoCardItems}>
-                            <div className={styles.infoCardItem}>
-                                <span className={styles.infoCardItemDot} />
-                                {t.disc1_pt}
+                        <div className={styles.cardsSection}>
+                            <div className={styles.infoCard}>
+                                <h3 className={styles.infoCardTitle}>{t.disciplinas_pt}</h3>
+                                <div className={styles.infoCardDivider} />
+                                <div className={styles.infoCardItems}>
+                                    <div className={styles.infoCardItem}>
+                                        <span className={styles.infoCardItemDot} />
+                                        {t.disc1_pt}
+                                    </div>
+                                    <div className={styles.infoCardItem}>
+                                        <span className={styles.infoCardItemDot} />
+                                        {t.disc2_pt}
+                                    </div>
+                                </div>
                             </div>
-                            <div className={styles.infoCardItem}>
-                                <span className={styles.infoCardItemDot} />
-                                {t.disc2_pt}
+
+                            <div className={styles.infoCard}>
+                                <h3 className={styles.infoCardTitle}>{t.cursos_pt}</h3>
+                                <div className={styles.infoCardDivider} />
+                                <div className={styles.infoCardItems}>
+                                    <div className={styles.infoCardItem}>
+                                        <span className={styles.infoCardItemDot} />
+                                        {t.disc3_pt}
+                                    </div>
+                                    <div className={styles.infoCardItem}>
+                                        <span className={styles.infoCardItemDot} />
+                                        {t.disc4_pt}
+                                    </div>
+                                    <div className={styles.infoCardItem}>
+                                        <span className={styles.infoCardItemDot} />
+                                        {t.disc5_pt}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div className={styles.infoCard}>
-                        <h3 className={styles.infoCardTitle}>{t.cursos_pt}</h3>
-                        <div className={styles.infoCardDivider} />
-                        <div className={styles.infoCardItems}>
-                            <div className={styles.infoCardItem}>
-                                <span className={styles.infoCardItemDot} />
-                                {t.disc3_pt}
-                            </div>
-                            <div className={styles.infoCardItem}>
-                                <span className={styles.infoCardItemDot} />
-                                {t.disc4_pt}
-                            </div>
-                            <div className={styles.infoCardItem}>
-                                <span className={styles.infoCardItemDot} />
-                                {t.disc5_pt}
-                            </div>
-                        </div>
-                    </div>
                 </section>
 
-                {/* ── APIs ── */}
+                {/* api´s */}
                 <section className={styles.apiSection}>
                     <div className={styles.apiIcon} aria-hidden="true">
                         ⚙
@@ -180,14 +179,14 @@ export default function Sobre() {
                     </div>
                 </section>
 
-                {/* ── DIVISOR ── */}
+                {/* divisor*/}
                 <div className={styles.divisor}>
                     <span className={styles.divisorLine} />
                     <span className={styles.divisorOrnament}>✦</span>
                     <span className={styles.divisorLine} />
                 </div>
 
-                {/* ── EQUIPE ── */}
+                {/* equipe */}
                 <section className={styles.equipeSection}>
                     <div className={styles.equipeTitulo}>
                         <h2 className={styles.equipeH2}>{t.equipe_pt}</h2>

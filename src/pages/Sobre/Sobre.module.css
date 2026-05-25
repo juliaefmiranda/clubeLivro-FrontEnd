@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
 
 :root {
-    --bg:           #e8e6e1;
-    --bg-card:      #f0ede8;
+    --bg:           #fcfbf7;
+    --bg-card:      #f6f4f0;
     --borda:        #be985e;
     --dourado:      #b5924c;
     --dourado-glow: #d4a96a;
@@ -16,7 +16,7 @@
 .wrapper {
     min-height: 100vh;
     background-color: var(--bg);
-    font-family: 'Lato', sans-serif;
+    font-family: 'Georgia', ;
     color: var(--texto);
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 130px 32px 80px;
+    padding: 60px 32px 80px;
     gap: 52px;
     max-width: 980px;
     margin: 0 auto;
@@ -35,7 +35,7 @@
     box-sizing: border-box;
 }
 
-/* topo — centralizado */
+/* topo  */
 .topo {
     display: flex;
     flex-direction: column;
@@ -77,7 +77,7 @@
 .heroTitle {
     font-family: 'Playfair Display', serif;
     font-size: clamp(36px, 4.5vw, 54px);
-    font-weight: 700;
+    font-weight: 400;
     color: var(--texto);
     line-height: 1.08;
     margin: 0;
@@ -137,7 +137,7 @@
 /* card de disciplinas */
 .cardsSection {
     display: flex;
-    gap: 20px;
+    gap: 0;
     width: 100%;
     flex-wrap: wrap;
 }
@@ -145,12 +145,15 @@
 .infoCard {
     flex: 1;
     min-width: 220px;
-    background: var(--bg-card);
-    border: 1px solid var(--borda);
-    border-radius: 12px;
-    padding: 20px 24px;
     display: flex;
     flex-direction: column;
+    padding: 0 32px;
+    border-left: 1px solid var(--borda);
+}
+
+.infoCard:first-child {
+    padding-left: 0;
+    border-left: none;
 }
 
 .infoCardTitle {
@@ -202,7 +205,7 @@
     flex-shrink: 0;
 }
 
-/* API SECTION */
+/* api´s */
 .apiSection {
     background: var(--bg-card);
     border: 1px solid var(--borda);
@@ -395,7 +398,7 @@
 /* responsividade */
 @media (max-width: 700px) {
     .main {
-        padding: 100px 20px 60px;
+        padding: 50px 20px 60px;
         gap: 36px;
     }
 
