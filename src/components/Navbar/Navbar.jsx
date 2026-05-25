@@ -1,7 +1,9 @@
 import styles from './Navbar.module.css';
 import { Link } from 'react-router-dom';
 
-export default function Navbar({idioma}) {
+import BotaoIdioma from '../BotaoIdioma/BotaoIdioma';
+
+export default function Navbar({ idioma, setIdioma }) {
     return (
         <header className={styles.navbar}>
             <div className={styles.logoContainer}>
@@ -12,21 +14,15 @@ export default function Navbar({idioma}) {
             <nav>
                 <ul className={styles.navLinks}>
                     <li>
-                        <Link to="/">
-                            {idioma === 'pt' ? 'HOME' : 'HOME'}
-                        </Link>
+                        <Link to="/">HOME</Link>
                     </li>
 
                     <li>
-                        <Link to="/sobre">
-                            {idioma === 'pt' ? 'SOBRE' : 'ABOUT'}
-                        </Link>
+                        <Link to="/sobre">{idioma === 'pt' ? 'SOBRE' : 'ABOUT'}</Link>
                     </li>
 
                     <li>
-                        <Link to="/obras">
-                            {idioma === 'pt' ? 'OBRAS' : 'WORKS'}
-                        </Link>
+                        <Link to="/obras">{idioma === 'pt' ? 'OBRAS' : 'WORKS'}</Link>
                     </li>
 
                     <li>
@@ -34,6 +30,7 @@ export default function Navbar({idioma}) {
                             {idioma === 'pt' ? 'VIDEO AULAS' : 'VIDEO LESSONS'}
                         </Link>
                     </li>
+
                     <li>
                         <Link to="/dicas-vestibular">
                             {idioma === 'pt' ? 'DICAS VESTIBULAR' : 'EXAM TIPS'}
@@ -41,12 +38,14 @@ export default function Navbar({idioma}) {
                     </li>
 
                     <li>
-                        <Link to="/simulados">
-                            {idioma === 'pt' ? 'SIMULADOS' : 'MOCK EXAMS'}
-                        </Link>
+                        <Link to="/simulados">{idioma === 'pt' ? 'SIMULADOS' : 'MOCK EXAMS'}</Link>
+                    </li>
+
+                    <li>
+                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
                     </li>
                 </ul>
             </nav>
         </header>
-    )
+    );
 }

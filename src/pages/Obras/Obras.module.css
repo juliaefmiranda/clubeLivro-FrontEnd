@@ -28,14 +28,6 @@
     text-align: center;
 }
 
-.botaoContainer {
-    position: absolute;
-    right: 0;
-    top: 8px;
-    display: flex;
-    justify-content: flex-end;
-}
-
 .titulo {
     font-size: clamp(2.2rem, 5vw, 4rem);
     font-weight: 400;
@@ -210,14 +202,6 @@
         flex-direction: column;
 
         gap: 22px;
-    }
-
-    .botaoContainer {
-        position: static;
-
-        justify-content: center;
-
-        width: 100%;
     }
 
     .gridObras {
