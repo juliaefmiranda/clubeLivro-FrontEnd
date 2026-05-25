@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
+
 import styles from './QuestoesSimulado.module.css';
 
+import { useIdioma } from '../../hooks/useIdioma';
+
 export default function QuestoesSimulado() {
-    const [idioma, setIdioma] = useState('pt');
+    const { idioma, setIdioma } = useIdioma();
     const [questoes, setQuestoes] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -100,7 +102,7 @@ export default function QuestoesSimulado() {
     if (loading) {
         return (
             <div className={styles.pagina}>
-                <Navbar idioma={idioma} />
+            <Navbar idioma={idioma} setIdioma={setIdioma} />
                 <main className={styles.main}>
                     <div className={styles.loadingContainer}>
                         <p className={styles.loading}>
@@ -116,15 +118,12 @@ export default function QuestoesSimulado() {
     if (finalizado && resultado) {
         return (
             <div className={styles.pagina}>
-                <Navbar idioma={idioma} />
+            <Navbar idioma={idioma} setIdioma={setIdioma} />
                 <main className={styles.main}>
                     <div className={styles.topo}>
                         <h1 className={styles.titulo}>
                             {idioma === 'pt' ? 'Resultado do Simulado' : 'Exam Results'}
                         </h1>
-                        <div className={styles.botaoContainer}>
-                            <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
-                        </div>
                     </div>
 
                     <div className={styles.resultadoContainer}>
@@ -199,7 +198,7 @@ export default function QuestoesSimulado() {
     if (questoes.length === 0) {
         return (
             <div className={styles.pagina}>
-                <Navbar idioma={idioma} />
+            <Navbar idioma={idioma} setIdioma={setIdioma} />
                 <main className={styles.main}>
                     <div className={styles.loadingContainer}>
                         <p className={styles.loading}>
@@ -217,16 +216,13 @@ export default function QuestoesSimulado() {
 
     return (
         <div className={styles.pagina}>
-            <Navbar idioma={idioma} />
+            <Navbar idioma={idioma} setIdioma={setIdioma} />
 
             <main className={styles.main}>
                 <div className={styles.topo}>
                     <h1 className={styles.titulo}>
                         {idioma === 'pt' ? 'Simulado de Literatura' : 'Literature Mock Exam'}
                     </h1>
-                    <div className={styles.botaoContainer}>
-                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
-                    </div>
                 </div>
 
                 <div className={styles.progressoContainer}>

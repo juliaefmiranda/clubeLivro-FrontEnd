@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import styles from './Videoaula.module.css';
 import Footer from '../../components/Footer/Footer';
-import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
+
+import { useIdioma } from '../../hooks/useIdioma';
 
 export default function Videoaulas() {
     const formatarLinkYoutube = (url) => {
@@ -28,7 +29,7 @@ export default function Videoaulas() {
         return url;
     };
 
-    const [idioma, setIdioma] = useState('pt');
+    const { idioma, setIdioma } = useIdioma();
     const [videoUrl, setVideoUrl] = useState(() => formatarLinkYoutube('https://www.youtube.com/watch?v=pTcc00EpCZc'));
 
 
@@ -53,7 +54,7 @@ export default function Videoaulas() {
 
     return (
         <div className={styles.header}>
-            <Navbar idioma={idioma} />
+            <Navbar idioma={idioma} setIdioma={setIdioma} />
 
             <main className={styles.home}>
                 <div className={styles.topo}>
@@ -62,13 +63,9 @@ export default function Videoaulas() {
                             {idioma === 'pt' ? 'Assista Nossa Video Aula!' : 'Watch Our Video Lesson!'}
                         </h1>
                     </div>
-                    <div className={styles.topoBotao}>
-                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
-                    </div>
                 </div>
 
                 <div className={styles.conteudoGrid}>
-
 
                     <section className={styles.secaoVideo}>
                         <div className={styles.videoContainer}>

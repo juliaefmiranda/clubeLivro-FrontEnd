@@ -11,7 +11,7 @@
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 60px 30px 80px;
+    padding: 60px 30px 40px;
     box-sizing: border-box;
 }
 
@@ -47,12 +47,11 @@
     width: 140px;
     height: 2px;
     background-color: #e3cf93;
-    margin-top: 28px;
+    margin: 28px 0;
     border-radius: 2px;
 }
 
 .homeText {
-    max-width: 760px;
     font-family: 'Montserrat', sans-serif;
 }
 

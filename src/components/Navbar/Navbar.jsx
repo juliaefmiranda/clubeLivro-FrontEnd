@@ -33,7 +33,7 @@ export default function Navbar({ idioma, setIdioma }) {
                         <NavLink
                             to="/obras"
                             className={({ isActive }) => (isActive ? styles.ativo : styles.link)}>
-                            {idioma === 'pt' ? 'OBRAS' : 'WORKS'}
+                            {idioma === 'pt' ? 'OBRAS' : 'BOOKS'}
                         </NavLink>
                     </li>
 

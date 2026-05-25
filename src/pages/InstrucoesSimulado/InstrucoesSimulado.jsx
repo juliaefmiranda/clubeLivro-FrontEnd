@@ -1,12 +1,13 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
+
 import styles from './InstrucoesSimulado.module.css';
 
+import { useIdioma } from '../../hooks/useIdioma';
+
 export default function InstrucoesSimulado() {
-    const [idioma, setIdioma] = useState('pt');
+    const { idioma, setIdioma } = useIdioma();
     const navigate = useNavigate();
 
     const handleIniciarSimulado = () => {
@@ -15,16 +16,13 @@ export default function InstrucoesSimulado() {
 
     return (
         <div className={styles.pagina}>
-            <Navbar idioma={idioma} />
+            <Navbar idioma={idioma} setIdioma={setIdioma} />
 
             <main className={styles.main}>
                 <div className={styles.topo}>
                     <h1 className={styles.titulo}>
                         {idioma === 'pt' ? 'Simulado' : 'Mock Exam'}
                     </h1>
-                    <div className={styles.botaoContainer}>
-                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
-                    </div>
                 </div>
 
                 <div className={styles.conteudo}>
