@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import styles from './Sobre.module.css';
 import Footer from '../../components/Footer/Footer';
-import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
+import { useIdioma } from '../../hooks/useIdioma';
 
 function iniciais(nome = '') {
     return nome
@@ -89,17 +89,14 @@ export default function Sobre() {
 
     return (
         <div className={styles.wrapper}>
-            <Navbar idioma={idioma} />
+            <Navbar idioma={idioma} setIdioma={setIdioma}/>
 
             <main className={styles.main}>
                 {/* topo */}
                 <div className={styles.topo}>
-                    <div className={styles.topoBotao}>
-                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
-                    </div>
+
                     <div className={styles.topoTexto}>
                         <span className={styles.tag}>{t.tag_pt}</span>
-                        <h1 className={styles.heroTitle}>{t.titulo_pt}</h1>
                         <p className={styles.heroSub}>{t.subtitulo_pt}</p>
                         <div className={styles.heroDividerThin} />
                     </div>
@@ -159,9 +156,6 @@ export default function Sobre() {
 
                 {/* api´s */}
                 <section className={styles.apiSection}>
-                    <div className={styles.apiIcon} aria-hidden="true">
-                        ⚙
-                    </div>
                     <div className={styles.apiText}>
                         <h3>{t.apis_pt}</h3>
                         <p>{t.apisDesc_pt}</p>
