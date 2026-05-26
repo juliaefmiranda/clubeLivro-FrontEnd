@@ -206,3 +206,175 @@
     line-height: 1.6;
     font-family: 'Montserrat', sans-serif;
 }
+
+@media (max-width: 1440px) {
+    .detalhes {
+        max-width: 1000px;
+        padding: 0px 30px 60px;
+    }
+
+    .secaoPrincipal {
+        gap: 28px;
+        padding: 20px 24px;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .capaLivro img {
+        width: 190px;
+    }
+
+    .infoLivro h1 {
+        font-size: 40px;
+    }
+
+    .infoLivro h2 {
+        font-size: 18px;
+    }
+
+    .resumoLivro {
+        font-size: 1rem;
+        max-width: 600px;
+    }
+
+    .conteudoTabs {
+        padding: 24px;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .cardInfo h3 {
+        font-size: 20px;
+    }
+
+    .tabsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 25px 12px;
+    }
+
+    .tabsContainer button {
+        font-size: 13px;
+        padding: 9px 15px;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .detalhes {
+        padding: 0px 26px 50px;
+    }
+
+    .secaoPrincipal {
+        gap: 26px;
+        padding: 18px 22px;
+    }
+
+    .capaLivro img {
+        width: 180px;
+    }
+
+    .infoLivro h1 {
+        font-size: 36px;
+    }
+
+    .infoLivro h2 {
+        font-size: 17px;
+    }
+
+    .resumoLivro {
+        font-size: 0.98rem;
+        max-width: 100%;
+    }
+
+    .tabsContainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 12px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .secaoPrincipal {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .infoLivro {
+        align-items: center;
+    }
+
+    .resumoLivro {
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .detalhes {
+        padding: 0px 16px 40px;
+    }
+
+    .secaoPrincipal {
+        padding: 16px;
+    }
+
+    .capaLivro img {
+        width: 150px;
+    }
+
+    .infoLivro h1 {
+        font-size: 26px;
+    }
+
+    .infoLivro h2 {
+        font-size: 15px;
+    }
+
+    .resumoLivro {
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    .tabsContainer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tabsContainer button {
+        width: 100%;
+    }
+
+    .cardInfo h3 {
+        font-size: 16px;
+    }
+
+    .cardInfo p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 375px) {
+    .detalhes {
+        padding: 0px 12px 35px;
+    }
+
+    .infoLivro h1 {
+        font-size: 22px;
+    }
+
+    .capaLivro img {
+        width: 130px;
+    }
+
+    .conteudoTabs {
+        padding: 16px;
+    }
+
+    .cardInfo {
+        padding: 14px;
+    }
+}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import BotaoIdioma from "../../components/BotaoIdioma/BotaoIdioma";
+import { useIdioma } from '../../hooks/useIdioma';
 import { Link } from "react-router-dom";
 import { APIs } from "../../config/apis"
 import styles from './DetalhesLivro.module.css';
@@ -75,7 +75,7 @@ export default function DetalhesLivro() {
 
         <div className={styles.pagina}>
 
-            <Navbar idioma={idioma} />
+            <Navbar idioma={idioma} setIdioma={setIdioma}/>
 
             <main className={styles.detalhes}>
                 <div className={styles.topoDetalhes}>
@@ -83,11 +83,6 @@ export default function DetalhesLivro() {
                     <Link to="/obras" className={styles.botaoVoltar}>
                         ← Voltar para obras
                     </Link>
-
-                    <BotaoIdioma
-                        idioma={idioma}
-                        setIdioma={setIdioma}
-                    />
 
                 </div>
 
