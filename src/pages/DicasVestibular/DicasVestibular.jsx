@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
-import BotaoIdioma from '../../components/BotaoIdioma/BotaoIdioma';
+
 import styles from './DicasVestibular.module.css';
+import { useIdioma } from '../../hooks/useIdioma';
 import { FiCheckCircle } from 'react-icons/fi';
 
 export default function DicasVestibular() {
     const [livro, setLivro] = useState({});
     const [dicas, setDicas] = useState([]);
     const [temas, setTemas] = useState([]);
-    const [idioma, setIdioma] = useState('pt');
+    const { idioma, setIdioma } = useIdioma();
 
     useEffect(() => {
         async function buscarDados() {
@@ -41,7 +42,7 @@ export default function DicasVestibular() {
 
     return (
         <div className={styles.container}>
-            <Navbar idioma={idioma} />
+            <Navbar idioma={idioma} setIdioma={setIdioma} />
 
             <main className={styles.main}>
                 <div className={styles.topo}>
@@ -51,7 +52,6 @@ export default function DicasVestibular() {
                                 ? 'Dicas Literárias para Vestibular'
                                 : 'Literary Tips for College Entrance Exams'}
                         </h1>
-                        <BotaoIdioma idioma={idioma} setIdioma={setIdioma} />
                     </div>
                 </div>
 

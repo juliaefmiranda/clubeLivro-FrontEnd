@@ -31,21 +31,19 @@
 }
 
 .topoTexto {
-    max-width: 760px;
+    max-width: 780px;
     text-align: center;
     width: 100%;
 }
 
 .tituloPrincipal {
     font-family: 'Georgia', serif;
-    font-size: clamp(3rem, 4vw, 60px);
+    font-size: clamp(2.2rem, 5vw, 4rem);
     font-weight: 400;
     color: #1c2321;
     margin: 1.4rem;
     line-height: 1.15;
 }
-
-
 
 .topoBotao {
     display: flex;
