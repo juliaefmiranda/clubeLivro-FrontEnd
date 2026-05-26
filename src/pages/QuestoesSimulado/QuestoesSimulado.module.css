@@ -396,6 +396,67 @@
     transform: scale(1.03);
 }
 
+@media (max-width: 1440px) {
+    .main {
+        padding: 45px 16px 60px;
+    }
+
+    .questaoCard {
+        padding: 20px;
+    }
+
+    .pergunta {
+        font-size: 0.95rem;
+    }
+
+    .opcoes {
+        gap: 12px;
+    }
+
+    .opcaoLabel {
+        padding: 10px 12px;
+    }
+
+    .opcaoLetra {
+        font-size: 0.95rem;
+        margin-right: 10px;
+    }
+
+    .opcaoTexto {
+        font-size: 1rem;
+    }
+
+
+    .notaValor {
+        font-size: 2.3rem;
+    }
+
+    .cardRevisao {
+        padding: 18px;
+    }
+
+     .notaCard {
+        padding: 20px 12px;
+    }
+
+    .revisaoTitulo {
+        font-size: 2.3rem;
+    }
+
+    .cardRevisao {
+        padding: 12px;
+    }
+
+    .textoPergunta {
+        font-size: 0.95rem;
+    }
+
+    .respostaRevisao p {
+        font-size: 1rem;
+    }
+}
+
+
 @media (max-width: 500px) {
     .notaCard {
         padding: 28px 20px;
