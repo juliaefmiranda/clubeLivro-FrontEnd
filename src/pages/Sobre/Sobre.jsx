@@ -14,7 +14,7 @@ function iniciais(nome = '') {
 }
 
 export default function Sobre() {
-    const [idioma, setIdioma] = useState('pt');
+    const { idioma, setIdioma } = useIdioma();
     const [integrantes, setIntegrantes] = useState([]);
 
     useEffect(() => {
@@ -98,7 +98,6 @@ export default function Sobre() {
                     <div className={styles.topoTexto}>
                         <span className={styles.tag}>{t.tag_pt}</span>
                         <p className={styles.heroSub}>{t.subtitulo_pt}</p>
-                        <div className={styles.heroDividerThin} />
                     </div>
                 </div>
 
