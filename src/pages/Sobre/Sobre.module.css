@@ -74,7 +74,7 @@
 
 .divisorLine {
     flex: 1;
-    height: 1px;
+    height: 1.5px;
     background: linear-gradient(to right,
             transparent,
             rgba(209, 188, 123, 0.35),
@@ -101,9 +101,10 @@
     display: flex;
     flex-direction: column;
     gap: 26px;
+    border: 1px solid #b19c5f40;
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.04),
-        0 1px 3px rgba(0, 0, 0, 0.03);
+        0 10px 30px #b19c5f1c,
+        0 1px 3px #b19c5f12;
 }
 
 .textBlock p {
@@ -178,9 +179,10 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    border: 1px solid #b19c5f40;
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.04),
-        0 1px 3px rgba(0, 0, 0, 0.03);
+        0 10px 30px #b19c5f1c,
+        0 1px 3px #b19c5f12;
 }
 
 .apiText h3 {
@@ -246,39 +248,43 @@
 }
 
 .equipeGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 24px;
     width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    justify-items: center;
 }
 
 .cardIntegrante {
     background: white;
-    border-radius: 24px;
-    padding: 38px 24px;
+    border-radius: 20px;
+    padding: 45px 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 12px;
+    gap: 19px;
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
+        border: 1px solid #b19c5f40;
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.04),
-        0 1px 3px rgba(0, 0, 0, 0.03);
+        0 10px 30px #b19c5f1c,
+        0 1px 3px #b19c5f12;
 }
 
 .cardIntegrante:hover {
     transform: translateY(-4px);
     box-shadow:
-        0 16px 40px rgba(0, 0, 0, 0.06),
-        0 2px 6px rgba(0, 0, 0, 0.04);
+        0 16px 40px #b19c5f39,
+        0 2px 6px #b19c5f22;
 }
 
 .avatar {
-    width: 82px;
-    height: 82px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     background: #b19d5f;
     color: white;
@@ -308,8 +314,8 @@
 
 /* FOTO */
 .fotoParticipante {
-    width: 82px;
-    height: 82px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     object-fit: cover;
 }

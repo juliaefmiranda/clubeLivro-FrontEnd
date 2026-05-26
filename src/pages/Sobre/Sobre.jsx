@@ -89,7 +89,7 @@ export default function Sobre() {
 
     return (
         <div className={styles.wrapper}>
-            <Navbar idioma={idioma} setIdioma={setIdioma}/>
+            <Navbar idioma={idioma} setIdioma={setIdioma} />
 
             <main className={styles.main}>
                 {/* topo */}
@@ -191,9 +191,25 @@ export default function Sobre() {
                         {Array.isArray(integrantes) &&
                             integrantes.map((p) => (
                                 <div key={p.id} className={styles.cardIntegrante}>
-                                    <div className={styles.avatar}>{iniciais(p.nome)}</div>
-                                    <p className={styles.integranteNome}>{p.nome}</p>
-                                    <span className={styles.integranteCurso}>{p.curso}</span>
+                                    <div className={styles.avatar}>
+                                        {p.fotoUrl ? (
+                                            <img
+                                                src={p.fotoUrl}
+                                                alt={p.nome}
+                                                className={styles.fotoParticipante}
+                                            />
+                                        ) : (
+                                            iniciais(p.nome)
+                                        )}
+                                    </div>
+
+                                    <p className={styles.integranteNome}>
+                                        {p.nome}
+                                    </p>
+
+                                    <span className={styles.integranteCurso}>
+                                        {p.curso}
+                                    </span>
                                 </div>
                             ))}
                     </div>
