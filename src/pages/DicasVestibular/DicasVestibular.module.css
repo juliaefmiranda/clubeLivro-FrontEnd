@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     background-color: #fcfbf7;
-    color: #1f1f1f;
+    color: #dfc886;
     overflow-x: hidden;
 }
 
@@ -12,33 +12,32 @@
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding: 10px 30px 50px;
+    padding: 60px 30px 40px;
     box-sizing: border-box;
 }
 
 .topo {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 .main h1 {
-    font-size: clamp(2rem, 3vw, 3.2rem);
+    font-size: clamp(2.2rem, 5vw, 4rem);
     font-family: 'Georgia', serif;
     font-weight: 400;
-    line-height: 1.1;
+    line-height: 1.08;
     margin: 0;
     color: #1c2321;
     text-align: center;
     width: 100%;
-    margin-left: 200px;
 }
 
 .idiomaContainer {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     padding-top: 60px;
     margin-bottom: 40px;
 }
@@ -191,4 +190,101 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 1440px) {
+    .main {
+        margin: 18px 0;
+        padding: 30px 15px;
+    }
+
+    .conteudo {
+        width: fit-content;
+        max-width: 85%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .livroBox {
+        width: 760px;
+        flex: unset;
+    }
+
+    .livroBox img {
+        width: 200px;
+    }
+
+    .livroDicas p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+    }
+
+    .temasBox {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 50px 24px 70px;
+    }
+
+    .conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .livroBox {
+        max-width: 100%;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .livroBox img {
+        width: 200px;
+    }
+
+    .temasBox {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .main {
+        padding: 45px 16px 60px;
+    }
+
+    .main h1 {
+        text-align: center;
+    }
+
+    .livroDicas p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .temasBox li {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .main {
+        padding: 40px 12px 50px;
+    }
+
+    .main h1 {
+        font-size: 2.2rem;
+    }
+
+    .livroDicas p {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
 }

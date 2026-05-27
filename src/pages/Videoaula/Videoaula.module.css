@@ -1,8 +1,6 @@
 .header {
-    position: relative;
     min-height: 100vh;
     background-color: #fcfbf7;
-    color: #1f1f1f;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -13,8 +11,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 20px 80px;
-    max-width: 1200px;
+    padding: 60px 30px 40px;
+    max-width: 1400px;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
@@ -112,18 +110,15 @@
 
 .secaoTexto h3 {
     font-family: 'Georgia', serif;
-    font-size: 26px;
     font-weight: 400;
     line-height: 1.2;
     color: #1c2321;
     margin-top: 0;
     font-size: 1.8rem;
-    text-align: center;
 }
 
 .secaoTexto p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
     line-height: 1.7;
     color: #333333;
     font-size: 1.2rem;
