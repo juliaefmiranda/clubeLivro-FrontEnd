@@ -402,7 +402,15 @@
     }
 
     .questaoCard {
-        padding: 20px;
+        
+        max-width: 85%;
+        margin: 0 auto;
+        gap: 60px;
+         
+    }
+
+    .progressoContainer {
+        max-width:100%;
     }
 
     .pergunta {
@@ -453,6 +461,10 @@
 
     .respostaRevisao p {
         font-size: 1rem;
+    }
+
+    .titulo {
+        font-size: 2.3rem
     }
 }
 
