@@ -147,6 +147,16 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .home {
+        padding: 50px 24px 40px;
+    }
+
+    .tituloPrincipal {
+        font-size: 2.3rem;
+    }
+}
+
 @media (max-width: 850px) {
     .conteudoGrid {
         flex-direction: column;
@@ -161,5 +171,90 @@
 
     .secaoTexto {
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        padding: 50px 24px 70px;
+    }
+
+    .topo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+        margin-bottom: 35px;
+    }
+
+    .topoTexto {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .conteudoGrid {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .secaoVideo,
+    .secaoTexto {
+        width: 100%;
+    }
+
+    .secaoTexto {
+        text-align: center;
+    }
+
+    .secaoTexto h3 {
+        font-size: 1.5rem;
+    }
+
+    .secaoTexto p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .home {
+        padding: 45px 16px 60px;
+    }
+
+    .tituloPrincipal {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .secaoTexto h3 {
+        font-size: 1.3rem;
+    }
+
+    .secaoTexto p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .dataPost {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+    .home {
+        padding: 40px 12px 50px;
+    }
+
+    .tituloPrincipal {
+        font-size: 1.8rem;
+    }
+
+    .secaoTexto h3 {
+        font-size: 1.2rem;
+    }
+
+    .secaoTexto p {
+        font-size: 0.9rem;
+        line-height: 1.75;
     }
 }
