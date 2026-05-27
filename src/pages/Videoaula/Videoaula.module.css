@@ -89,7 +89,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Georgia', serif;
 }
 
 .dataPost {
@@ -118,14 +118,39 @@
 }
 
 .secaoTexto p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Georgia', serif;
     line-height: 1.7;
     color: #333333;
     font-size: 1.2rem;
     text-align: justify;
 }
 
+@media (max-width: 1440px) {
+    .home {
+        margin: 18px 0;
+        padding: 30px 15px;
+    }
+
+    .conteudoGrid {
+        width: fit-content;
+        max-width: 85%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 50px;
+    }
+}
+
 @media (max-width: 1024px) {
+    .home {
+        padding: 50px 24px 40px;
+    }
+
+    .tituloPrincipal {
+        font-size: 2.3rem;
+    }
+
     .topo {
         flex-direction: column;
         align-items: center;
@@ -137,23 +162,12 @@
     .topoTexto {
         max-width: 100%;
         text-align: center;
-        font-size: 3rem;
     }
 
     .topoBotao {
         width: 100%;
         justify-content: center;
         padding-top: 0;
-    }
-}
-
-@media (max-width: 1024px) {
-    .home {
-        padding: 50px 24px 40px;
-    }
-
-    .tituloPrincipal {
-        font-size: 2.3rem;
     }
 }
 
