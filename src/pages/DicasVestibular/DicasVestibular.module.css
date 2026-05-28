@@ -86,7 +86,7 @@
     font-family: 'Georgia', serif;
     font-weight: 400;
     line-height: 1.1;
-    color: #1f1f1f;
+    color: #8c2e8c;
     margin: 0;
 }
 
@@ -149,10 +149,10 @@
     flex: 1;
 
     background-color: #f7edf7;
-    padding: 28px;
+    padding: 30px;
     border-radius: 12px;
 
-    max-width: 470px;
+    max-width: 570px;
     width: 100%;
 
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
