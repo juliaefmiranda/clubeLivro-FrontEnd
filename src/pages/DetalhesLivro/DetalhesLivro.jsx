@@ -81,7 +81,9 @@ export default function DetalhesLivro() {
                 <div className={styles.topoDetalhes}>
 
                     <Link to="/obras" className={styles.botaoVoltar}>
-                        ← Voltar para obras
+                    {idioma === 'pt'
+                                ? '← Voltar para obras'
+                                : '← Back to books'}
                     </Link>
 
                 </div>
