@@ -118,7 +118,7 @@
 
 @media (max-width: 1440px) {
     .main {
-        margin: 18px 0;
+        margin: 15px 0 5px;
         padding: 30px 15px;
     }
 
@@ -252,33 +252,5 @@
 
     .homeBook img {
         width: 180px;
-    }
-}
-
-@media (max-height: 500px) and (orientation: landscape) {
-    .main {
-        padding: 30px 24px 40px;
-    }
-
-    .conteudo {
-        gap: 28px;
-    }
-
-    .titulo {
-        font-size: 2.5rem;
-    }
-
-    .homeText p {
-        font-size: 0.98rem;
-        line-height: 1.6;
-    }
-
-    .homeBook img {
-        width: 160px;
-    }
-
-    .botao {
-        max-width: 200px;
-        font-size: 0.85rem;
     }
 }

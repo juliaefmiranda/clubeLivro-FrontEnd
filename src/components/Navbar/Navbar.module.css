@@ -118,9 +118,6 @@
 @media (max-width: 900px) {
     .navbar {
         padding: 20px 25px;
-
-        flex-direction: column;
-        justify-content: center;
     }
 }
 
