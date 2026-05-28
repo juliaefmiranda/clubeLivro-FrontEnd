@@ -258,39 +258,3 @@
         font-size: 0.92rem;
     }
 }
-
-@media (max-height: 500px) and (orientation: landscape) {
-    .main {
-        padding: 30px 24px 40px;
-    }
-
-    .topo {
-        margin-bottom: 28px;
-    }
-
-    .titulo {
-        font-size: 2.5rem;
-    }
-
-    .gridObras {
-        gap: 20px;
-    }
-
-    .cardObra,
-    .cardErro {
-        max-width: 210px;
-    }
-
-    .imagem {
-        width: 120px;
-        height: 180px;
-    }
-
-    .nomeLivro {
-        font-size: 1.05rem;
-    }
-
-    .autor {
-        font-size: 0.85rem;
-    }
-}

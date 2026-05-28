@@ -377,6 +377,7 @@
     }
 
     .equipeH2 {
+        margin-top: 15px;
         font-size: 2.2rem;
     }
 
@@ -428,10 +429,6 @@
         font-size: 1rem;
     }
 
-    .heroDividerThin {
-        margin: 24px auto 0;
-    }
-
     .divisor {
         max-width: 100%;
         margin: 0 auto;
@@ -440,7 +437,6 @@
     .textBlock,
     .apiSection {
         max-width: 100%;
-
         padding: 30px 24px;
     }
 
@@ -465,7 +461,6 @@
 
     .equipeGrid {
         grid-template-columns: repeat(2, 1fr);
-
         max-width: 100%;
     }
 
@@ -490,10 +485,6 @@
     .heroSub {
         font-size: 0.95rem;
         line-height: 1.75;
-    }
-
-    .heroDividerThin {
-        width: 110px;
     }
 
     .textBlock,
@@ -613,31 +604,5 @@
     .fotoParticipante {
         width: 62px;
         height: 62px;
-    }
-}
-
-@media (max-height: 500px) and (orientation: landscape) {
-    .main {
-        padding: 30px 24px 40px;
-        gap: 28px;
-    }
-
-    .tag {
-        font-size: 2.2rem;
-    }
-
-    .textBlock,
-    .apiSection {
-        padding: 24px 22px;
-    }
-
-    .textBlock p,
-    .apiText p {
-        font-size: 0.9rem;
-        line-height: 1.65;
-    }
-
-    .cardIntegrante {
-        padding: 22px 18px;
     }
 }

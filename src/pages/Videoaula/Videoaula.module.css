@@ -8,14 +8,13 @@
 
 .home {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 30px 40px;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    width: 100%;
+    padding: 60px 30px 80px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .topo {
@@ -35,12 +34,12 @@
 }
 
 .tituloPrincipal {
-    font-family: 'Georgia', serif;
     font-size: clamp(2.2rem, 5vw, 4rem);
     font-weight: 400;
-    color: #1c2321;
-    margin: 1.4rem;
-    line-height: 1.15;
+    color: #1f1f1f;
+    margin: 0;
+    text-align: center;
+    line-height: 1.08;
 }
 
 .topoBotao {
@@ -118,7 +117,7 @@
 }
 
 .secaoTexto p {
-    font-family: 'Georgia', serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.7;
     color: #333333;
     font-size: 1.2rem;
@@ -127,8 +126,11 @@
 
 @media (max-width: 1440px) {
     .home {
-        margin: 18px 0;
-        padding: 30px 15px;
+        padding: 30px 0 20px;
+    }
+
+    .tituloPrincipal {
+        font-size: 2.3rem;
     }
 
     .conteudoGrid {
@@ -140,35 +142,17 @@
         align-items: flex-start;
         gap: 50px;
     }
-}
 
-@media (max-width: 1024px) {
-    .home {
-        padding: 50px 24px 40px;
+    .secaoTexto h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0;
     }
 
-    .tituloPrincipal {
-        font-size: 2.3rem;
+    .secaoTexto p {
+        font-size: 0.95rem;
+        margin-bottom: 0;
     }
 
-    .topo {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 24px;
-        margin-bottom: 35px;
-    }
-
-    .topoTexto {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .topoBotao {
-        width: 100%;
-        justify-content: center;
-        padding-top: 0;
-    }
 }
 
 @media (max-width: 850px) {
