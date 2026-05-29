@@ -26,7 +26,7 @@
     font-size: clamp(2.2rem, 5vw, 4rem);
     font-family: 'Georgia', serif;
     font-weight: 400;
-    line-height: 1.08;
+    line-height: 1.2;
     margin: 0;
     color: #1c2321;
     text-align: center;
@@ -211,7 +211,6 @@
 
 @media (max-width: 1440px) {
     .main {
-        margin: 18px 0;
         padding: 30px 15px;
     }
 
@@ -246,34 +245,26 @@
     }
 }
 
-@media (max-width: 900px) {
-    .conteudo {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-
-    .livroBox {
-        max-width: 100%;
-    }
-
-    .temasBox {
-        max-width: 100%;
-    }
-}
-
 @media (max-width: 768px) {
     .main {
         padding: 50px 24px 70px;
     }
 
+    .main h1 {
+        font-size: 2rem;
+    }
+
     .conteudo {
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 40px;
     }
 
     .livroBox {
         flex-direction: column;
         align-items: center;
+        max-width: 100%;
     }
 
     .livroBox img {
@@ -291,6 +282,10 @@
     .linhaDivisor {
         width: 100%;
     }
+
+    .temasBox {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 500px) {
@@ -299,7 +294,7 @@
     }
 
     .main h1 {
-        text-align: center;
+        font-size: 1.75rem;
     }
 
     .livroDicas h2 {
@@ -326,7 +321,8 @@
     }
 
     .main h1 {
-        font-size: 2.2rem;
+        font-size: 1.65rem;
+        line-height: 1.3;
     }
 
     .livroBox img {
@@ -336,5 +332,40 @@
     .livroDicas p {
         font-size: 0.95rem;
         line-height: 1.75;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .main {
+        padding: 30px 24px 40px;
+    }
+
+    .conteudo {
+        gap: 28px;
+    }
+
+    .main h1 {
+        font-size: 2.5rem;
+    }
+
+    .livroBox {
+        gap: 20px;
+    }
+
+    .livroBox img {
+        width: 160px;
+    }
+
+    .livroDicas p {
+        font-size: 0.98rem;
+        line-height: 1.6;
+    }
+
+    .temasBox {
+        padding: 20px;
+    }
+
+    .temasBox li {
+        padding: 12px 0;
     }
 }
