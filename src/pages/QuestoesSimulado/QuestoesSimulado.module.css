@@ -401,6 +401,12 @@
         padding: 45px 16px 60px;
     }
 
+    .questaoCard, 
+    .cardRevisao{ 
+    max-width: 85%;
+    margin: 0 auto 30px;
+}
+
     .questaoCard {
         
         max-width: 85%;
@@ -410,7 +416,8 @@
     }
 
     .progressoContainer {
-        max-width:100%;
+        max-width:90%;
+        margin: 0 auto 30px;
     }
 
     .pergunta {
@@ -434,7 +441,6 @@
         font-size: 1rem;
     }
 
-
     .notaValor {
         font-size: 2.3rem;
     }
@@ -445,6 +451,7 @@
 
      .notaCard {
         padding: 20px 12px;
+        max-width: 85%;
     }
 
     .revisaoTitulo {
@@ -453,6 +460,7 @@
 
     .cardRevisao {
         padding: 12px;
+        margin-bottom: 30px;
     }
 
     .textoPergunta {
@@ -464,9 +472,28 @@
     }
 
     .titulo {
-        font-size: 2.3rem
+        font-size: 2.3rem;
     }
+    
+   .navegacaoBotoes {
+        gap: 12px;
+    }
+
+    .navegacaoBotoes .botaoNav {
+        padding: 8px 20px;
+        font-size: 0.95rem;
+        max-width: 50%;
+        margin: 40px;
+    }
+
+    .navegacaoBotoes .botaoFinalizar {
+        margin: 40px;
+        font-size: 0.95rem;
+    }
+
+    
 }
+
 
 
 @media (max-width: 500px) {
@@ -492,48 +519,5 @@
 
     .respostaRevisao p {
         font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 500px) {
-    .main {
-        padding: 45px 16px 60px;
-    }
-
-    .questaoCard {
-        padding: 20px;
-    }
-
-    .pergunta {
-        font-size: 1.1rem;
-    }
-
-    .opcoes {
-        gap: 12px;
-    }
-
-    .opcaoLabel {
-        padding: 10px 12px;
-    }
-
-    .opcaoLetra {
-        font-size: 1rem;
-        margin-right: 10px;
-    }
-
-    .opcaoTexto {
-        font-size: 0.85rem;
-    }
-
-    .notaCard {
-        padding: 25px;
-    }
-
-    .notaValor {
-        font-size: 2.5rem;
-    }
-
-    .cardRevisao {
-        padding: 18px;
     }
 }
