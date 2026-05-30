@@ -6,6 +6,7 @@ import { useIdioma } from '../../hooks/useIdioma';
 import { Link } from "react-router-dom";
 import { APIs } from "../../config/apis"
 import styles from './DetalhesLivro.module.css';
+import { FiBookOpen, FiEdit3, FiSearch, FiUsers, FiCheckCircle } from 'react-icons/fi';
 
 export default function DetalhesLivro() {
     const { origem, id } = useParams();
@@ -75,15 +76,15 @@ export default function DetalhesLivro() {
 
         <div className={styles.pagina}>
 
-            <Navbar idioma={idioma} setIdioma={setIdioma}/>
+            <Navbar idioma={idioma} setIdioma={setIdioma} />
 
             <main className={styles.detalhes}>
                 <div className={styles.topoDetalhes}>
 
                     <Link to="/obras" className={styles.botaoVoltar}>
-                    {idioma === 'pt'
-                                ? '← Voltar para obras'
-                                : '← Back to books'}
+                        {idioma === 'pt'
+                            ? '← Voltar para obras'
+                            : '← Back to books'}
                     </Link>
 
                 </div>
@@ -134,6 +135,7 @@ export default function DetalhesLivro() {
                         className={abaAtiva === 'visao' ? styles.active : ''}
                         onClick={() => setAbaAtiva('visao')}
                     >
+                        <FiBookOpen />
                         {idioma === 'pt'
                             ? 'Visão Geral'
                             : 'Overview'}
@@ -144,6 +146,7 @@ export default function DetalhesLivro() {
                         className={abaAtiva === 'autor' ? styles.active : ''}
                         onClick={() => setAbaAtiva('autor')}
                     >
+                        <FiEdit3 />
                         {idioma === 'pt'
                             ? 'Autor e Estilo'
                             : 'Author & Style'}
@@ -154,6 +157,7 @@ export default function DetalhesLivro() {
                         className={abaAtiva === 'analise' ? styles.active : ''}
                         onClick={() => setAbaAtiva('analise')}
                     >
+                        <FiSearch />
                         {idioma === 'pt'
                             ? 'Análise'
                             : 'Analysis'}
@@ -164,6 +168,7 @@ export default function DetalhesLivro() {
                         className={abaAtiva === 'personagens' ? styles.active : ''}
                         onClick={() => setAbaAtiva('personagens')}
                     >
+                        <FiUsers />
                         {idioma === 'pt'
                             ? 'Personagens'
                             : 'Characters'}
@@ -174,6 +179,7 @@ export default function DetalhesLivro() {
                         className={abaAtiva === 'conclusao' ? styles.active : ''}
                         onClick={() => setAbaAtiva('conclusao')}
                     >
+                        <FiCheckCircle />
                         {idioma === 'pt'
                             ? 'Conclusão'
                             : 'Conclusion'}
