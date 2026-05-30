@@ -9,7 +9,7 @@
 
 .detalhes {
     flex: 1;
-    max-width: 1180px;
+    max-width: 1400px;
     width: 100%;
     margin: 0 auto;
     padding: 0px 50px 60px;
@@ -123,14 +123,24 @@
 .tabsContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 12px;
+    gap: 40px;
+    margin-bottom: 24px;
+    width: 100%;
+    padding: 8px;
+    background: white;
+    border: 1px solid #ece7ec;
+    border-radius: 14px;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .tabsContainer button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     padding: 11px 22px;
-    border-radius: 999px;
-    border: 1px solid rgba(154, 9, 132, 0.15);
+    border-radius: 16px;
+    border: 1px solid rgb(242, 242, 242);
     background-color: white;
     color: #8c2e8c;
     font-size: 15px;
@@ -141,7 +151,7 @@
 }
 
 .tabsContainer button:hover {
-    background-color: #fef8ff;
+    background-color: #faeafd;
     transform: translateY(-2px);
 }
 
@@ -179,7 +189,7 @@
 }
 
 .cardInfo p {
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 1.8;
     color: #383838;
     font-family: 'Montserrat', sans-serif;
@@ -251,7 +261,13 @@
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        margin: 25px 12px;
+        width: 85%;
+        margin: 25px auto;
+        justify-content: center;
+        padding: 10px;
+        background: white;
+        border: 1px solid #ece7ec;
+        border-radius: 14px;
     }
 
     .tabsContainer button {
@@ -292,8 +308,13 @@
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        margin-bottom: 12px;
+        width: 83%;
+        margin: 20px auto 20px;
         justify-content: center;
+        padding: 10px;
+        background: white;
+        border: 1px solid #ece7ec;
+        border-radius: 14px;
     }
 }
 
