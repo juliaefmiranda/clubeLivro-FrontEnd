@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-import styles from './Videoaula.module.css';
+import styles from './Videoaula.module.css'; 
 import Footer from '../../components/Footer/Footer';
-
 import { useIdioma } from '../../hooks/useIdioma';
 
 export default function Videoaulas() {
     const { idioma, setIdioma } = useIdioma();
     const [videoaula, setVideoaula] = useState(null);
-    const [videoUrl, setVideoUrl] = useState(() => formatarLinkYoutube('https://www.youtube.com/watch?v=pTcc00EpCZc'));
+    const [videoUrl, setVideoUrl] = useState('');
 
     const formatarLinkYoutube = (url) => {
         if (!url) return '';
@@ -29,32 +28,43 @@ export default function Videoaulas() {
     };
 
     useEffect(() => {
-        
         fetch('https://clubelivro-backend.onrender.com/api/videoAulas', {
             headers: {
-                'x-api-key': import.meta.env.VITE_API_KEY,
+                'x-api-key': import.meta.env.VITE_API_KEY || import.meta.env.VITE_API_KEY_ENTRE_LINHAS,
             },
         })
-            .then((res) => res.json())
+            .then((res) => {
+                console.log('Status:', res.status);
+                return res.json();
+            })
             .then((data) => {
-                
-                const listaVideos = Array.isArray(data) ? data : data.videos; 
-                
+                const listaVideos = Array.isArray(data) ? data : data.videoAulas;
+
                 if (listaVideos && listaVideos[0]) {
                     const aula = listaVideos[0];
                     setVideoaula(aula); 
-
                     
-                    const urlOriginal = aula.videoUrl || '';
-                    if (urlOriginal) {
-                        setVideoUrl(formatarLinkYoutube(urlOriginal));
+                    if (aula.videoUrl) {
+                        setVideoUrl(formatarLinkYoutube(aula.videoUrl));
                     }
                 }
             })
             .catch((erro) => {
-                console.error('Erro ao buscar vídeo:', erro);
+                console.error('Erro ao buscar vídeo do banco:', erro);
             });
     }, []);
+
+    if (!videoaula) {
+        return (
+            <div className={styles.carregando}>
+                <p>
+                    {idioma === 'pt'
+                        ? 'Carregando...'
+                        : 'Loading...'}
+                </p>
+            </div>
+        );
+    }
 
     return (
         <div className={styles.header}>
@@ -64,7 +74,9 @@ export default function Videoaulas() {
                 <div className={styles.topo}>
                     <div className={styles.topoTexto}>
                         <h1 className={styles.tituloPrincipal}>
-                            {idioma === 'pt' ? 'Assista Nossa Video Aula!' : 'Watch Our Video Lesson!'}
+                            {idioma === 'pt' 
+                                ? 'Assista Nossa Video Aula!' 
+                                : 'Watch Our Video Lesson!'}
                         </h1>
                     </div>
                 </div>
@@ -82,23 +94,28 @@ export default function Videoaulas() {
                                     className={styles.videoPlayer}
                                 ></iframe>
                             ) : (
-                                <div className={styles.carregando}>Carregando vídeo...</div>
+                                <div className={styles.carregando}>
+                                    <p>
+                                        {idioma === 'pt' 
+                                            ? 'Vídeo não disponível' 
+                                            : 'Video unavailable'}
+                                    </p>
+                                </div>
                             )}
                         </div>
                         <span className={styles.dataPost}>22 May, 2026</span>
                     </section>
 
-                    
                     <section className={styles.secaoTexto}>
                         <h3>
-                            {videoaula 
-                                ? (idioma === 'pt' ? videoaula.titulo : videoaula.titulo_en)
-                                : (idioma === 'pt' ? 'Carregando título...' : 'Loading title...')}
+                            {idioma === 'pt' 
+                                ? videoaula.titulo 
+                                : videoaula.titulo_en}
                         </h3>
                         <p>
-                            {videoaula 
-                                ? (idioma === 'pt' ? videoaula.descricao : videoaula.descricao_en)
-                                : (idioma === 'pt' ? 'Carregando descrição...' : 'Loading description...')}
+                            {idioma === 'pt' 
+                                ? videoaula.descricao 
+                                : videoaula.descricao_en}
                         </p>
                     </section>
                 </div>
