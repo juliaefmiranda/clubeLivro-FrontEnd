@@ -6,45 +6,49 @@ import Footer from '../../components/Footer/Footer';
 import { useIdioma } from '../../hooks/useIdioma';
 
 export default function Videoaulas() {
+    const { idioma, setIdioma } = useIdioma();
+    const [videoaula, setVideoaula] = useState(null);
+    const [videoUrl, setVideoUrl] = useState(() => formatarLinkYoutube('https://www.youtube.com/watch?v=pTcc00EpCZc'));
+
     const formatarLinkYoutube = (url) => {
         if (!url) return '';
-
         if (url.includes('youtube.com/embed/')) return url;
-
         if (url.includes('youtube.com/shorts/')) {
             const id = url.split('shorts/')[1]?.split('?')[0];
             return `https://www.youtube.com/embed/${id}`;
         }
-
         if (url.includes('v=')) {
             const id = url.split('v=')[1]?.split('&')[0];
             return `https://www.youtube.com/embed/${id}`;
         }
-
         if (url.includes('youtu.be/')) {
             const id = url.split('youtu.be/')[1]?.split('?')[0];
             return `https://www.youtube.com/embed/${id}`;
         }
-
         return url;
     };
 
-    const { idioma, setIdioma } = useIdioma();
-    const [videoUrl, setVideoUrl] = useState(() => formatarLinkYoutube('https://www.youtube.com/watch?v=pTcc00EpCZc'));
-
-
     useEffect(() => {
-        fetch('https://clubelivro-backend.onrender.com/api/livros', {
+        
+        fetch('https://clubelivro-backend.onrender.com/api/videoAulas', {
             headers: {
                 'x-api-key': import.meta.env.VITE_API_KEY,
             },
         })
             .then((res) => res.json())
             .then((data) => {
-                if (data && data[0]) {
+                
+                const listaVideos = Array.isArray(data) ? data : data.videos; 
+                
+                if (listaVideos && listaVideos[0]) {
+                    const aula = listaVideos[0];
+                    setVideoaula(aula); 
 
-                    const urlOriginal = data[0].video || data[0].url || '';
-                    setVideoUrl(formatarLinkYoutube(urlOriginal));
+                    
+                    const urlOriginal = aula.videoUrl || '';
+                    if (urlOriginal) {
+                        setVideoUrl(formatarLinkYoutube(urlOriginal));
+                    }
                 }
             })
             .catch((erro) => {
@@ -66,7 +70,6 @@ export default function Videoaulas() {
                 </div>
 
                 <div className={styles.conteudoGrid}>
-
                     <section className={styles.secaoVideo}>
                         <div className={styles.videoContainer}>
                             {videoUrl ? (
@@ -85,20 +88,19 @@ export default function Videoaulas() {
                         <span className={styles.dataPost}>22 May, 2026</span>
                     </section>
 
-
+                    
                     <section className={styles.secaoTexto}>
                         <h3>
-                            {idioma === 'pt'
-                                ? 'Letras e Contexto Histórico da Obra'
-                                : 'Literature and Historical Context of the Work'}
+                            {videoaula 
+                                ? (idioma === 'pt' ? videoaula.titulo : videoaula.titulo_en)
+                                : (idioma === 'pt' ? 'Carregando título...' : 'Loading title...')}
                         </h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                            {videoaula 
+                                ? (idioma === 'pt' ? videoaula.descricao : videoaula.descricao_en)
+                                : (idioma === 'pt' ? 'Carregando descrição...' : 'Loading description...')}
                         </p>
                     </section>
-
                 </div>
             </main>
 
