@@ -164,7 +164,6 @@
     flex-shrink: 0;
 }
 
-/* API */
 .apiSection {
     background: var(--bg-card);
     border-radius: 24px;
@@ -216,7 +215,6 @@
     font-size: 1rem;
 }
 
-/* EQUIPE */
 .equipeSection {
     width: 100%;
     display: flex;
@@ -303,7 +301,6 @@
     font-weight: 500;
 }
 
-/* FOTO */
 .fotoParticipante {
     width: 90px;
     height: 90px;
@@ -311,14 +308,9 @@
     object-fit: cover;
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 1440px) {
     .main {
         padding: 30px;
-    }
-
-    .topoTexto {
-        max-width: 760px;
     }
 
     .tag {
@@ -331,22 +323,11 @@
         line-height: 1.8;
     }
 
-    .divisor {
-        max-width: 760px;
-        margin: 5px auto;
-    }
-
     .textBlock,
     .apiSection {
         max-width: 80%;
-        padding: 34px 34px;
-        gap: 20px;
+        padding: 34px;
         margin: 15px auto;
-    }
-
-    .equipeGrid {
-        grid-template-columns: repeat(auto-fit, minmax(190px, 190px));
-        justify-content: center;
     }
 
     .textBlock p,
@@ -359,17 +340,8 @@
         padding: 24px;
     }
 
-    .infoCardTitle {
-        font-size: 1rem;
-    }
-
-    .infoCardItem {
-        font-size: 0.92rem;
-    }
-
     .apiText h3 {
         font-size: 1.6rem;
-        margin-bottom: 12px;
     }
 
     .node {
@@ -378,17 +350,13 @@
     }
 
     .equipeH2 {
-        margin-top: 15px;
         font-size: 2.2rem;
     }
 
-    .equipeSub {
-        font-size: 0.95rem;
-    }
-
     .cardIntegrante {
-        padding: 24px 18px;
-        border-radius: 20px;
+        padding: 22px 16px;
+        max-width: 220px;
+        width: 100%;
     }
 
     .avatar,
@@ -399,7 +367,6 @@
 
     .integranteNome {
         font-size: 0.95rem;
-        line-height: 1.4;
     }
 
     .integranteCurso {
@@ -409,36 +376,33 @@
 
 @media (max-width: 768px) {
     .main {
-        padding: 50px 24px 70px;
-    }
-
-    .topoTexto {
-        max-width: 100%;
+        padding: 40px 18px 60px;
     }
 
     .tag,
-    .equipeH2,
-    .heroSub {
+    .heroSub,
+    .equipeH2 {
         text-align: center;
     }
 
     .tag {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
     }
 
     .heroSub {
         font-size: 1rem;
     }
 
+    /* espaçamento geral equilibrado */
     .divisor {
-        max-width: 100%;
-        margin: 0 auto;
+        margin: 20px 0;
     }
 
     .textBlock,
     .apiSection {
         max-width: 100%;
-        padding: 30px 24px;
+        padding: 28px 22px;
+        margin: 18px 0;
     }
 
     .textBlock p,
@@ -447,103 +411,36 @@
         line-height: 1.8;
     }
 
+    /* INFO CARDS (corrigido) */
     .cardsSection {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 16px;
     }
 
     .infoCard {
         width: 100%;
-        min-width: 0;
         padding: 22px;
         box-sizing: border-box;
     }
 
-    .equipeGrid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 100%;
-    }
-
+    /* API */
     .apiNodes {
         justify-content: center;
+        flex-wrap: wrap;
     }
 
-    .node {
-        text-align: center;
-    }
-}
-
-@media (max-width: 500px) {
-    .main {
-        padding: 45px 16px 60px;
-    }
-
-    .tag {
-        font-size: 2.2rem;
-    }
-
-    .heroSub {
-        font-size: 0.95rem;
-        line-height: 1.75;
-    }
-
-    .textBlock,
-    .apiSection {
-        padding: 24px 20px;
-
-        border-radius: 20px;
-    }
-
-    .textBlock p,
-    .apiText p {
-        font-size: 0.92rem;
-        line-height: 1.75;
-    }
-
-    .infoCard {
-        padding: 22px;
-    }
-
-    .infoCardTitle {
-        font-size: 0.96rem;
-    }
-
-    .infoCardDivider {
-        margin: 14px 0 18px;
-    }
-
-    .infoCardItem {
-        font-size: 0.88rem;
-    }
-
-    .apiText h3 {
-        font-size: 1.35rem;
-    }
-
-    .node {
-        font-size: 0.75rem;
-        padding: 7px 12px;
-    }
-
-    .connector {
-        font-size: 0.9rem;
-    }
-
-    .equipeH2 {
-        font-size: 2rem;
-    }
-
-    .equipeSub {
-        font-size: 0.9rem;
-    }
-
+    /* EQUIPE (igual obras) */
     .equipeGrid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+        justify-items: center;
     }
 
     .cardIntegrante {
-        padding: 26px 18px;
+        max-width: 200px;
+        width: 100%;
+        padding: 20px 14px;
     }
 
     .avatar,
@@ -551,19 +448,11 @@
         width: 68px;
         height: 68px;
     }
-
-    .integranteNome {
-        font-size: 0.96rem;
-    }
-
-    .integranteCurso {
-        font-size: 0.75rem;
-    }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 500px) {
     .main {
-        padding: 40px 12px 50px;
+        padding: 36px 14px 55px;
     }
 
     .tag {
@@ -571,16 +460,89 @@
     }
 
     .heroSub {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
-    .heroDividerThin {
-        width: 90px;
+    /* controla o “vazio” vertical */
+    .divisor {
+        margin: 16px 0;
     }
 
     .textBlock,
     .apiSection {
-        padding: 22px 16px;
+        padding: 22px 18px;
+        border-radius: 20px;
+        margin: 16px 0;
+    }
+
+    .textBlock p,
+    .apiText p {
+        font-size: 0.9rem;
+        line-height: 1.75;
+    }
+
+    /* INFO CARDS corrigidos */
+    .infoCard {
+        padding: 18px;
+    }
+
+    .infoCardTitle {
+        font-size: 0.96rem;
+    }
+
+    .infoCardItem {
+        font-size: 0.88rem;
+    }
+
+    /* API */
+    .apiText h3 {
+        font-size: 1.3rem;
+    }
+
+    .node {
+        font-size: 0.75rem;
+        padding: 7px 12px;
+    }
+
+    /* EQUIPE vira lista limpa */
+    .equipeGrid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .cardIntegrante {
+        max-width: 260px;
+        width: 100%;
+        padding: 18px 14px;
+    }
+
+    .avatar,
+    .fotoParticipante {
+        width: 70px;
+        height: 70px;
+    }
+
+    .integranteNome {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .main {
+        padding: 30px 12px 40px;
+    }
+
+    .tag {
+        font-size: 1.9rem;
+    }
+
+    .heroSub {
+        font-size: 0.88rem;
+    }
+
+    .textBlock,
+    .apiSection {
+        padding: 20px 14px;
     }
 
     .textBlock p,
@@ -590,7 +552,7 @@
     }
 
     .infoCard {
-        padding: 18px;
+        padding: 16px;
     }
 
     .apiText h3 {
@@ -599,6 +561,11 @@
 
     .equipeH2 {
         font-size: 1.8rem;
+    }
+
+    .cardIntegrante {
+        max-width: 240px;
+        padding: 16px 12px;
     }
 
     .avatar,
