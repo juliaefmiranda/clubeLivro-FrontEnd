@@ -39,35 +39,32 @@
     align-items: center;
     justify-content: center;
     padding-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .conteudo {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 36px;
+    gap: 370px;
     width: 100%;
 }
 
 .livroBox {
     flex: 1;
-    max-width: 760px;
+    max-width: 900px;
     width: 100%;
-
     display: flex;
     align-items: flex-start;
     gap: 30px;
 }
 
 .livroBox img {
-    width: 210px;
+    width: 243px;
     max-width: 100%;
     height: auto;
-
     border-left: 4px solid #9a0984;
     border-radius: 6px;
-
     box-shadow:
         0 16px 30px rgba(0, 0, 0, 0.07),
         0 1px 3px rgba(0, 0, 0, 0.04);
@@ -78,6 +75,8 @@
     flex-direction: column;
     gap: 10px;
     flex: 1;
+    width: 100%;
+    min-width: 360px;
     padding-top: 4px;
 }
 
@@ -111,6 +110,7 @@
 .livroDicas p {
     font-size: 1rem;
     line-height: 1.8;
+    text-align: justify;
     margin: 0;
     color: #333;
     font-family: 'Montserrat', sans-serif;
@@ -122,7 +122,7 @@
     justify-content: center;
     gap: 8px;
     width: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 45px;
 }
 
 .linhaDivisor {
@@ -130,12 +130,10 @@
     max-width: 100%;
     height: 1px;
 
-    background: linear-gradient(
-        to right,
-        transparent,
-        #eddbab,
-        transparent
-    );
+    background: linear-gradient(to right,
+            transparent,
+            #eddbab,
+            transparent);
 }
 
 .simbolo {
@@ -147,17 +145,13 @@
 
 .temasBox {
     flex: 1;
-
     background-color: #f7edf7;
     padding: 30px;
     border-radius: 12px;
-
     max-width: 570px;
     width: 100%;
-
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
     box-sizing: border-box;
-
     min-width: 0;
 }
 
@@ -179,14 +173,11 @@
     display: flex;
     align-items: center;
     gap: 10px;
-
     font-size: 0.98rem;
+    text-align: justify;
     line-height: 1.6;
-
     padding: 15px 0;
-
     border-bottom: 1px solid rgba(140, 46, 140, 0.12);
-
     color: #333;
     font-family: 'Montserrat', sans-serif;
 }
@@ -212,7 +203,7 @@
 @media (max-width: 1440px) {
     .main {
         padding: 30px 15px;
-        margin: 0 ;
+        margin: 0;
     }
 
     .conteudo {
@@ -274,9 +265,40 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+        max-width: 100%;
+    }
+
+    .livroBox {
+        flex-direction: column;
+        align-items: center;
+        max-width: 700px;
+    }
+
+    .livroDicas {
+        align-items: center;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .livroDicas h3::after {
+        margin: 14px auto 0;
+    }
+
+    .temasBox {
+        width: 100%;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 778px) {
     .main {
-        padding: 50px 24px 70px;
+        padding: 20px 24px 70px;
     }
 
     .main h1 {
@@ -287,7 +309,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 40px;
+        gap: 32px;
         max-width: 100%;
     }
 
@@ -304,6 +326,8 @@
     .livroDicas {
         align-items: center;
         max-width: 650px;
+        min-width: 0;
+        width: 100%;
     }
 
     .livroDicas h3::after {
@@ -315,21 +339,28 @@
     }
 
     .temasBox {
-        max-width: 100%;
+        width: 100%;
+        max-width: 650px;
     }
 }
 
 @media (max-width: 500px) {
     .main {
-        padding: 45px 16px 60px;
+        padding: 15px 16px 60px;
     }
 
     .main h1 {
         font-size: 1.95rem;
     }
 
+    .livroBox {
+        gap: 20px;
+    }
+
     .livroDicas {
         text-align: center;
+        min-width: 0;
+        width: 100%;
     }
 
     .livroDicas h2 {
@@ -343,6 +374,7 @@
 
     .temasBox {
         padding: 22px;
+        width: 100%;
     }
 
     .temasBox h3 {
@@ -356,7 +388,11 @@
 
 @media (max-width: 375px) {
     .main {
-        padding: 40px 12px 50px;
+        padding: 10px 12px 50px;
+    }
+
+    .divisor {
+        margin-bottom: 30px;
     }
 
     .main h1 {
@@ -371,6 +407,18 @@
     .livroDicas p {
         font-size: 0.95rem;
         line-height: 1.75;
+    }
+
+    .temasBox {
+        padding: 18px;
+    }
+
+    .temasBox li {
+        font-size: 0.9rem;
+    }
+
+    .livroDicas h2 {
+        font-size: 1.5rem;
     }
 }
 
