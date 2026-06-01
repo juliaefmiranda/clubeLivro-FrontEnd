@@ -569,10 +569,9 @@
     }
 
     .cardIntegrante {
-        max-width: 240px;
-        width: 100%;
-        padding: 18px 14px;
-        gap: 10px;
+        max-width: 230px;
+        padding: 16px 12px;
+        gap: 8px;
     }
 
     .avatar,
@@ -627,10 +626,9 @@
     }
 
     .cardIntegrante {
-        max-width: 220px;
-        width: 100%;
-        padding: 16px 12px 12px;
-        gap: 10px;
+        max-width: 210px;
+        padding: 14px 10px 10px;
+        gap: 6px;
     }
 
     .avatar,
