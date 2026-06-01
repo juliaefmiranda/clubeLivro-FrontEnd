@@ -176,14 +176,14 @@
 
 @media (max-width: 768px) {
     .main {
-        padding: 50px 24px 70px;
+        padding: 40px 18px 60px;
     }
 
     .conteudo {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 40px;
+        gap: 28px;
     }
 
     .conteudoEsquerda {
@@ -192,14 +192,27 @@
 
     .topoTexto {
         max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titulo {
+        text-align: center;
     }
 
     .linha {
-        margin: 24px auto 0;
+        margin: 18px auto 0;
     }
 
     .homeText {
-        max-width: 100%;
+        text-align: center;
+    }
+
+    .homeText p {
+        font-size: 1rem;
+        line-height: 1.75;
+        margin: 18px 0;
     }
 
     .homeBook {
@@ -207,46 +220,48 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
     .main {
-        padding: 45px 16px 60px;
+        padding: 32px 14px 50px;
     }
 
     .titulo {
-        text-align: center;
+        font-size: 1.8rem;
     }
 
     .homeText p {
-        font-size: 1rem;
-        line-height: 1.8;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin: 14px 0;
     }
 
     .homeBook img {
-        width: 200px;
+        width: 190px;
     }
 
     .botao {
         font-size: 0.9rem;
-        padding: 11px 18px;
-        max-width: 230px;
+        padding: 10px 18px;
+        width: fit-content;
+        max-width: 90%;
+        border-radius: 8px;
     }
 }
 
 @media (max-width: 375px) {
     .main {
-        padding: 40px 12px 50px;
+        padding: 28px 12px 40px;
     }
 
     .titulo {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
     }
 
     .homeText p {
-        font-size: 0.95rem;
-        line-height: 1.75;
+        font-size: 0.9rem;
     }
 
     .homeBook img {
-        width: 180px;
+        width: 170px;
     }
 }
