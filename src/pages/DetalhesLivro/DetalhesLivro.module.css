@@ -226,7 +226,7 @@
     .secaoPrincipal {
         gap: 28px;
         padding: 20px 24px;
-        max-width: 80%;
+        max-width: 100%;
         margin: 0 auto;
     }
 
@@ -249,7 +249,7 @@
 
     .conteudoTabs {
         padding: 24px;
-        max-width: 80%;
+        max-width: 100%;
         margin: 0 auto;
     }
 
@@ -261,7 +261,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        width: 85%;
+        width: 100%;
         margin: 25px auto;
         justify-content: center;
         padding: 10px;
@@ -285,6 +285,7 @@
     .secaoPrincipal {
         gap: 26px;
         padding: 18px 22px;
+        max-width: 80%;
     }
 
     .capaLivro img {
@@ -308,13 +309,23 @@
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
-        width: 83%;
+        width: 85%;
         margin: 20px auto 20px;
         justify-content: center;
         padding: 10px;
         background: white;
         border: 1px solid #ece7ec;
         border-radius: 14px;
+    }
+
+    .conteudoTabs {
+        padding: 24px;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .botaoVoltar {
+        margin-left: 60px;
     }
 }
 
