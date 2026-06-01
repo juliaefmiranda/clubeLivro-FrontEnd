@@ -12,7 +12,7 @@
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
-    padding: 60px 30px 40px;
+    padding: 30px 30px 40px;
     box-sizing: border-box;
 }
 
@@ -38,7 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 60px;
+    padding-top: 30px;
     margin-bottom: 40px;
 }
 
@@ -133,14 +133,14 @@
     background: linear-gradient(
         to right,
         transparent,
-        var(--borda),
+        #eddbab,
         transparent
     );
 }
 
 .simbolo {
     font-size: 13px;
-    color: var(--dourado);
+    color: #dfc886;
     line-height: 1;
     flex-shrink: 0;
 }
@@ -212,36 +212,65 @@
 @media (max-width: 1440px) {
     .main {
         padding: 30px 15px;
+        margin: 0 ;
     }
 
     .conteudo {
+        width: 100%;
         max-width: 85%;
         margin: 0 auto;
-
         display: flex;
         justify-content: center;
         align-items: flex-start;
+        gap: 50px;
+    }
 
-        gap: 60px;
+    .main h1 {
+        font-size: 2.3rem;
+    }
+
+    .idiomaContainer {
+        padding-top: 35px;
+        margin-bottom: 30px;
     }
 
     .livroBox {
-        flex: 1;
-        max-width: 760px;
-        width: 100%;
+        max-width: 700px;
     }
 
     .livroBox img {
-        width: 200px;
+        width: 190px;
+    }
+
+    .livroDicas h2 {
+        font-size: 1.6rem;
     }
 
     .livroDicas p {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
         line-height: 1.85;
     }
 
     .temasBox {
-        max-width: 100%;
+        max-width: 500px;
+        padding: 24px;
+    }
+
+    .temasBox h3 {
+        font-size: 1.5rem;
+    }
+
+    .temasBox li {
+        font-size: 0.92rem;
+        padding: 13px 0;
+    }
+
+    .divisor {
+        margin-bottom: 60px;
+    }
+
+    .linhaDivisor {
+        width: 400px;
     }
 }
 
@@ -259,6 +288,7 @@
         align-items: center;
         text-align: center;
         gap: 40px;
+        max-width: 100%;
     }
 
     .livroBox {
@@ -273,6 +303,7 @@
 
     .livroDicas {
         align-items: center;
+        max-width: 650px;
     }
 
     .livroDicas h3::after {
@@ -294,7 +325,11 @@
     }
 
     .main h1 {
-        font-size: 1.75rem;
+        font-size: 1.95rem;
+    }
+
+    .livroDicas {
+        text-align: center;
     }
 
     .livroDicas h2 {
@@ -308,6 +343,10 @@
 
     .temasBox {
         padding: 22px;
+    }
+
+    .temasBox h3 {
+        text-align: center;
     }
 
     .temasBox li {
