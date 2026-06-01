@@ -228,10 +228,6 @@
         padding: 32px 18px 50px;
     }
 
-    .titulo {
-        font-size: 2.2rem;
-    }
-
     .gridObras {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 20px;
@@ -291,7 +287,7 @@
     }
 
     .titulo {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     .imagem {
@@ -314,6 +310,10 @@
     .imagem {
         width: 120px;
         height: 180px;
+    }
+
+    .titulo {
+        font-size: 1.6rem;
     }
 
     .nomeLivro {
