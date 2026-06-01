@@ -88,7 +88,6 @@
     border-radius: 2px;
     transform: scaleX(0);
     transform-origin: left;
-    /* faz a animação começar da esquerda */
     transition: transform 0.3s ease;
 }
 
@@ -117,35 +116,61 @@
 
 @media (max-width: 900px) {
     .navbar {
-        padding: 20px 25px;
+        padding: 16px 20px;
         justify-content: center;
+        gap: 12px;
     }
-}
 
-@media (max-width: 600px) {
     .navLinks {
-        display: grid;
-
-        grid-template-columns: repeat(2, auto);
-
-        gap: 12px 24px;
-
-        text-align: center;
-
-        justify-content: center;
-    }
-
-    .itemIdioma {
-        grid-column: span 2;
-
-        display: flex;
-        justify-content: center;
-
-        margin-top: 6px;
+        gap: 12px;
+        font-size: 0.85rem;
     }
 
     .logo,
     .logo2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 14px;
+        gap: 6px;
+    }
+
+    .logoContainer {
+        line-height: 1;
+    }
+
+    .logo,
+    .logo2 {
+        font-size: 1.15rem;
+    }
+
+    .navLinks {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 12px;
+        font-size: 0.75rem;
+        margin-top: 2px;
+    }
+
+    .navLinks li {
+        padding: 2px 4px;
+    }
+
+    .itemIdioma {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 2px;
+    }
+
+    .link,
+    .ativo {
+        padding-bottom: 1px;
     }
 }

@@ -120,6 +120,10 @@ export default function DetalhesLivro() {
                                 : `Published in ${livro.anoPublicacao}`}
                         </p>
 
+                        <p className={styles.notaLivro}>
+                            ⭐ {livro.nota ? livro.nota : 3}/5
+                        </p>
+
                         <p className={styles.resumoLivro}>
                             {idioma === 'pt'
                                 ? livro.resumo
