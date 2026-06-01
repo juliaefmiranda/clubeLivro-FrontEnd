@@ -149,14 +149,6 @@
     margin: 0;
 }
 
-.cardObra {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cardObra:hover {
-    transform: translateY(-4px);
-}
-
 @media (max-width: 1440px) {
     .topo {
         margin-bottom: 27px;
