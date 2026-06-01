@@ -207,13 +207,14 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
     .main {
         padding: 45px 16px 60px;
     }
 
     .titulo {
         text-align: center;
+        font-size: 2rem;
     }
 
     .homeText p {
@@ -235,10 +236,6 @@
 @media (max-width: 375px) {
     .main {
         padding: 40px 12px 50px;
-    }
-
-    .titulo {
-        font-size: 2.2rem;
     }
 
     .homeText p {
