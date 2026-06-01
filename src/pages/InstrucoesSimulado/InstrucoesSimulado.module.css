@@ -91,15 +91,19 @@
     transform: scale(1.05);
 }
 
-/* ── breakpoints no padrão do projeto ── */
-
 @media (max-width: 1440px) {
     .topo {
         margin-bottom: 8px;
     }
 
     .main {
-        padding: 30px 15px 60px;
+        padding: 30px 15px;
+        margin: 15px 0 5px;
+    }
+
+    .conteudo {
+        max-width: 85%;
+        margin: 0 auto;
     }
 
     .titulo {
@@ -107,19 +111,35 @@
     }
 
     .subtitulo {
-        font-size: 1.75rem;
+        font-size: 1.65rem;
+        margin-bottom: 10px;
     }
 
     .textoInfo p {
-        font-size: 1.05rem;
+        font-size: 0.95rem;
+        line-height: 1.85;
+        margin-bottom: 22px;
     }
 
     .textoInfo {
         margin-bottom: 30px;
     }
+
+    .botaoIniciar {
+        font-size: 0.92rem;
+        padding: 12px 28px;
+    }
 }
 
 @media (max-width: 768px) {
+    .main {
+        padding: 50px 24px 70px;
+    }
+
+    .conteudo {
+        max-width: 100%;
+    }
+
     .topo {
         flex-direction: column;
         gap: 22px;
@@ -147,6 +167,7 @@
 
     .titulo {
         font-size: 2rem;
+        text-align: center;
     }
 
     .subtitulo {
@@ -155,8 +176,8 @@
     }
 
     .textoInfo p {
-        font-size: 0.95rem;
-        line-height: 1.75;
+        font-size: 1rem;
+        line-height: 1.8;
     }
 
     .botaoIniciar {
