@@ -167,9 +167,17 @@
     .cardObra,
     .cardErro {
         display: flex;
+        justify-content: center;
         flex-direction: column;
         padding: 15px 16px;
         margin: 0;
+        min-height: 340px;
+    }
+
+    .info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     .info {
@@ -204,10 +212,6 @@
     .info {
         gap: 4px;
     }
-
-    .cardErro {
-        min-height: 340px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -228,6 +232,11 @@
     .imagem {
         width: 130px;
         height: 195px;
+    }
+
+    .cardObra,
+    .cardErro {
+        min-height: 400px;
     }
 }
 
