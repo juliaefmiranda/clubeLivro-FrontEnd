@@ -49,8 +49,8 @@ export default function DicasVestibular() {
                     <div className={styles.idiomaContainer}>
                         <h1>
                             {idioma === 'pt'
-                                ? 'Dicas Literárias para Vestibular'
-                                : 'Literary Tips for College Entrance Exams'}
+                                ? 'Dicas para Vestibular'
+                                : 'Tips for College Entrance Exams'}
                         </h1>
                     </div>
                 </div>
