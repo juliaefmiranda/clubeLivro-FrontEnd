@@ -180,6 +180,12 @@
         flex-direction: column;
     }
 
+    .info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
     .imagem {
         width: 120px;
         height: 180px;
@@ -263,6 +269,10 @@
 
     .autor {
         font-size: 0.95rem;
+    }
+
+    .cardErro {
+        min-height: 300px;
     }
 }
 
