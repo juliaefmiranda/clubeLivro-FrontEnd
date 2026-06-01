@@ -67,7 +67,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 320px;
+    max-width: 280px;
     flex-shrink: 0;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .homeBook img {
-    width: 240px;
+    width: 210px;
     display: block;
     object-fit: cover;
     border-left: 4px solid #9a0984;
@@ -118,21 +118,17 @@
 
 @media (max-width: 1440px) {
     .main {
-        margin: 15px 0 5px;
-        padding: 30px 15px;
+        margin: 0;
+        padding: 30px;
     }
 
     .conteudo {
         width: fit-content;
-
         max-width: 85%;
-
         margin: 0 auto;
-
         display: flex;
         justify-content: center;
-        align-items: center;
-
+        align-items: flex-start;
         gap: 60px;
     }
 
@@ -160,16 +156,16 @@
     .homeText p {
         font-size: 0.95rem;
         line-height: 1.85;
-        margin-bottom: 22px;
+        margin: 35px 22px 22px 0;
     }
 
     .homeBook {
-        width: 230px;
+        width: 220px;
         flex-shrink: 0;
     }
 
     .homeBook img {
-        width: 200px;
+        width: 190px;
     }
 
     .botao {
