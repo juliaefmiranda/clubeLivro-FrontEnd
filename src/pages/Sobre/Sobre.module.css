@@ -30,7 +30,6 @@
     flex-direction: column;
 }
 
-/* HERO */
 .topo {
     width: 100%;
     display: flex;
@@ -80,7 +79,6 @@
     flex-shrink: 0;
 }
 
-/* SOBRE */
 
 .section {
     width: 100%;
@@ -108,7 +106,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* CARDS */
 .cardsSection {
     display: flex;
     gap: 24px;
@@ -164,7 +161,6 @@
     flex-shrink: 0;
 }
 
-/* API */
 .apiSection {
     background: var(--bg-card);
     border-radius: 24px;
@@ -311,7 +307,6 @@
     object-fit: cover;
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 1440px) {
     .main {
         padding: 30px;
@@ -398,18 +393,21 @@
     }
 
     .integranteNome {
+        margin: 0;
+        line-height: 1.3;
         font-size: 0.95rem;
-        line-height: 1.4;
     }
 
     .integranteCurso {
+        margin: 0;
         font-size: 0.75rem;
     }
+
 }
 
 @media (max-width: 768px) {
     .main {
-        padding: 50px 24px 70px;
+        padding: 40px 18px 60px;
     }
 
     .topoTexto {
@@ -420,10 +418,6 @@
     .equipeH2,
     .heroSub {
         text-align: center;
-    }
-
-    .tag {
-        font-size: 2.3rem;
     }
 
     .heroSub {
@@ -438,7 +432,8 @@
     .textBlock,
     .apiSection {
         max-width: 100%;
-        padding: 30px 24px;
+        padding: 26px 20px;
+        margin: 10px auto;
     }
 
     .textBlock p,
@@ -450,19 +445,14 @@
     .cardsSection {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 14px;
     }
 
     .infoCard {
         width: 100%;
         min-width: 0;
-        padding: 22px;
+        padding: 20px;
         box-sizing: border-box;
-    }
-
-    .equipeGrid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 100%;
     }
 
     .apiNodes {
@@ -472,15 +462,38 @@
     .node {
         text-align: center;
     }
+
+    .equipeGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        justify-items: center;
+    }
+
+    .cardIntegrante {
+        max-width: 200px;
+        width: 100%;
+        padding: 20px 14px;
+        gap: 12px;
+    }
+
+    .avatar,
+    .fotoParticipante {
+        width: 66px;
+        height: 66px;
+    }
+
+    .integranteNome {
+        font-size: 0.95rem;
+    }
+
+    .integranteCurso {
+        font-size: 0.75rem;
+    }
 }
 
 @media (max-width: 500px) {
     .main {
-        padding: 45px 16px 60px;
-    }
-
-    .tag {
-        font-size: 2.2rem;
+        padding: 32px 14px 50px;
     }
 
     .heroSub {
@@ -488,11 +501,15 @@
         line-height: 1.75;
     }
 
+    .divisor {
+        margin: 6px 0;
+    }
+
     .textBlock,
     .apiSection {
-        padding: 24px 20px;
-
-        border-radius: 20px;
+        padding: 20px 16px;
+        border-radius: 18px;
+        margin: 8px auto;
     }
 
     .textBlock p,
@@ -502,7 +519,7 @@
     }
 
     .infoCard {
-        padding: 22px;
+        padding: 18px;
     }
 
     .infoCardTitle {
@@ -510,7 +527,7 @@
     }
 
     .infoCardDivider {
-        margin: 14px 0 18px;
+        margin: 12px 0 16px;
     }
 
     .infoCardItem {
@@ -530,6 +547,10 @@
         font-size: 0.9rem;
     }
 
+    .tag {
+        font-size: 1.8rem;
+    }
+
     .equipeH2 {
         font-size: 2rem;
     }
@@ -538,12 +559,19 @@
         font-size: 0.9rem;
     }
 
+    .equipeSection {
+        gap: 20px;
+    }
+
     .equipeGrid {
         grid-template-columns: 1fr;
+        justify-items: center;
     }
 
     .cardIntegrante {
-        padding: 26px 18px;
+        max-width: 230px;
+        padding: 16px 12px;
+        gap: 8px;
     }
 
     .avatar,
@@ -563,24 +591,20 @@
 
 @media (max-width: 375px) {
     .main {
-        padding: 40px 12px 50px;
+        padding: 28px 12px 40px;
     }
 
     .tag {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .heroSub {
         font-size: 0.9rem;
     }
 
-    .heroDividerThin {
-        width: 90px;
-    }
-
     .textBlock,
     .apiSection {
-        padding: 22px 16px;
+        padding: 18px 14px;
     }
 
     .textBlock p,
@@ -590,7 +614,7 @@
     }
 
     .infoCard {
-        padding: 18px;
+        padding: 16px;
     }
 
     .apiText h3 {
@@ -598,12 +622,27 @@
     }
 
     .equipeH2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+
+    .cardIntegrante {
+        max-width: 210px;
+        padding: 14px 10px 10px;
+        gap: 6px;
     }
 
     .avatar,
     .fotoParticipante {
         width: 62px;
         height: 62px;
+    }
+
+    .integranteNome {
+        font-size: 0.9rem;
+    }
+
+
+    .integranteCurso {
+        font-size: 0.72rem;
     }
 }
