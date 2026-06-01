@@ -48,7 +48,6 @@
     display: flex;
     width: 100%;
     max-width: 240px;
-    min-width: 0;
     margin: 0 auto;
     padding: 24px 20px 18px;
     flex-direction: column;
@@ -76,8 +75,10 @@
 }
 
 .imagem {
-    width: 160px;
-    height: 240px;
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    aspect-ratio: 2 / 3;
     object-fit: cover;
     border-radius: 4px;
 }
@@ -122,7 +123,7 @@
     box-sizing: border-box;
     width: 100%;
     max-width: 240px;
-    min-height: 420px;
+    min-height: 380px;
     margin: 0 auto;
     padding: 24px 20px 18px;
     background-color: #f7f5f1;
@@ -156,6 +157,7 @@
     .gridObras {
         grid-template-columns: repeat(auto-fit, minmax(190px, 190px));
         justify-content: center;
+        align-items: start;
     }
 
     .main {
@@ -164,28 +166,47 @@
 
     .cardObra,
     .cardErro {
-        max-width: 190px;
+        display: flex;
+        flex-direction: column;
         padding: 15px 16px;
         margin: 0;
     }
 
+    .info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
     .imagem {
         width: 120px;
-        height: 190px;
+        height: 180px;
+    }
+
+    .imagemContainer {
+        margin-bottom: 12px;
     }
 
     .nomeLivro {
-        font-size: 1.15rem;
-        margin: 3px;
+        margin: 0 0 6px;
+        line-height: 1.15;
+        font-size: 1.2rem;
     }
 
     .autor {
-        font-size: 0.95rem;
-        margin: 0;
+        font-size: 0.9rem;
     }
 
     .titulo {
         font-size: 2.3rem;
+    }
+
+    .info {
+        gap: 4px;
+    }
+
+    .cardErro {
+        min-height: 340px;
     }
 }
 
@@ -199,62 +220,122 @@
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 26px;
     }
+
+    .main {
+        padding: 30px 20px 50px;
+    }
+
+    .imagem {
+        width: 130px;
+        height: 195px;
+    }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .main {
-        padding: 45px 16px 60px;
+        padding: 40px 20px 50px;
     }
 
     .gridObras {
-        grid-template-columns: 1fr;
-        justify-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
         gap: 24px;
+        justify-content: center;
     }
 
     .cardObra,
     .cardErro {
-        max-width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        padding: 20px 16px 16px;
     }
 
     .imagem {
-        width: 150px;
-        height: 220px;
+        width: 140px;
+        height: 210px;
     }
 
     .nomeLivro {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
     }
 
     .autor {
         font-size: 0.95rem;
     }
+
+    .cardErro {
+        min-height: 300px;
+    }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
     .main {
-        padding: 40px 12px 50px;
+        padding: 35px 16px 45px;
+    }
+
+    .gridObras {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .cardObra,
+    .cardErro {
+        max-width: 260px;
+        padding: 18px 14px 14px;
+    }
+
+    .imagem {
+        width: 130px;
+        height: 195px;
     }
 
     .titulo {
         font-size: 2rem;
     }
 
-    .cardObra,
-    .cardErro {
-        padding: 20px 16px 16px;
-    }
-
-    .imagem {
-        width: 140px;
-        height: 205px;
-    }
-
     .nomeLivro {
         font-size: 1.2rem;
+        margin-bottom: 5px;
     }
 
     .autor {
-        font-size: 0.92rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .main {
+        padding: 30px 12px 40px;
+    }
+
+    .cardObra,
+    .cardErro {
+        max-width: 240px;
+        padding: 16px 12px 12px;
+    }
+
+    .imagem {
+        width: 120px;
+        height: 180px;
+    }
+
+    .nomeLivro {
+        font-size: 1.1rem;
+    }
+
+    .autor {
+        font-size: 0.85rem;
+    }
+
+    .cardErro {
+        min-height: 280px;
+    }
+
+    .erroConteudo h2 {
+        font-size: 1.2rem;
+    }
+
+    .erroConteudo p {
+        font-size: 0.85rem;
     }
 }
