@@ -149,6 +149,14 @@
     margin: 0;
 }
 
+.cardObra {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cardObra:hover {
+    transform: translateY(-4px);
+}
+
 @media (max-width: 1440px) {
     .topo {
         margin-bottom: 27px;
@@ -216,100 +224,79 @@
 }
 
 @media (max-width: 768px) {
-    .topo {
-        flex-direction: column;
-        gap: 22px;
+    .main {
+        padding: 32px 18px 50px;
+    }
+
+    .titulo {
+        font-size: 2.2rem;
     }
 
     .gridObras {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 26px;
-    }
-
-    .main {
-        padding: 30px 20px 50px;
-    }
-
-    .imagem {
-        width: 130px;
-        height: 195px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
     }
 
     .cardObra,
     .cardErro {
-        min-height: 400px;
+        max-width: 200px;
+        padding: 18px 14px 14px;
+        min-height: auto;
+    }
+
+    .imagem {
+        width: 120px;
+        height: 180px;
+    }
+
+    .nomeLivro {
+        font-size: 1.1rem;
+    }
+
+    .autor {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 600px) {
     .main {
-        padding: 40px 20px 50px;
+        padding: 28px 16px 40px;
     }
 
     .gridObras {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
-        gap: 24px;
-        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
     }
 
     .cardObra,
     .cardErro {
-        max-width: 280px;
-        margin: 0 auto;
-        padding: 20px 16px 16px;
+        max-width: 100%;
     }
 
     .imagem {
-        width: 140px;
-        height: 210px;
-    }
-
-    .nomeLivro {
-        font-size: 1.25rem;
-    }
-
-    .autor {
-        font-size: 0.95rem;
-    }
-
-    .cardErro {
-        min-height: 300px;
+        width: 110px;
+        height: 165px;
     }
 }
 
 @media (max-width: 480px) {
-    .main {
-        padding: 35px 16px 45px;
-    }
-
     .gridObras {
         grid-template-columns: 1fr;
-        gap: 20px;
         justify-items: center;
     }
 
     .cardObra,
     .cardErro {
         max-width: 260px;
-        padding: 18px 14px 14px;
-    }
-
-    .imagem {
-        width: 130px;
-        height: 195px;
     }
 
     .titulo {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
-    .nomeLivro {
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-    }
-
-    .autor {
-        font-size: 0.9rem;
+    .imagem {
+        width: 120px;
+        height: 180px;
     }
 }
 
