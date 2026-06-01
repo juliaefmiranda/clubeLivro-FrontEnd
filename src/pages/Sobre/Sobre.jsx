@@ -13,6 +13,24 @@ function iniciais(nome = '') {
         .toUpperCase();
 }
 
+function formatCurso(participante, idioma) {
+    if (!participante) return '';
+
+    const curso = participante.curso;
+    const cursoPt = participante.curso_pt || participante.cursoPt || participante.pt;
+    const cursoEn = participante.curso_en || participante.cursoEn || participante.en;
+
+    if (idioma === 'en') {
+        if (cursoEn) return cursoEn;
+        if (typeof curso === 'object') return curso.en || curso.curso_en || curso.curso || cursoPt || '';
+        return curso || cursoPt || '';
+    }
+
+    if (cursoPt) return cursoPt;
+    if (typeof curso === 'object') return curso.pt || curso.curso_pt || curso.curso || cursoEn || '';
+    return curso || cursoEn || '';
+}
+
 export default function Sobre() {
     const { idioma, setIdioma } = useIdioma();
     const [integrantes, setIntegrantes] = useState([]);
@@ -65,7 +83,7 @@ export default function Sobre() {
             titulo_pt: 'A Moreninha',
             subtitulo_pt: 'Integrated Literary Platform',
             descricao1_pt:
-                'This project is a joint initiative between SESI and SENAI schools, bringing together students from Systems Development, Electrical & Electronics, and Mechanics programs around a shared goal: exploring Brazilian entrance-exam literature in a digital and collaborative way.',
+                'This project is a joint initiative between SESI and SENAI schools, bringing together students from Systems Development, Electroelectronics, and Mechanics programs around a shared goal: exploring Brazilian entrance-exam literature in a digital and collaborative way.',
             descricao2_pt:
                 'Our platform is dedicated to the novel A Moreninha by Joaquim Manuel de Macedo — the first Brazilian novel — offering summaries, analyses, quizzes, and study resources.',
             descricao3_pt:
@@ -75,7 +93,7 @@ export default function Sobre() {
             disc2_pt: 'English',
             cursos_pt: 'Participating Programs',
             disc3_pt: 'Systems Development',
-            disc4_pt: 'Electrical & Electronics',
+            disc4_pt: 'Electroelectronics',
             disc5_pt: 'Mechanics',
             apis_pt: 'API Integration',
             apisDesc_pt:
@@ -92,7 +110,6 @@ export default function Sobre() {
             <Navbar idioma={idioma} setIdioma={setIdioma} />
 
             <main className={styles.main}>
-                {/* topo */}
                 <div className={styles.topo}>
 
                     <div className={styles.topoTexto}>
@@ -101,14 +118,12 @@ export default function Sobre() {
                     </div>
                 </div>
 
-                {/* divisor */}
                 <div className={styles.divisor}>
                     <span className={styles.divisorLine} />
                     <span className={styles.divisorOrnament}>✦</span>
                     <span className={styles.divisorLine} />
                 </div>
 
-                {/* sobre + disciplinas juntos */}
                 <section className={styles.section}>
                     <div className={styles.textBlock}>
                         <p>{t.descricao1_pt}</p>
@@ -207,7 +222,7 @@ export default function Sobre() {
                                     </p>
 
                                     <span className={styles.integranteCurso}>
-                                        {p.curso}
+                                        {formatCurso(p, idioma)}
                                     </span>
                                 </div>
                             ))}
