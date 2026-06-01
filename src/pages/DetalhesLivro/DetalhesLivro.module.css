@@ -115,6 +115,7 @@
 .resumoLivro {
     max-width: 720px;
     font-size: 1.08rem;
+    text-align: justify;
     line-height: 1.8;
     color: #333;
     font-family: 'Montserrat', sans-serif;
