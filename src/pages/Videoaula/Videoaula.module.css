@@ -178,7 +178,7 @@
 
 @media (max-width: 768px) {
     .home {
-        padding: 40px 30px 60px;
+        padding: 40px 60px 60px;
     }
 
     .topo {
@@ -227,7 +227,7 @@
 
 @media (max-width: 500px) {
     .home {
-        padding: 32px 14px 50px;
+        padding: 32px 30px 50px;
     }
 
     .topo {
@@ -260,7 +260,6 @@
 
     .secaoTexto {
         max-width: 420px;
-        padding: 0 30px;
         box-sizing: border-box;
     }
 
@@ -275,7 +274,7 @@
 
 @media (max-width: 375px) {
     .home {
-        padding: 28px 12px 40px;
+        padding: 28px 30px 40px;
     }
 
     .tituloPrincipal {
