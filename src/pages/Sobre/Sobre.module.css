@@ -55,7 +55,6 @@
     line-height: 1.7;
 }
 
-/* DIVISOR */
 .divisor {
     display: flex;
     align-items: center;
@@ -79,7 +78,6 @@
     flex-shrink: 0;
 }
 
-
 .section {
     width: 100%;
 }
@@ -99,6 +97,7 @@
 }
 
 .textBlock p {
+    text-align: justify;
     font-size: 1.2rem;
     line-height: 1.95;
     color: var(--texto-suave);
@@ -183,6 +182,7 @@
 }
 
 .apiText p {
+    text-align: justify;
     font-size: 1.2rem;
     line-height: 1.9;
     color: var(--texto-suave);
@@ -212,7 +212,6 @@
     font-size: 1rem;
 }
 
-/* EQUIPE */
 .equipeSection {
     width: 100%;
     display: flex;
@@ -299,7 +298,6 @@
     font-weight: 500;
 }
 
-/* FOTO */
 .fotoParticipante {
     width: 90px;
     height: 90px;
@@ -514,6 +512,7 @@
 
     .textBlock p,
     .apiText p {
+        text-align: left;
         font-size: 0.92rem;
         line-height: 1.75;
     }
