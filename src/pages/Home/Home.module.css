@@ -56,6 +56,7 @@
 }
 
 .homeText p {
+    text-align: justify;
     font-size: 1.2rem;
     line-height: 1.95;
     margin-bottom: 28px;
@@ -134,7 +135,6 @@
 
     .conteudoEsquerda {
         width: 760px;
-        flex: unset;
     }
 
     .topo {
@@ -205,11 +205,8 @@
         margin: 18px auto 0;
     }
 
-    .homeText {
-        text-align: left;
-    }
-
     .homeText p {
+        text-align: justify;
         font-size: 1rem;
         line-height: 1.75;
         margin: 18px 0;
@@ -230,6 +227,7 @@
     }
 
     .homeText p {
+        text-align: left;
         font-size: 0.95rem;
         line-height: 1.7;
         margin: 14px 0;

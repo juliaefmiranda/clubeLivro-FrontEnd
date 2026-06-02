@@ -103,7 +103,7 @@ export default function Videoaulas() {
                                 </div>
                             )}
                         </div>
-                        <span className={styles.dataPost}>22 May, 2026</span>
+                        <span className={styles.dataPost}>29 May, 2026</span>
                     </section>
 
                     <section className={styles.secaoTexto}>
