@@ -62,7 +62,7 @@ export default function Sobre() {
             descricao1_pt:
                 'Este projeto é uma iniciativa integrada entre as escolas SESI e SENAI, reunindo alunos dos cursos de Desenvolvimento de Sistemas, Eletroeletrônica e Mecânica em torno de um objetivo comum: explorar a literatura brasileira de vestibular de forma digital e colaborativa.',
             descricao2_pt:
-                'Nossa plataforma é dedicada à obra A Moreninha, de Joaquim Manuel de Macedo — o primeiro romance brasileiro — oferecendo resumos, análises, quizzes e conteúdos de apoio para o estudo.',
+                'Nossa plataforma é dedicada à obra A Moreninha, de Joaquim Manuel de Macedo — o primeiro romance brasileiro — oferecendo resumos, análises, simulados e conteúdos de apoio para o estudo.',
             descricao3_pt:
                 'O projeto integra as disciplinas de Língua Portuguesa e Inglês do SESI, e se conecta às plataformas de outros grupos via APIs, cada um responsável por um livro diferente, formando uma grande biblioteca literária colaborativa.',
             disciplinas_pt: 'Disciplinas Integradas',
@@ -85,7 +85,7 @@ export default function Sobre() {
             descricao1_pt:
                 'This project is a joint initiative between SESI and SENAI schools, bringing together students from Systems Development, Electroelectronics, and Mechanics programs around a shared goal: exploring Brazilian entrance-exam literature in a digital and collaborative way.',
             descricao2_pt:
-                'Our platform is dedicated to the novel A Moreninha by Joaquim Manuel de Macedo — the first Brazilian novel — offering summaries, analyses, quizzes, and study resources.',
+                'Our platform is dedicated to the novel A Moreninha by Joaquim Manuel de Macedo — the first Brazilian novel — offering summaries, analyses, mock exams, and study resources.',
             descricao3_pt:
                 "The project integrates Portuguese Language and English subjects from SESI and connects to other groups' platforms via APIs, each responsible for a different book, forming a large collaborative literary library.",
             disciplinas_pt: 'Integrated Subjects',
