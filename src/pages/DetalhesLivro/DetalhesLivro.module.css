@@ -335,7 +335,13 @@
     }
 
     .botaoVoltar {
-        margin-left: 60px;
+        padding-top: 22px;
+        margin-left: 80px;
+        font-size: 0.98rem;
+    }
+
+    .topoDetalhes {
+        margin-bottom: 10px;
     }
 }
 
@@ -352,6 +358,16 @@
 
     .resumoLivro {
         text-align: center;
+    }
+
+    .botaoVoltar {
+        padding-top: 22px;
+        margin-left: 50px;
+        font-size: 0.95rem;
+    }
+
+    .topoDetalhes {
+        margin-bottom: 10px;
     }
 }
 
@@ -379,6 +395,7 @@
     .resumoLivro {
         font-size: 0.9rem;
         line-height: 1.65;
+        text-align: left;
     }
 
     .tabsContainer {
@@ -396,10 +413,21 @@
 
     .cardInfo p {
         font-size: 14px;
+        text-align: left;
+    }
+
+    .botaoVoltar {
+        padding-top: 12px;
+        margin-left: 20px;
+        font-size: 0.85rem;
+    }
+
+    .topoDetalhes {
+        margin-bottom: 10px;
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 395px) {
     .detalhes {
         padding: 0px 12px 35px;
     }
@@ -418,5 +446,23 @@
 
     .cardInfo {
         padding: 14px;
+    }
+
+    .cardInfo p {
+        text-align: left;
+    }
+
+    .botaoVoltar {
+        padding-top: 12px;
+        margin-left: 20px;
+        font-size: 0.85rem;
+    }
+
+    .topoDetalhes {
+        margin-bottom: 10px;
+    }
+
+    .resumoLivro {
+        text-align: left;
     }
 }
