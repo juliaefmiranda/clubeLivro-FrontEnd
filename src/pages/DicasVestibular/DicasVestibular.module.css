@@ -46,13 +46,13 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 370px;
+    gap: 120px;
     width: 100%;
 }
 
 .livroBox {
     flex: 1;
-    max-width: 900px;
+    max-width: 760px;
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -148,7 +148,7 @@
     background-color: #f7edf7;
     padding: 30px;
     border-radius: 12px;
-    max-width: 570px;
+    max-width: 600px;
     width: 100%;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
     box-sizing: border-box;
@@ -202,17 +202,7 @@
 
 @media (max-width: 1440px) {
     .main {
-        padding: 30px 15px 40px;
-    }
-
-    .conteudo {
-        width: 100%;
-        max-width: 85%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 50px;
+        padding: 30px 30px 40px;
     }
 
     .main h1 {
@@ -220,16 +210,31 @@
     }
 
     .idiomaContainer {
-        padding-top: 35px;
-        margin-bottom: 30px;
+        padding-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .conteudo {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 80px;
     }
 
     .livroBox {
-        max-width: 700px;
+        flex: 1;
+        max-width: 620px;
+        gap: 24px;
     }
 
     .livroBox img {
         width: 190px;
+    }
+
+    .livroDicas {
+        min-width: 0;
     }
 
     .livroDicas h2 {
@@ -242,12 +247,13 @@
     }
 
     .temasBox {
-        max-width: 500px;
+        flex: 1;
+        max-width: 520px;
         padding: 24px;
     }
 
     .temasBox h3 {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
     }
 
     .temasBox li {
@@ -256,7 +262,7 @@
     }
 
     .divisor {
-        margin-bottom: 60px;
+        margin-bottom: 28px;
     }
 
     .linhaDivisor {
@@ -268,28 +274,35 @@
     .main {
         padding: 30px 20px 50px;
     }
+
     .conteudo {
         flex-direction: column;
         align-items: center;
-        text-align: center;
         gap: 40px;
         max-width: 100%;
     }
 
     .livroBox {
-        flex-direction: column;
-        align-items: center;
-        max-width: 700px;
+        flex-direction: row;
+        align-items: flex-start;
+        max-width: 850px;
+        width: 100%;
+        gap: 28px;
+    }
+
+    .livroBox img {
+        width: 190px;
+        flex-shrink: 0;
     }
 
     .livroDicas {
-        align-items: center;
-        min-width: 0;
+        align-items: flex-start;
+        text-align: left;
         width: 100%;
     }
 
     .livroDicas h3::after {
-        margin: 14px auto 0;
+        margin-top: 14px;
     }
 
     .temasBox {
@@ -298,9 +311,9 @@
     }
 }
 
-@media (max-width: 778px) {
+@media (max-width: 768px) {
     .main {
-        padding: 30px 20px 50px;
+        padding: 40px 18px 60px;
     }
 
     .main h1 {
@@ -310,7 +323,6 @@
     .conteudo {
         flex-direction: column;
         align-items: center;
-        text-align: center;
         gap: 32px;
         max-width: 100%;
     }
@@ -319,6 +331,7 @@
         flex-direction: column;
         align-items: center;
         max-width: 100%;
+        gap: 20px;
     }
 
     .livroBox img {
@@ -326,10 +339,11 @@
     }
 
     .livroDicas {
-        align-items: center;
+        width: 100%;
         max-width: 650px;
         min-width: 0;
-        width: 100%;
+        align-items: center;
+        text-align: center;
     }
 
     .livroDicas h3::after {
@@ -348,62 +362,57 @@
 
 @media (max-width: 500px) {
     .main {
-        padding: 25px 16px 45px;
+        padding: 32px 14px 50px;
+    }
+
+    .idiomaContainer {
+        margin-bottom: 14px;
     }
 
     .main h1 {
-        font-size: 1.95rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
     }
 
-    .livroBox {
-        gap: 20px;
-    }
-
-    .livroDicas {
-        text-align: center;
-        min-width: 0;
-        width: 100%;
+    .livroBox, .temasBox, .main h1 {
+        max-width: 85%;
     }
 
     .livroDicas h2 {
         font-size: 1.8rem;
-    }
-
-    .livroDicas p {
-        font-size: 1rem;
-        line-height: 1.8;
-    }
-
-    .temasBox {
-        padding: 22px;
-        width: 100%;
-    }
-
-    .temasBox h3 {
         text-align: center;
     }
 
-    .temasBox li {
+    .livroDicas p {
+        text-align: left;
         font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    .temasBox {
+        padding: 20px;
+    }
+
+    .temasBox h3 {
+        margin: 10px;
+    }
+
+    .temasBox li {
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 375px) {
     .main {
-        padding: 20px 12px 40px;
-    }
-
-    .divisor {
-        margin-bottom: 30px;
+        padding: 28px 12px 40px;
     }
 
     .main h1 {
-        font-size: 1.65rem;
-        line-height: 1.3;
+        font-size: 1.6rem;
     }
 
-    .livroBox img {
-        width: 180px;
+    .livroDicas h2 {
+        font-size: 1.5rem;
     }
 
     .livroDicas p {
@@ -413,48 +422,5 @@
 
     .temasBox {
         padding: 18px;
-    }
-
-    .temasBox li {
-        font-size: 0.9rem;
-    }
-
-    .livroDicas h2 {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-height: 500px) and (orientation: landscape) {
-    .main {
-        padding: 30px 24px 40px;
-    }
-
-    .conteudo {
-        gap: 28px;
-    }
-
-    .main h1 {
-        font-size: 2.5rem;
-    }
-
-    .livroBox {
-        gap: 20px;
-    }
-
-    .livroBox img {
-        width: 160px;
-    }
-
-    .livroDicas p {
-        font-size: 0.98rem;
-        line-height: 1.6;
-    }
-
-    .temasBox {
-        padding: 20px;
-    }
-
-    .temasBox li {
-        padding: 12px 0;
     }
 }
