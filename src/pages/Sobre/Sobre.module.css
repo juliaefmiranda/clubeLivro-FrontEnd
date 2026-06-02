@@ -408,8 +408,12 @@
         padding: 40px 18px 60px;
     }
 
+    .divisor {
+        max-width: 760px;
+    }
+
     .topoTexto {
-        max-width: 100%;
+        max-width: 85%;
     }
 
     .tag,
@@ -422,14 +426,10 @@
         font-size: 1rem;
     }
 
-    .divisor {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
     .textBlock,
     .apiSection {
-        max-width: 100%;
+        max-width: 760px;
+        width: 85%;
         padding: 26px 20px;
         margin: 10px auto;
     }
@@ -505,6 +505,7 @@
 
     .textBlock,
     .apiSection {
+        max-width: 75%;
         padding: 20px 16px;
         border-radius: 18px;
         margin: 8px auto;
