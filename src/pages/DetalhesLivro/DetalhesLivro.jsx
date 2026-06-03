@@ -11,7 +11,7 @@ import { FiBookOpen, FiEdit3, FiSearch, FiUsers, FiCheckCircle } from 'react-ico
 export default function DetalhesLivro() {
     const { origem, id } = useParams();
     const [livro, setLivro] = useState(null);
-    const [idioma, setIdioma] = useState('pt');
+    const { idioma, setIdioma } = useIdioma();
     const [abaAtiva, setAbaAtiva] = useState('visao');
     const [personagens, setPersonagens] = useState([]);
 
