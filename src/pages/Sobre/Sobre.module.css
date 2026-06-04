@@ -1,648 +1,648 @@
 :root {
-    --bg: #fcfbf7;
-    --bg-card: #ffffff;
-    --texto: #1f1f1f;
-    --texto-suave: #333;
-    --texto-leve: #666;
-    --roxo: #b951a1;
-    --roxo-dark: #75175e;
-    --linha: #e3cf93;
-    --borda: rgba(0, 0, 0, 0.06);
-    --radius: 22px;
+--bg: #fcfbf7;
+--bg-card: #ffffff;
+--texto: #1f1f1f;
+--texto-suave: #333;
+--texto-leve: #666;
+--roxo: #b951a1;
+--roxo-dark: #75175e;
+--linha: #e3cf93;
+--borda: rgba(0, 0, 0, 0.06);
+--radius: 22px;
 }
 
 .wrapper {
-    min-height: 100vh;
-    background-color: var(--bg);
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+min-height: 100vh;
+background-color: var(--bg);
+display: flex;
+flex-direction: column;
+overflow-x: hidden;
 }
 
 .main {
-    flex: 1;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 60px 30px 80px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+flex: 1;
+width: 100%;
+max-width: 1400px;
+margin: 0 auto;
+padding: 60px 30px 80px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
 }
 
 .topo {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+width: 100%;
+display: flex;
+justify-content: center;
 }
 
 .topoTexto {
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
+width: 100%;
+max-width: 900px;
+text-align: center;
 }
 
 .tag {
-    font-size: 4rem;
-    font-weight: 400;
-    color: var(--texto);
+font-size: 4rem;
+font-weight: 400;
+color: var(--texto);
 }
 
 .heroSub {
-    font-size: 1.5rem;
-    color: var(--texto-leve);
-    margin-top: 14px;
-    line-height: 1.7;
+font-size: 1.5rem;
+color: var(--texto-leve);
+margin-top: 14px;
+line-height: 1.7;
 }
 
 .divisor {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin: 25px 0;
+display: flex;
+align-items: center;
+width: 100%;
+margin: 25px 0;
 }
 
 .divisorLine {
-    flex: 1;
-    height: 2px;
-    background: linear-gradient(to right,
-            transparent,
-            rgba(209, 188, 123, 0.35),
-            transparent);
+flex: 1;
+height: 2px;
+background: linear-gradient(to right,
+transparent,
+rgba(209, 188, 123, 0.35),
+transparent);
 }
 
 .divisorOrnament {
-    font-size: 14px;
-    color: rgb(209, 188, 123);
-    line-height: 1;
-    flex-shrink: 0;
+font-size: 14px;
+color: rgb(209, 188, 123);
+line-height: 1;
+flex-shrink: 0;
 }
 
 .section {
-    width: 100%;
+width: 100%;
 }
 
 .textBlock {
-    background: var(--bg-card);
-    border-radius: 24px;
-    margin: 30px;
-    padding: 52px;
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-    border: 1px solid #b19c5f40;
-    box-shadow:
-        0 10px 30px #b19c5f1c,
-        0 1px 3px #b19c5f12;
+background: var(--bg-card);
+border-radius: 24px;
+margin: 30px;
+padding: 52px;
+display: flex;
+flex-direction: column;
+gap: 26px;
+border: 1px solid #b19c5f40;
+box-shadow:
+0 10px 30px #b19c5f1c,
+0 1px 3px #b19c5f12;
 }
 
 .textBlock p {
-    text-align: justify;
-    font-size: 1.2rem;
-    line-height: 1.95;
-    color: var(--texto-suave);
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
+text-align: justify;
+font-size: 1.2rem;
+line-height: 1.95;
+color: var(--texto-suave);
+margin: 0;
+font-family: 'Montserrat', sans-serif;
 }
 
 .cardsSection {
-    display: flex;
-    gap: 24px;
-    width: 100%;
-    margin-top: 10px;
-    flex-wrap: wrap;
+display: flex;
+gap: 24px;
+width: 100%;
+margin-top: 10px;
+flex-wrap: wrap;
 }
 
 .infoCard {
-    flex: 1;
-    min-width: 280px;
-    background: rgb(255, 252, 252);
-    border-radius: 16px;
-    padding: 30px;
-    border: 1px solid #e3cf93;
+flex: 1;
+min-width: 280px;
+background: rgb(255, 252, 252);
+border-radius: 16px;
+padding: 30px;
+border: 1px solid #e3cf93;
 }
 
 .infoCardTitle {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--texto);
-    margin: 0;
+font-size: 1.2rem;
+font-weight: 500;
+color: var(--texto);
+margin: 0;
 }
 
 .infoCardDivider {
-    width: 40px;
-    height: 2px;
-    background: var(--linha);
-    border-radius: 2px;
-    margin: 18px 0 22px;
+width: 40px;
+height: 2px;
+background: var(--linha);
+border-radius: 2px;
+margin: 18px 0 22px;
 }
 
 .infoCardItems {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+display: flex;
+flex-direction: column;
+gap: 14px;
 }
 
 .infoCardItem {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1rem;
-    color: var(--texto-suave);
-    font-family: 'Montserrat', sans-serif;
+display: flex;
+align-items: center;
+gap: 12px;
+font-size: 1rem;
+color: var(--texto-suave);
+font-family: 'Montserrat', sans-serif;
 }
 
 .infoCardItemDot {
-    width: 8px;
-    height: 8px;
-    background: var(--linha);
-    border-radius: 50%;
-    flex-shrink: 0;
+width: 8px;
+height: 8px;
+background: var(--linha);
+border-radius: 50%;
+flex-shrink: 0;
 }
 
 .apiSection {
-    background: var(--bg-card);
-    border-radius: 24px;
-    margin: 10px 30px 50px 30px;
-    padding: 52px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    border: 1px solid #b19c5f40;
-    box-shadow:
-        0 10px 30px #b19c5f1c,
-        0 1px 3px #b19c5f12;
+background: var(--bg-card);
+border-radius: 24px;
+margin: 10px 30px 50px 30px;
+padding: 52px;
+display: flex;
+flex-direction: column;
+gap: 30px;
+border: 1px solid #b19c5f40;
+box-shadow:
+0 10px 30px #b19c5f1c,
+0 1px 3px #b19c5f12;
 }
 
 .apiText h3 {
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--texto);
-    margin: 0 0 16px;
+font-size: 2rem;
+font-weight: 400;
+color: var(--texto);
+margin: 0 0 16px;
 }
 
 .apiText p {
-    text-align: justify;
-    font-size: 1.2rem;
-    line-height: 1.9;
-    color: var(--texto-suave);
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
+text-align: justify;
+font-size: 1.2rem;
+line-height: 1.9;
+color: var(--texto-suave);
+margin: 0;
+font-family: 'Montserrat', sans-serif;
 }
 
 .apiNodes {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
+display: flex;
+align-items: center;
+gap: 10px;
+flex-wrap: wrap;
 }
 
 .node {
-    background: rgb(255, 252, 252);
-    border: 1px solid #e3cf93;
-    color: #444;
-    font-size: 0.9rem;
-    padding: 10px 18px;
-    border-radius: 999px;
-    font-family: 'Montserrat', sans-serif;
+background: rgb(255, 252, 252);
+border: 1px solid #e3cf93;
+color: #444;
+font-size: 0.9rem;
+padding: 10px 18px;
+border-radius: 999px;
+font-family: 'Montserrat', sans-serif;
 }
 
 .connector {
-    color: var(--linha);
-    font-size: 1rem;
+color: var(--linha);
+font-size: 1rem;
 }
 
 .equipeSection {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 40px;
 }
 
 .equipeTitulo {
-    text-align: center;
+text-align: center;
 }
 
 .equipeH2 {
-    font-size: 3rem;
-    font-weight: 400;
-    color: var(--texto);
-    margin: 0 0 10px;
+font-size: 3rem;
+font-weight: 400;
+color: var(--texto);
+margin: 0 0 10px;
 }
 
 .equipeSub {
-    font-size: 1.2rem;
-    color: var(--texto-leve);
-    margin: 0;
+font-size: 1.2rem;
+color: var(--texto-leve);
+margin: 0;
 }
 
 .equipeGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 35px;
-    width: 100%;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 35px;
+width: 100%;
 }
 
 .cardIntegrante {
-    background: white;
-    border-radius: 20px;
-    padding: 45px 70px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 19px;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    border: 1px solid #b19c5f40;
-    box-shadow:
-        0 10px 30px #b19c5f1c,
-        0 1px 3px #b19c5f12;
+background: white;
+border-radius: 20px;
+padding: 45px 70px;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 19px;
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease;
+border: 1px solid #b19c5f40;
+box-shadow:
+0 10px 30px #b19c5f1c,
+0 1px 3px #b19c5f12;
 }
 
 .cardIntegrante:hover {
-    transform: translateY(-4px);
-    box-shadow:
-        0 16px 40px #b19c5f39,
-        0 2px 6px #b19c5f22;
+transform: translateY(-4px);
+box-shadow:
+0 16px 40px #b19c5f39,
+0 2px 6px #b19c5f22;
 }
 
 .avatar {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: #b19d5f;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
+width: 90px;
+height: 90px;
+border-radius: 50%;
+background: #b19d5f;
+color: white;
+font-size: 1.5rem;
+font-weight: 600;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 8px;
 }
 
 .integranteNome {
-    font-family: 'Georgia', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--texto);
-    margin: 0;
-    line-height: 1.5;
+font-family: 'Georgia', sans-serif;
+font-size: 1.2rem;
+font-weight: 500;
+color: var(--texto);
+margin: 0;
+line-height: 1.5;
 }
 
 .integranteCurso {
-    font-size: 0.9rem;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--texto-leve);
-    font-weight: 500;
+font-size: 0.9rem;
+font-family: 'Montserrat', sans-serif;
+color: var(--texto-leve);
+font-weight: 500;
 }
 
 .fotoParticipante {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
+width: 90px;
+height: 90px;
+border-radius: 50%;
+object-fit: cover;
 }
 
 @media (max-width: 1440px) {
-    .main {
-        padding: 30px;
-    }
+.main {
+padding: 30px;
+}
 
-    .topoTexto {
-        max-width: 760px;
-    }
+.topoTexto {
+max-width: 760px;
+}
 
-    .tag {
-        font-size: 2.3rem;
-    }
+.tag {
+font-size: 2.3rem;
+}
 
-    .heroSub {
-        margin: 8px;
-        font-size: 1.05rem;
-        line-height: 1.8;
-    }
+.heroSub {
+margin: 8px;
+font-size: 1.05rem;
+line-height: 1.8;
+}
 
-    .divisor {
-        max-width: 760px;
-        margin: 5px auto;
-    }
+.divisor {
+max-width: 760px;
+margin: 5px auto;
+}
 
-    .textBlock,
-    .apiSection {
-        max-width: 80%;
-        padding: 34px 34px;
-        gap: 20px;
-        margin: 15px auto;
-    }
+.textBlock,
+.apiSection {
+max-width: 80%;
+padding: 34px 34px;
+gap: 20px;
+margin: 15px auto;
+}
 
-    .equipeGrid {
-        grid-template-columns: repeat(auto-fit, minmax(190px, 190px));
-        justify-content: center;
-    }
+.equipeGrid {
+grid-template-columns: repeat(auto-fit, minmax(190px, 190px));
+justify-content: center;
+}
 
-    .textBlock p,
-    .apiText p {
-        font-size: 0.95rem;
-        line-height: 1.85;
-    }
+.textBlock p,
+.apiText p {
+font-size: 0.95rem;
+line-height: 1.85;
+}
 
-    .infoCard {
-        padding: 24px;
-    }
+.infoCard {
+padding: 24px;
+}
 
-    .infoCardTitle {
-        font-size: 1rem;
-    }
+.infoCardTitle {
+font-size: 1rem;
+}
 
-    .infoCardItem {
-        font-size: 0.92rem;
-    }
+.infoCardItem {
+font-size: 0.92rem;
+}
 
-    .apiText h3 {
-        font-size: 1.6rem;
-        margin-bottom: 12px;
-    }
+.apiText h3 {
+font-size: 1.6rem;
+margin-bottom: 12px;
+}
 
-    .node {
-        font-size: 0.82rem;
-        padding: 8px 14px;
-    }
+.node {
+font-size: 0.82rem;
+padding: 8px 14px;
+}
 
-    .equipeH2 {
-        margin-top: 15px;
-        font-size: 2.2rem;
-    }
+.equipeH2 {
+margin-top: 15px;
+font-size: 2.2rem;
+}
 
-    .equipeSub {
-        font-size: 0.95rem;
-    }
+.equipeSub {
+font-size: 0.95rem;
+}
 
-    .cardIntegrante {
-        padding: 24px 18px;
-        border-radius: 20px;
-    }
+.cardIntegrante {
+padding: 24px 18px;
+border-radius: 20px;
+}
 
-    .avatar,
-    .fotoParticipante {
-        width: 66px;
-        height: 66px;
-    }
+.avatar,
+.fotoParticipante {
+width: 66px;
+height: 66px;
+}
 
-    .integranteNome {
-        margin: 0;
-        line-height: 1.3;
-        font-size: 0.95rem;
-    }
+.integranteNome {
+margin: 0;
+line-height: 1.3;
+font-size: 0.95rem;
+}
 
-    .integranteCurso {
-        margin: 0;
-        font-size: 0.75rem;
-    }
-
+.integranteCurso {
+margin: 0;
+font-size: 0.75rem;
+}
 }
 
 @media (max-width: 768px) {
-    .main {
-        padding: 40px 18px 60px;
-    }
+.main {
+padding: 40px 18px 60px;
+}
 
-    .divisor {
-        max-width: 760px;
-    }
+.divisor {
+max-width: 760px;
+}
 
-    .topoTexto {
-        max-width: 85%;
-    }
+.topoTexto {
+width: 85%;
+max-width: 760px;
+}
 
-    .tag,
-    .equipeH2,
-    .heroSub {
-        text-align: center;
-    }
+.tag,
+.equipeH2,
+.heroSub {
+text-align: center;
+}
 
-    .heroSub {
-        font-size: 1rem;
-    }
+.heroSub {
+font-size: 1rem;
+}
 
-    .textBlock,
-    .apiSection {
-        max-width: 760px;
-        width: 85%;
-        padding: 26px 20px;
-        margin: 10px auto;
-    }
+.textBlock,
+.apiSection {
+width: 85%;
+max-width: 760px;
+padding: 26px 20px;
+margin: 10px auto;
+}
 
-    .textBlock p,
-    .apiText p {
-        font-size: 0.95rem;
-        line-height: 1.8;
-    }
+.textBlock p,
+.apiText p {
+font-size: 0.95rem;
+line-height: 1.8;
+}
 
-    .cardsSection {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 14px;
-    }
+.cardsSection {
+display: grid;
+grid-template-columns: 1fr;
+gap: 14px;
+}
 
-    .infoCard {
-        width: 100%;
-        min-width: 0;
-        padding: 20px;
-        box-sizing: border-box;
-    }
+.infoCard {
+width: 100%;
+min-width: 0;
+padding: 20px;
+box-sizing: border-box;
+}
 
-    .apiNodes {
-        justify-content: center;
-    }
+.apiNodes {
+justify-content: center;
+}
 
-    .node {
-        text-align: center;
-    }
+.node {
+text-align: center;
+}
 
-    .equipeGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 18px;
-        justify-items: center;
-    }
+.equipeGrid {
+grid-template-columns: repeat(2, 1fr);
+gap: 18px;
+justify-items: center;
+}
 
-    .cardIntegrante {
-        max-width: 200px;
-        width: 100%;
-        padding: 20px 14px;
-        gap: 12px;
-    }
+.cardIntegrante {
+max-width: 200px;
+width: 100%;
+padding: 20px 14px;
+gap: 12px;
+}
 
-    .avatar,
-    .fotoParticipante {
-        width: 66px;
-        height: 66px;
-    }
+.avatar,
+.fotoParticipante {
+width: 66px;
+height: 66px;
+}
 
-    .integranteNome {
-        font-size: 0.95rem;
-    }
+.integranteNome {
+font-size: 0.95rem;
+}
 
-    .integranteCurso {
-        font-size: 0.75rem;
-    }
+.integranteCurso {
+font-size: 0.75rem;
+}
 }
 
 @media (max-width: 500px) {
-    .main {
-        padding: 32px 14px 50px;
-    }
+.main {
+padding: 32px 14px 50px;
+}
 
-    .heroSub {
-        font-size: 0.95rem;
-        line-height: 1.75;
-    }
+.tag {
+font-size: 1.8rem;
+}
 
-    .divisor {
-        margin: 6px 0;
-    }
+.heroSub {
+font-size: 0.95rem;
+line-height: 1.75;
+}
 
-    .textBlock,
-    .apiSection {
-        max-width: 75%;
-        padding: 20px 16px;
-        border-radius: 18px;
-        margin: 8px auto;
-    }
+.divisor {
+margin: 6px 0;
+}
 
-    .textBlock p,
-    .apiText p {
-        text-align: left;
-        font-size: 0.92rem;
-        line-height: 1.75;
-    }
+.textBlock,
+.apiSection {
+width: 85%;
+max-width: 760px;
+padding: 20px 16px;
+border-radius: 18px;
+margin: 8px auto;
+}
 
-    .infoCard {
-        padding: 18px;
-    }
+.textBlock p,
+.apiText p {
+text-align: left;
+font-size: 0.92rem;
+line-height: 1.75;
+}
 
-    .infoCardTitle {
-        font-size: 0.96rem;
-    }
+.infoCard {
+padding: 18px;
+}
 
-    .infoCardDivider {
-        margin: 12px 0 16px;
-    }
+.infoCardTitle {
+font-size: 0.96rem;
+}
 
-    .infoCardItem {
-        font-size: 0.88rem;
-    }
+.infoCardDivider {
+margin: 12px 0 16px;
+}
 
-    .apiText h3 {
-        font-size: 1.35rem;
-    }
+.infoCardItem {
+font-size: 0.88rem;
+}
 
-    .node {
-        font-size: 0.75rem;
-        padding: 7px 12px;
-    }
+.apiText h3 {
+font-size: 1.35rem;
+}
 
-    .connector {
-        font-size: 0.9rem;
-    }
+.node {
+font-size: 0.75rem;
+padding: 7px 12px;
+}
 
-    .tag {
-        font-size: 1.8rem;
-    }
+.connector {
+font-size: 0.9rem;
+}
 
-    .equipeH2 {
-        font-size: 2rem;
-    }
+.equipeH2 {
+font-size: 2rem;
+}
 
-    .equipeSub {
-        font-size: 0.9rem;
-    }
+.equipeSub {
+font-size: 0.9rem;
+}
 
-    .equipeSection {
-        gap: 20px;
-    }
+.equipeSection {
+gap: 20px;
+}
 
-    .equipeGrid {
-        grid-template-columns: 1fr;
-        justify-items: center;
-    }
+.equipeGrid {
+grid-template-columns: 1fr;
+justify-items: center;
+}
 
-    .cardIntegrante {
-        max-width: 230px;
-        padding: 16px 12px;
-        gap: 8px;
-    }
+.cardIntegrante {
+max-width: 230px;
+padding: 16px 12px;
+gap: 8px;
+}
 
-    .avatar,
-    .fotoParticipante {
-        width: 68px;
-        height: 68px;
-    }
+.avatar,
+.fotoParticipante {
+width: 68px;
+height: 68px;
+}
 
-    .integranteNome {
-        font-size: 0.96rem;
-    }
+.integranteNome {
+font-size: 0.96rem;
+}
 
-    .integranteCurso {
-        font-size: 0.75rem;
-    }
+.integranteCurso {
+font-size: 0.75rem;
+}
 }
 
 @media (max-width: 375px) {
-    .main {
-        padding: 28px 12px 40px;
-    }
+.main {
+padding: 28px 12px 40px;
+}
 
-    .tag {
-        font-size: 1.6rem;
-    }
+.tag {
+font-size: 1.6rem;
+}
 
-    .heroSub {
-        font-size: 0.9rem;
-    }
+.heroSub {
+font-size: 0.9rem;
+}
 
-    .textBlock,
-    .apiSection {
-        padding: 18px 14px;
-    }
+.textBlock,
+.apiSection {
+padding: 18px 14px;
+}
 
-    .textBlock p,
-    .apiText p {
-        font-size: 0.88rem;
-        line-height: 1.7;
-    }
+.textBlock p,
+.apiText p {
+font-size: 0.88rem;
+line-height: 1.7;
+}
 
-    .infoCard {
-        padding: 16px;
-    }
+.infoCard {
+padding: 16px;
+}
 
-    .apiText h3 {
-        font-size: 1.2rem;
-    }
+.apiText h3 {
+font-size: 1.2rem;
+}
 
-    .equipeH2 {
-        font-size: 1.6rem;
-    }
+.equipeH2 {
+font-size: 1.6rem;
+}
 
-    .cardIntegrante {
-        max-width: 210px;
-        padding: 14px 10px 10px;
-        gap: 6px;
-    }
+.cardIntegrante {
+max-width: 210px;
+padding: 14px 10px 10px;
+gap: 6px;
+}
 
-    .avatar,
-    .fotoParticipante {
-        width: 62px;
-        height: 62px;
-    }
+.avatar,
+.fotoParticipante {
+width: 62px;
+height: 62px;
+}
 
-    .integranteNome {
-        font-size: 0.9rem;
-    }
+.integranteNome {
+font-size: 0.9rem;
+}
 
-
-    .integranteCurso {
-        font-size: 0.72rem;
-    }
+.integranteCurso {
+font-size: 0.72rem;
+}
 }
