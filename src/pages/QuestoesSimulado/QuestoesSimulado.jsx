@@ -41,7 +41,7 @@ export default function QuestoesSimulado() {
         };
 
         carregarQuestoes();
-    }, []); // O useEffect agora só tem a função declarada dentro dele
+    }, []); 
 
     const handleResposta = (questaoId, opcao) => {
         setRespostas(prev => ({
