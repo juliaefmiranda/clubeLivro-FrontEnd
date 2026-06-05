@@ -20,8 +20,8 @@ export default function Obras() {
             try {
                 const resultado = await getAllLivros();
 
-                setLivros(resultado.livros);
-                setErros(resultado.erros);
+                setLivros(resultado);
+                setErros([]);
             } catch (erro) {
                 console.log('Erro ao carregar livros:', erro);
             } finally {
