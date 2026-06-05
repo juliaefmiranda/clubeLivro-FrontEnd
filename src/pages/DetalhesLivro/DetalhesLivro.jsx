@@ -4,7 +4,8 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { useIdioma } from "../../hooks/useIdioma";
 import { Link } from "react-router-dom";
-import { APIs } from "../../config/apis";
+import { getLivroById } from "../../services/livrosService";
+
 import styles from "./DetalhesLivro.module.css";
 import {
   FiBookOpen,
@@ -22,43 +23,38 @@ export default function DetalhesLivro() {
   const [personagens, setPersonagens] = useState([]);
 
   useEffect(() => {
-    const apiSelecionada = APIs.find((api) => api.origem === origem);
 
-    console.log("Origem:", origem);
-    console.log("API:", apiSelecionada);
-    if (!apiSelecionada) return;
+    async function carregarLivro() {
 
-    fetch(`${apiSelecionada.url}/${id}`, {
-      headers: {
-        "x-api-key": apiSelecionada.apiKey,
-      },
-    })
-      .then((res) => {
-        console.log("Status:", res.status);
-        return res.json();
-      })
-      .then((data) => {
-        console.log(JSON.stringify(data, null, 2));
-        setLivro(data.data);
+      try {
+
+        const livro = await getLivroById(origem, id);
+
+        setLivro(livro);
+
         if (origem === "minha-api") {
-          fetch(apiSelecionada.personagensUrl, {
-            headers: {
-              "x-api-key": apiSelecionada.apiKey,
-            },
-          })
-            .then((res) => res.json())
-            .then((personagensData) => {
-              setPersonagens(personagensData.data || personagensData || []);
-            })
-            .catch((erro) => {
-              console.error("Erro ao buscar personagens:", erro);
-            });
+
+          const resposta = await fetch(
+            "https://clubelivro-backend.onrender.com/api/personagens"
+          );
+
+          const dados = await resposta.json();
+
+          setPersonagens(dados);
+
         }
-      })
-      .catch((erro) => {
-        console.error("Erro ao buscar livro:", erro);
-      });
-  }, [id, origem]);
+
+      } catch (erro) {
+
+        console.error(erro);
+
+      }
+
+    }
+
+    carregarLivro();
+
+  }, [origem, id]);
 
   if (!livro) {
     return (
