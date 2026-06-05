@@ -494,7 +494,80 @@
 
 }
 
+@media (max-width: 768px) {
+    .topo {
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    .botaoContainer {
+        position: relative; 
+        top: 0;
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .questaoCard,
+    .cardRevisao,
+    .progressoContainer,
+    .notaCard {
+        max-width: 100%; 
+    }
+
+    .navegacaoBotoes .botaoNav,
+    .navegacaoBotoes .botaoFinalizar {
+        margin: 0; 
+    }
+}
+
+
+/*O "!important" foi adicionado para garantir que o celular ignore o padding e as larguras do desktop para não quebrar o layout. */
+
+
 @media (max-width: 500px) {
+    .main {
+        padding: 30px 15px 50px;
+    }
+
+    .pergunta {
+        text-align: left;
+        font-size: 1.1rem;
+    }
+
+    .questaoCard {
+        padding: 20px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .opcoes {
+        gap: 10px;
+    }
+
+    .opcaoLabel {
+        padding: 12px 10px !important;
+        align-items: flex-start !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .radio {
+        margin-top: 2px !important;
+        margin-right: 10px !important;
+    }
+
+    .opcaoLetra {
+        margin-top: 0 !important;
+        margin-right: 10px !important;
+        min-width: 20px !important;
+    }
+
+    .opcaoTexto {
+        text-align: left !important;
+        font-size: 0.95rem !important;
+        width: 100%;
+    }
+
     .notaCard {
         padding: 28px 20px;
     }
@@ -511,11 +584,35 @@
         padding: 18px;
     }
 
-    .textoPergunta {
+    .textoPergunta,
+    .explicacao {
+        text-align: left;
         font-size: 0.95rem;
     }
 
     .respostaRevisao p {
         font-size: 0.9rem;
+    }
+
+    .navegacaoBotoes {
+        flex-direction: column-reverse; 
+        gap: 12px;
+    }
+
+    .navegacaoBotoes .botaoNav,
+    .navegacaoBotoes .botaoFinalizar {
+        max-width: 100%;
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    .botoesResultado {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .botaoReiniciar,
+    .botaoVoltar {
+        width: 100%;
     }
 }
