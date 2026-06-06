@@ -35,7 +35,12 @@ export default function DetalhesLivro() {
         if (origem === "minha-api") {
 
           const resposta = await fetch(
-            "https://clubelivro-backend.onrender.com/api/personagens"
+            "https://clubelivro-backend.onrender.com/api/personagens",
+            {
+              headers: {
+                "x-api-key": import.meta.env.VITE_API_KEY_ENTRE_LINHAS
+              }
+            }
           );
 
           const dados = await resposta.json();
@@ -56,6 +61,8 @@ export default function DetalhesLivro() {
 
   }, [origem, id]);
 
+  console.log("ESTADO PERSONAGENS:", personagens);
+
   if (!livro) {
     return (
       <div className={styles.carregando}>
@@ -63,6 +70,7 @@ export default function DetalhesLivro() {
       </div>
     );
   }
+
 
   return (
     <div className={styles.pagina}>
@@ -231,7 +239,8 @@ export default function DetalhesLivro() {
               <div className={styles.cardInfo}>
                 <h3>{idioma === "pt" ? "Personagens" : "Characters"}</h3>
                 {origem === "minha-api" ? (
-                  (personagens || []).map((personagem) => (
+                  Array.isArray(personagens) &&
+                  personagens.map((personagem) => (
                     <div key={personagem.id} className={styles.personagemCard}>
                       <h4>{personagem.nome}</h4>
                       <p>
