@@ -39,8 +39,8 @@ export default function InstrucoesSimulado() {
 
                         <p>
                             {idioma === 'pt'
-                                ? 'O simulado contém 10 questões de múltipla escolha, cada uma com 5 alternativas. Ao final, você receberá sua pontuação e poderá revisar todas as questões com as explicações detalhadas. Não há tempo limite, mas recomendamos responder com calma e atenção para melhor aproveitamento.'
-                                : 'The exam contains 10 multiple choice questions, each with 5 alternatives. At the end, you will receive your score and can review all questions with detailed explanations. There is no time limit, but we recommend answering calmly and carefully for better results.'}
+                                ? 'O simulado contém 10 questões de múltipla escolha, cada uma com 4 alternativas. Ao final, você receberá sua pontuação e poderá revisar todas as questões com as explicações detalhadas. Não há tempo limite, mas recomendamos responder com calma e atenção para melhor aproveitamento.'
+                                : 'The exam contains 10 multiple choice questions, each with 4 alternatives. At the end, you will receive your score and can review all questions with detailed explanations. There is no time limit, but we recommend answering calmly and carefully for better results.'}
                         </p>
                     </div>
 
