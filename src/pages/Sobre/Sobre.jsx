@@ -106,60 +106,59 @@ export default function Sobre() {
     const t = conteudo[idioma];
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.paginaSobre}>
             <Navbar idioma={idioma} setIdioma={setIdioma} />
 
-            <main className={styles.main}>
+            <main className={styles.principal}>
                 <div className={styles.topo}>
-
                     <div className={styles.topoTexto}>
-                        <span className={styles.tag}>{t.tag_pt}</span>
+                        <span className={styles.etiqueta}>{t.tag_pt}</span>
                         <p className={styles.heroSub}>{t.subtitulo_pt}</p>
                     </div>
                 </div>
 
                 <div className={styles.divisor}>
-                    <span className={styles.divisorLine} />
-                    <span className={styles.divisorOrnament}>✦</span>
-                    <span className={styles.divisorLine} />
+                    <span className={styles.divisorLinha} />
+                    <span className={styles.divisorOrnamento}>✦</span>
+                    <span className={styles.divisorLinha} />
                 </div>
 
-                <section className={styles.section}>
-                    <div className={styles.textBlock}>
+                <section className={styles.secao}>
+                    <div className={styles.blocoTexto}>
                         <p>{t.descricao1_pt}</p>
                         <p>{t.descricao2_pt}</p>
                         <p>{t.descricao3_pt}</p>
 
-                        <div className={styles.cardsSection}>
-                            <div className={styles.infoCard}>
-                                <h3 className={styles.infoCardTitle}>{t.disciplinas_pt}</h3>
-                                <div className={styles.infoCardDivider} />
-                                <div className={styles.infoCardItems}>
-                                    <div className={styles.infoCardItem}>
-                                        <span className={styles.infoCardItemDot} />
+                        <div className={styles.secaoCartoes}>
+                            <div className={styles.cartaoInfo}>
+                                <h3 className={styles.cartaoInfoTitulo}>{t.disciplinas_pt}</h3>
+                                <div className={styles.cartaoInfoDivisor} />
+                                <div className={styles.cartaoInfoItens}>
+                                    <div className={styles.cartaoInfoItem}>
+                                        <span className={styles.cartaoInfoPonto} />
                                         {t.disc1_pt}
                                     </div>
-                                    <div className={styles.infoCardItem}>
-                                        <span className={styles.infoCardItemDot} />
+                                    <div className={styles.cartaoInfoItem}>
+                                        <span className={styles.cartaoInfoPonto} />
                                         {t.disc2_pt}
                                     </div>
                                 </div>
                             </div>
 
-                            <div className={styles.infoCard}>
-                                <h3 className={styles.infoCardTitle}>{t.cursos_pt}</h3>
-                                <div className={styles.infoCardDivider} />
-                                <div className={styles.infoCardItems}>
-                                    <div className={styles.infoCardItem}>
-                                        <span className={styles.infoCardItemDot} />
+                            <div className={styles.cartaoInfo}>
+                                <h3 className={styles.cartaoInfoTitulo}>{t.cursos_pt}</h3>
+                                <div className={styles.cartaoInfoDivisor} />
+                                <div className={styles.cartaoInfoItens}>
+                                    <div className={styles.cartaoInfoItem}>
+                                        <span className={styles.cartaoInfoPonto} />
                                         {t.disc3_pt}
                                     </div>
-                                    <div className={styles.infoCardItem}>
-                                        <span className={styles.infoCardItemDot} />
+                                    <div className={styles.cartaoInfoItem}>
+                                        <span className={styles.cartaoInfoPonto} />
                                         {t.disc4_pt}
                                     </div>
-                                    <div className={styles.infoCardItem}>
-                                        <span className={styles.infoCardItemDot} />
+                                    <div className={styles.cartaoInfoItem}>
+                                        <span className={styles.cartaoInfoPonto} />
                                         {t.disc5_pt}
                                     </div>
                                 </div>
@@ -169,42 +168,42 @@ export default function Sobre() {
                 </section>
 
                 {/* api´s */}
-                <section className={styles.apiSection}>
-                    <div className={styles.apiText}>
+                <section className={styles.secaoApi}>
+                    <div className={styles.textoApi}>
                         <h3>{t.apis_pt}</h3>
                         <p>{t.apisDesc_pt}</p>
                     </div>
-                    <div className={styles.apiNodes}>
-                        <span className={styles.node}>A Moreninha</span>
-                        <span className={styles.connector}>↔</span>
-                        <span className={styles.node}>Os Ratos</span>
-                        <span className={styles.connector}>↔</span>
-                        <span className={styles.node}>Olhos d'Água</span>
-                        <span className={styles.connector}>↔</span>
-                        <span className={styles.node}>Caminho das Pedras</span>
-                        <span className={styles.connector}>↔</span>
-                        <span className={styles.node}>Canção para Ninar Menino Grande</span>
+                    <div className={styles.nosApi}>
+                        <span className={styles.no}>A Moreninha</span>
+                        <span className={styles.conector}>↔</span>
+                        <span className={styles.no}>Os Ratos</span>
+                        <span className={styles.conector}>↔</span>
+                        <span className={styles.no}>Olhos d'Água</span>
+                        <span className={styles.conector}>↔</span>
+                        <span className={styles.no}>Caminho das Pedras</span>
+                        <span className={styles.conector}>↔</span>
+                        <span className={styles.no}>Canção para Ninar Menino Grande</span>
                     </div>
                 </section>
 
-                {/* divisor*/}
+                {/* divisor */}
                 <div className={styles.divisor}>
-                    <span className={styles.divisorLine} />
-                    <span className={styles.divisorOrnament}>✦</span>
-                    <span className={styles.divisorLine} />
+                    <span className={styles.divisorLinha} />
+                    <span className={styles.divisorOrnamento}>✦</span>
+                    <span className={styles.divisorLinha} />
                 </div>
 
                 {/* equipe */}
-                <section className={styles.equipeSection}>
-                    <div className={styles.equipeTitulo}>
+                <section className={styles.secaoEquipe}>
+                    <div className={styles.tituloEquipe}>
                         <h2 className={styles.equipeH2}>{t.equipe_pt}</h2>
                         <p className={styles.equipeSub}>{t.equipeSub_pt}</p>
                     </div>
 
-                    <div className={styles.equipeGrid}>
+                    <div className={styles.gradeEquipe}>
                         {Array.isArray(integrantes) &&
                             integrantes.map((p) => (
-                                <div key={p.id} className={styles.cardIntegrante}>
+                                <div key={p.id} className={styles.cartaoIntegrante}>
                                     <div className={styles.avatar}>
                                         {p.fotoUrl ? (
                                             <img
